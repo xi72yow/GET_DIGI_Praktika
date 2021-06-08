@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktikum Elektrotechnik Oszilloskop</title>
+    <!-- Scriptdatein -->
+    <script src="Javascript/MeineFunktionen.js"></script>
+    <script src="Javascript/protokollMain.js"></script>
+    <link rel="stylesheet" href="CSS/stylesheet.css" />
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <link rel="stylesheet" href="CSS/plyr.css" />
+    <!-- Temporäre sicherrung der HTML -->
+    <script>
+      neuladen();
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="Bilder/favicon.ico" />
+  </head>
+
+  <body>
+    <!-- zum drucken -->
+    <div id="capture">
+      <header>
+        <!-- Seitenkopf -->
+        <div class="row border">
+          <div class="column small-4">
+            <img src="Bilder/EAH.png" title="EAH Logo" />
+          </div>
+          <div class="colum small-8">
+            <p class="pnebenlogo" id="pnebenlogo">
+              <b>Fachbereich Elektrotechnik und Informationstechnik</b> <br />
+              Laborpraktikum <br />
+              Grundlagen der Elektrotechnik <br />
+              Dipl.-Ing. O.Reimer<br />
+              <span id="datum" class="datum"> </span>
+              Praktikum am: 8.6.2021
+            </p>
+          </div>
+
+          <script>
+            Datum();
+          </script>
+        </div>
+
+        <!-- Titel -->
+        <div class="divtitle" id="element-to-print">
+          <h1>Umgang mit der Laborausstattung: Oszilloskop</h1>
+        </div>
+
+        <!-- Eintragungen Studenten -->
+        <div class="links" width="50%" height="400">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <label for="Studiengang"> Studiengang/Set:</label>
+                </td>
+                <td>
+                  <input
+                    for="StudiengangEingabe"
+                    type="search"
+                    list="Studiengang"
+                    size="25"
+                    maxlength="25"
+                    placeholder="Studiengang"
+                    style="margin-left: 25px"
+                    required=""
+                  />
+                  <datalist id="Studiengang">
+                    <option value="WI"></option>
+                    <option value="UT"></option>
+                    <option value="MT"></option>
+                  </datalist>
+                  <input
+                    for="Setnummer"
+                    type="search"
+                    list="Set"
+                    size="9"
+                    maxlength="15"
+                    placeholder="1.01"
+                    required=""
+                  />
+                  <datalist id="Set">
+                    <option value="2.01"></option>
+                    <option value="2.02"></option>
+                    <option value="2.03"></option>
+                    <option value="2.04"></option>
+                    <option value="2.05"></option>
+                    <option value="2.06"></option>
+                    <option value="2.07"></option>
+                    <option value="2.08"></option>
+                  </datalist>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="Teilnehmer">Teilnehmer:</label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="Teilnehmer"
+                    size="40"
+                    maxlength="50"
+                    placeholder="Erika Mustermann"
+                    style="margin-left: 25px"
+                    required=""
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="Matrikelnummer">Matrikelnummer:</label>
+                </td>
+                <td>
+                  <input
+                    id="Matrikelnummer"
+                    size="40"
+                    maxlength="50"
+                    placeholder="665544"
+                    style="margin-left: 25px"
+                    required=""
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <label>Versuchs-ID: GET-01</label>
+          <label
+            >persönliche Prüf-ID:
+            <script type="text/javascript">
+              var min = 9,
+                max = 99999;
+              document.write(
+                20201407 + Math.floor(Math.random() * (max - min)) + min
+              );
+            </script>
+            20239807
+          </label>
+        </div>
+
+        <!-- Eintragung Testat -->
+        <div class="rechts">
+          <table>
+            <tbody>
+              <tr>
+                <td>Betreuer</td>
+                <td><input readonly="" /></td>
+              </tr>
+              <tr>
+                <td>Datum</td>
+                <td><input readonly="" /></td>
+              </tr>
+              <tr>
+                <td>Unterschrift</td>
+                <td><input readonly="" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Inhaltsverzeichnis -->
+        <div class="inhalt">
+          <hr />
+          <h2>Inhaltsverzeichnis</h2>
+          <a href="#sinu">4.1 – Sinusförmige Wechselspannung</a><br /><br />
+          <a href="#lite">Literaturhinweise</a><br /><br />
+        </div>
+
+        Hinweise
+        <div class="hinweise">
+          <h2>Hinweise zum Praktikum</h2>
+          <ul>
+            <li>
+              Für die Lösungen zu den einzelnen Aufgaben sind im Protokoll
+              Leerstellen vorgesehen. <br />
+              Verwenden Sie bitte für die Nebenrechnungen kein eigenes Papier.
+            </li>
+            <li style="color: #a52f33">
+              Folgen Sie immer den Anweisungen der Aufsichtspersonen! <br />
+              Wenn Sie sich unsicher sind, stellen Sie Fragen.<br />
+              Lassen Sie sich Ihren Versuchsaufbau vor dem Einschalten abnehmen.
+            </li>
+          </ul>
+        </div>
+
+        <div class="Druckhinweis">
+          <h2>Druckhinweis</h2>
+          <ul>
+            <li>
+              <p id="datumdruck">Datum: 8.6.2021</p>
+              <script>
+                Datum1();
+              </script>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Inhalt -->
+      <div>
+        <article class="article">
+          <h2>Versuchaufgaben</h2>
+          <fieldset>
+            <legend><h4>Video</h4></legend>
+            <div class="videoscreen">
+              <span id="vid"></span>
+              <video
+                id="player"
+                playsinline
+                controls
+                data-poster="Bilder/EAH_LOGO.jpg"
+              >
+                <source
+                  src="Videos/Praktikum Grundlagen ET Versuch 1 Teil2.webm"
+                  type="video/mp4"
+                />
+              </video>
+              <script>
+                const player = new Plyr("#player");
+              </script>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>
+              <span id="sinu"></span>
+              <h4>4.1 Sinusförmige Wechselspannung</h4>
+            </legend>
+            <ul>
+              <li>
+                Bilden Sie auf dem Oszillograf eine sinusförmige Spannung mit
+                einer Frequenz von <b>f = 1 kHz</b> ab!
+              </li>
+              <li>
+                Entnehmen Sie das Signal dem Funktionsgenerator (nicht am
+                TTL-Ausgang)!
+              </li>
+              <li>
+                Achten Sie darauf, dass die Dämpfungsschalter und der Schalter
+                für Offset gelöst sind. Drehen Sie den Amplitudensteller auf
+                Vollausschlag!
+              </li>
+              <div class="center">
+                <iframe
+                  id="frame-1"
+                  class="embed-container"
+                  src="ZeichenTool/zeichentool.html"
+                  style="height: 45vw; width: 80vw"
+                  onload="setZeichenTool(document.getElementById(`frame-1`), `11`)"
+                  data-vdevtools-injection="true"
+                ></iframe>
+              </div>
+              <li>
+                Lesen Sie Û, U<sub>SS</sub>, U<sub>eff</sub>, T und f ab und
+                tragen Sie diese in die nachfolgende Vergleichstabelle ein!
+              </li>
+              <li>
+                Messen Sie mit dem DMM im DC- und im AC-Bereich ebenfalls die
+                Spannung am Signalgenerator.
+              </li>
+              <li>Messen Sie die Frequenz mit dem DMM.</li>
+              <div>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label for="UAC"
+                          >U<sub>AC</sub>
+                          =
+                          <input
+                            id="UAC"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 V"
+                          />
+                        </label>
+                      </td>
+                      <td></td>
+                      <td>
+                        <label for="UDC">
+                          U<sub>DC</sub>
+                          =
+                          <input
+                            id="UDC"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 V"
+                          />
+                        </label>
+                      </td>
+                      <td></td>
+                      <td>
+                        <label for="f"
+                          >f =
+                          <input
+                            id="f"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 HZ"
+                          />
+                        </label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>
+                Welche Kennwerte zeigt das Messinstrument im jeweiligen
+                Messbereich an?
+              </li>
+              <div>
+                <textarea
+                  rows="8"
+                  cols="80"
+                  placeholder="Schreiben Sie hier..."
+                ></textarea>
+              </div>
+              <li>
+                Vervollständigen Sie die Tabelle und ermitteln Sie die fehlenden
+                Werte.
+              </li>
+              <li>
+                Markieren Sie bei M gemessene Werte und bei R berechnete Werte.
+              </li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th>Kennwert</th>
+
+                      <th>Oszilloskop</th>
+
+                      <th>M</th>
+
+                      <th>R</th>
+
+                      <th>DMM</th>
+
+                      <th>M</th>
+
+                      <th>R</th>
+                    </tr>
+
+                    <tr>
+                      <td>Û</td>
+
+                      <td><input id="oszi_1" placeholder="10 V" /></td>
+
+                      <td><input type="radio" name="1" /></td>
+
+                      <td><input type="radio" name="1" /></td>
+
+                      <td><input id="dmm_1" placeholder="10 V" /></td>
+
+                      <td><input type="radio" name="11" /></td>
+
+                      <td><input type="radio" name="11" /></td>
+                    </tr>
+                    <tr>
+                      <td>U<sub>SS</sub></td>
+
+                      <td><input id="oszi_2" placeholder="10 V" /></td>
+
+                      <td><input type="radio" name="2" /></td>
+
+                      <td><input type="radio" name="2" /></td>
+
+                      <td><input id="dmm_2" placeholder="10 V" /></td>
+
+                      <td><input type="radio" name="21" /></td>
+
+                      <td><input type="radio" name="21" /></td>
+                    </tr>
+                    <tr>
+                      <td>U<sub>eff</sub></td>
+
+                      <td><input id="oszi_3" placeholder="10 V" /></td>
+
+                      <td><input type="radio" name="3" /></td>
+
+                      <td><input type="radio" name="3" /></td>
+
+                      <td><input id="dmm_3" placeholder="10 V" /></td>
+
+                      <td><input type="radio" name="31" /></td>
+
+                      <td><input type="radio" name="31" /></td>
+                    </tr>
+                    <tr>
+                      <td>T</td>
+
+                      <td><input id="oszi_4" placeholder="10 s" /></td>
+
+                      <td><input type="radio" name="4" /></td>
+
+                      <td><input type="radio" name="4" /></td>
+
+                      <td><input id="dmm_4" placeholder="10 s" /></td>
+
+                      <td><input type="radio" name="41" /></td>
+
+                      <td><input type="radio" name="41" /></td>
+                    </tr>
+                    <tr>
+                      <td>H<sub>z</sub></td>
+
+                      <td><input id="oszi_5" placeholder="10 Hz" /></td>
+
+                      <td><input type="radio" name="5" /></td>
+
+                      <td><input type="radio" name="5" /></td>
+
+                      <td><input id="dmm_5" placeholder="10 Hz" /></td>
+
+                      <td><input type="radio" name="51" /></td>
+
+                      <td><input type="radio" name="51" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>
+                Stellen Sie mit Hilfe des Oszilloskop am Funktionsgenerator eine
+                Amplitude von Û = 8 V ein.
+              </li>
+              <li>
+                Aktivieren Sie nun die Offseteinstellung des Funktionsgenerators
+                (Offsetschalter) und stellen Sie einen positiven
+                Gleichspannungsoffset so ein, dass gerade noch eine unverzerrte
+                Sinusspannung am Oszilloskop abgebildet wird.
+              </li>
+              <li>
+                Verändern Sie die Einstellungen am Oszilloskop so, dass die
+                Sinusfunktion und die Nulllinie (GND Potential) in einem Bild
+                sichtbar wären.
+              </li>
+              <div class="center">
+                <iframe
+                  id="frame-2"
+                  class="embed-container"
+                  src="ZeichenTool/zeichentool.html"
+                  style="height: 45vw; width: 80vw"
+                  onload="setZeichenTool(document.getElementById(`frame-2`), `11`)"
+                  data-vdevtools-injection="true"
+                ></iframe>
+              </div>
+              <li>
+                Führen Sie wieder eine Vergleichsmessung mit dem DMM durch. Und
+                vervollständigen Sie die Tabelle.
+              </li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th>Kennwert</th>
+
+                      <th>Oszilloskop</th>
+
+                      <th>M</th>
+
+                      <th>R</th>
+
+                      <th>DMM</th>
+
+                      <th>M</th>
+
+                      <th>R</th>
+                    </tr>
+
+                    <tr>
+                      <td>U<sub>AC</sub></td>
+
+                      <td><input id="oszi_1_2" placeholder="10 V" /></td>
+
+                      <td><input type="radio" name="6" /></td>
+
+                      <td><input type="radio" name="6" /></td>
+
+                      <td><input id="dmm_1_2" placeholder="10 V" /></td>
+
+                      <td><input type="radio" name="61" /></td>
+
+                      <td><input type="radio" name="61" /></td>
+                    </tr>
+                    <tr>
+                      <td>U<sub>AC.eff</sub></td>
+
+                      <td><input id="oszi_2_2" placeholder="10 V" /></td>
+
+                      <td><input type="radio" name="7" /></td>
+
+                      <td><input type="radio" name="7" /></td>
+
+                      <td><input id="dmm_2_2" placeholder="10 V" /></td>
+
+                      <td><input type="radio" name="71" /></td>
+
+                      <td><input type="radio" name="71" /></td>
+                    </tr>
+                    <tr>
+                      <td>U<sub>DC</sub></td>
+
+                      <td><input id="oszi_3_2" placeholder="10 V" /></td>
+
+                      <td><input type="radio" name="8" /></td>
+
+                      <td><input type="radio" name="8" /></td>
+
+                      <td><input id="dmm_3_2" placeholder="10 V" /></td>
+
+                      <td><input type="radio" name="81" /></td>
+
+                      <td><input type="radio" name="81" /></td>
+                    </tr>
+                    <tr>
+                      <td>U<sub>Misch.eff</sub></td>
+
+                      <td><input id="oszi_4_2" placeholder="10 V" /></td>
+
+                      <td><input type="radio" name="9" /></td>
+
+                      <td><input type="radio" name="9" /></td>
+
+                      <td><input id="dmm_4_2" placeholder="10 V" /></td>
+
+                      <td><input type="radio" name="91" /></td>
+
+                      <td><input type="radio" name="91" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </ul>
+          </fieldset>
+
+          <!-- Literaturhinweise -->
+          <fieldset>
+            <legend>
+              <span id="lite"></span>
+              <h4>Literaturhinweise</h4>
+            </legend>
+            <ul>
+              <li>
+                <div>siehe Vorlesung</div>
+              </li>
+            </ul>
+          </fieldset>
+        </article>
+      </div>
+
+      <!-- Druckoptionen -->
+      <div id="wrapper">
+        <p>
+          <b>zum drucken der Datei auf dem iPad:</b><br />
+          Klicken Sie auf den nachfolgenden Button<br />
+          Anschließend die Druckvorschau mit der Zoom-Geste groß ziehen und das
+          Dokument speichern
+        </p>
+
+        <a><button id="pbtn" class="button">Drucken</button></a>
+        <a
+          ><button class="button" onclick="toggletheme()">
+            Toggle dark mode
+          </button></a
+        >
+
+        <p>
+          <b>Hinweise zur Selbstkontrolle:</b><br />
+          Achten Sie auf richtige eingabe der Einheit. Zulässige Einheiten sind:
+          "Ohm, Ω, A, V, %".<br />
+          Anschließend können Sie auch folgende Zehnerpotenzen benuntzen: "n, u,
+          m, k"<br />
+          In den Feldern ist keine Berechnung des Ergebnisses zulässig.<br />
+          <b>Beteutung der Farben:</b><br />
+          Grau: das Feld wurde nicht ausgefüllt.<br />
+          Gelb: die verlangte Einheit ist nicht richtig oder entspricht nicht
+          den Vorgaben.<br />
+          Türkies: kein Zahlenwert vor erforderlicher Basiseinheit gefunden.<br />
+          Rot: das eingegebene Ergebnis ist falsch.<br />
+          Grün: das eingegebene Ergebnis ist richtig.<br />
+        </p>
+
+        <p>
+          <button onclick="kontrolle()" class="button">Selbstkontrolle</button>
+        </p>
+      </div>
+
+      <!-- Fußzeile -->
+      <footer>
+        <br />
+        <hr />
+        <a href="mailto:oliver.reimer@eah-jena.de">Kontakt - Mail</a>
+        <p>
+          © 2020
+          <a href="https://www2.eah-jena.de/et/"
+            >EAH Jena - FB Elektrotechnik und Informationstechnik</a
+          >
+        </p>
+      </footer>
+      <!-- zum drucken -->
+    </div>
+  </body>
+  <script src="Javascript/Drucken.js"></script>
+</html>
+
+<script>
+  function kontrolle() {
+    const UAC = document.querySelector("#UAC");
+    const UDC = document.querySelector("#UDC");
+    const f = document.querySelector("#f");
+
+    checkSingleInput(UAC, 7.07, "V");
+    checkSingleInput(UDC, 0.15, "V");
+    checkSingleInput(f, 1000, "Hz");
+
+    const oszi_1 = document.querySelector("#oszi_1");
+    const oszi_2 = document.querySelector("#oszi_2");
+    const oszi_3 = document.querySelector("#oszi_3");
+    const oszi_4 = document.querySelector("#oszi_4");
+    const oszi_5 = document.querySelector("#oszi_5");
+    const dmm_1 = document.querySelector("#dmm_1");
+    const dmm_2 = document.querySelector("#dmm_2");
+    const dmm_3 = document.querySelector("#dmm_3");
+    const dmm_4 = document.querySelector("#dmm_4");
+    const dmm_5 = document.querySelector("#dmm_5");
+
+    checkSingleInput(oszi_1, 10, "V");
+    checkSingleInput(oszi_2, 20, "V");
+    checkSingleInput(oszi_3, 7.1, "V");
+    checkSingleInput(oszi_4, 0.001, "s");
+    checkSingleInput(oszi_5, 1000, "Hz");
+    checkSingleInput(dmm_1, 10, "V");
+    checkSingleInput(dmm_2, 20, "V");
+    checkSingleInput(dmm_3, 7.07, "V");
+    checkSingleInput(dmm_4, 0.001, "s");
+    checkSingleInput(dmm_5, 1000, "Hz");
+
+    const oszi_1_2 = document.querySelector("#oszi_1_2");
+    const oszi_2_2 = document.querySelector("#oszi_2_2");
+    const oszi_3_2 = document.querySelector("#oszi_3_2");
+    const oszi_4_2 = document.querySelector("#oszi_4_2");
+    const dmm_1_2 = document.querySelector("#dmm_1_2");
+    const dmm_2_2 = document.querySelector("#dmm_2_2");
+    const dmm_3_2 = document.querySelector("#dmm_3_2");
+    const dmm_4_2 = document.querySelector("#dmm_4_2");
+
+    checkSingleInput(oszi_1_2, 8, "V");
+    checkSingleInput(oszi_2_2, 5.7, "V");
+    checkSingleInput(oszi_3_2, 3, "V");
+    checkSingleInput(oszi_4_2, 6.48, "V");
+    checkSingleInput(dmm_1_2, 8, "V");
+    checkSingleInput(dmm_2_2, 5.7, "V");
+    checkSingleInput(dmm_3_2, 3, "V");
+    checkSingleInput(dmm_4_2, 6.48, "V");
+
+    const phi500 = document.querySelector("#phi500");
+    const phi1000 = document.querySelector("#phi1000");
+    const phi10000 = document.querySelector("#phi10000");
+
+    checkSingleInput(phi500, 10, "V");
+    checkSingleInput(phi1000, 10, "V");
+    checkSingleInput(phi10000, 10, "Hz");
+
+    const phi5002 = document.querySelector("#phi5002");
+    const phi10002 = document.querySelector("#phi10002");
+    const phi100002 = document.querySelector("#phi100002");
+
+    checkSingleInput(phi5002, 10, "V");
+    checkSingleInput(phi10002, 10, "V");
+    checkSingleInput(phi100002, 10, "Hz");
+
+    const ur1 = document.querySelector("#ur1");
+    const ur2 = document.querySelector("#ur2");
+    const rr21 = document.querySelector("#rr21");
+    const rr22 = document.querySelector("#rr22");
+    const relr2 = document.querySelector("#relr2");
+    const ur3 = document.querySelector("#ur3");
+    const rr31 = document.querySelector("#rr31");
+    const rr32 = document.querySelector("#rr32");
+    const relr3 = document.querySelector("#relr3");
+
+    checkSingleInput(ur1, 10, "V");
+    checkSingleInput(ur2, 10, "V");
+    checkSingleInputWithMultipleUnit(rr21, 10, ["Ohm", "\u{2126}", "\u{03A9}"]);
+    checkSingleInputWithMultipleUnit(rr22, 10, ["Ohm", "\u{2126}", "\u{03A9}"]);
+    checkSingleInput(relr2, 10, "%");
+    checkSingleInput(ur3, 10, "V");
+    checkSingleInputWithMultipleUnit(rr31, 10, ["Ohm", "\u{2126}", "\u{03A9}"]);
+    checkSingleInputWithMultipleUnit(rr32, 10, ["Ohm", "\u{2126}", "\u{03A9}"]);
+    checkSingleInput(relr3, 10, "%");
+  }
+</script>

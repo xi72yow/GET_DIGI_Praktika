@@ -1,0 +1,42 @@
+img {
+  padding: 1.5rem 0;
+  width: 98%;
+}
+
+body {
+  background-image: url(../Bilder/printIconPop.png);
+  background-repeat: repeat;
+  background-position: center;
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  margin-bottom: 120px;
+  overflow: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 550px;
+  color: #333;
+  font-size: 15px;
+}
+
+@media print {
+  h1 {
+    font-size: 2rem;
+  }
+  @page {
+    size: A4;
+  }
+  img {
+    display: block;
+    page-break-inside: avoid;
+  }
+  table {
+    page-break-inside: avoid;
+  }
+  body {
+    width: 900px;
+    background-image: none;
+    background-color: #fff;
+  }
+  .center{
+    display: block;
+  }
+}

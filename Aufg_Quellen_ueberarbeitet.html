@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktikum Elektrotechnik Multimeter</title>
+    <!-- Scriptdatein -->
+    <script src="Javascript/MeineFunktionen.js"></script>
+    <script src="Javascript/protokollMain.js"></script>
+    <link rel="stylesheet" href="CSS/stylesheet.css" />
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <link rel="stylesheet" href="CSS/plyr.css" />
+    <!-- Temporäre sicherrung der HTML -->
+    <script>
+      neuladen();
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="Bilder/favicon.ico" />
+  </head>
+
+  <body>
+    <!-- zum drucken -->
+    <div id="capture">
+      <header>
+        <!-- Seitenkopf -->
+        <div class="row border">
+          <div class="column small-4">
+            <img src="Bilder/EAH.png" title="EAH Logo" />
+          </div>
+          <div class="colum small-8">
+            <p class="pnebenlogo" id="pnebenlogo">
+              <b>Fachbereich Elektrotechnik und Informationstechnik</b> <br />
+              Laborpraktikum <br />
+              Grundlagen der Elektrotechnik <br />
+              Dipl.-Ing. O.Reimer<br />
+              <span id="datum" class="datum"> </span>
+              Praktikum am: 8.6.2021
+            </p>
+          </div>
+
+          <script>
+            Datum();
+          </script>
+        </div>
+
+        <!-- Titel -->
+        <div class="divtitle" id="element-to-print">
+          <h1>Umgang mit der Laborausstattung: Multimeter</h1>
+        </div>
+
+        <!-- Eintragungen Studenten -->
+        <div class="links" width="50%" height="400">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <label for="Studiengang"> Studiengang/Set:</label>
+                </td>
+                <td>
+                  <input
+                    for="StudiengangEingabe"
+                    type="search"
+                    list="Studiengang"
+                    size="25"
+                    maxlength="25"
+                    placeholder="Studiengang"
+                    style="margin-left: 25px"
+                    required=""
+                  />
+                  <datalist id="Studiengang">
+                    <option value="WI"></option>
+                    <option value="UT"></option>
+                    <option value="MT"></option>
+                  </datalist>
+                  <input
+                    for="Setnummer"
+                    type="search"
+                    list="Set"
+                    size="9"
+                    maxlength="15"
+                    placeholder="1.01"
+                    required=""
+                  />
+                  <datalist id="Set">
+                    <option value="2.01"></option>
+                    <option value="2.02"></option>
+                    <option value="2.03"></option>
+                    <option value="2.04"></option>
+                    <option value="2.05"></option>
+                    <option value="2.06"></option>
+                    <option value="2.07"></option>
+                    <option value="2.08"></option>
+                  </datalist>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="Teilnehmer">Teilnehmer:</label>
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    id="Teilnehmer"
+                    size="40"
+                    maxlength="50"
+                    placeholder="Erika Mustermann"
+                    style="margin-left: 25px"
+                    required=""
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="Matrikelnummer">Matrikelnummer:</label>
+                </td>
+                <td>
+                  <input
+                    id="Matrikelnummer"
+                    size="40"
+                    maxlength="50"
+                    placeholder="665544"
+                    style="margin-left: 25px"
+                    required=""
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <label>Versuchs-ID: GET-01</label>
+          <label
+            >persönliche Prüf-ID:
+            <script type="text/javascript">
+              var min = 9,
+                max = 99999;
+              document.write(
+                20201407 + Math.floor(Math.random() * (max - min)) + min
+              );
+            </script>
+            20236067
+          </label>
+        </div>
+
+        <!-- Eintragung Testat -->
+        <div class="rechts">
+          <table>
+            <tbody>
+              <tr>
+                <td>Betreuer</td>
+                <td><input readonly="" /></td>
+              </tr>
+              <tr>
+                <td>Datum</td>
+                <td><input readonly="" /></td>
+              </tr>
+              <tr>
+                <td>Unterschrift</td>
+                <td><input readonly="" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Inhaltsverzeichnis -->
+        <div class="inhalt">
+          <hr />
+          <h2>Inhaltsverzeichnis</h2>
+          <a href="#einf"
+            >2.1 Einführung in die Handhabung von Laborausrüstung</a
+          ><br /><br />
+          <a href="#mess">3.1 Messungen am Ohmschen Widerstand</a><br /><br />
+          <a href="#stro">3.2 Strom- und spannungsrichtige Messung</a
+          ><br /><br />
+          <a href="#lite">Literaturhinweise</a><br /><br />
+        </div>
+
+        Hinweise
+        <div class="hinweise">
+          <h2>Hinweise zum Praktikum</h2>
+          <ul>
+            <li>
+              Für die Lösungen zu den einzelnen Aufgaben sind im Protokoll
+              Leerstellen vorgesehen. <br />
+              Verwenden Sie bitte für die Nebenrechnungen kein eigenes Papier.
+            </li>
+            <li style="color: #a52f33">
+              Folgen Sie immer den Anweisungen der Aufsichtspersonen! <br />
+              Wenn Sie sich unsicher sind, stellen Sie Fragen.<br />
+              Lassen Sie sich Ihren Versuchsaufbau vor dem Einschalten abnehmen.
+            </li>
+          </ul>
+        </div>
+
+        <div class="Druckhinweis">
+          <h2>Druckhinweis</h2>
+          <ul>
+            <li>
+              <p id="datumdruck">Datum: 8.6.2021</p>
+              <script>
+                Datum1();
+              </script>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Inhalt -->
+      <div>
+        <article class="article">
+          <h2>Versuchaufgaben</h2>
+          <fieldset>
+            <legend>
+              <h4>Video</h4>
+            </legend>
+            <div class="videoscreen">
+              <span id="vid"></span>
+              <video
+                id="player"
+                playsinline
+                controls
+                data-poster="Bilder/EAH_LOGO.jpg"
+              >
+                <source
+                  src="Videos/Praktikum Grundlagen ET Versuch 1 Teil1.webm"
+                  type="video/mp4"
+                />
+              </video>
+              <script>
+                const player = new Plyr("#player");
+              </script>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>
+              <span id="einf"></span>
+              <h4>2.1 Einführung in die Handhabung von Laborausrüstung</h4>
+            </legend>
+            <ul>
+              <li>
+                Verifizieren Sie das Netzteil als a) Konstantspannungsquelle und
+                als b) Konstantstromquelle mit dem Digitalmultimeter.
+              </li>
+              <div>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label for="U_eingestellt"
+                          >U<sub>eingestellt</sub>
+                          =
+                          <input
+                            id="U_eingestellt"
+                            size="20"
+                            maxlength="20"
+                            value="10 V"
+                            readonly=""
+                          />
+                        </label>
+                      </td>
+                      <td></td>
+                      <td>
+                        <label for="U_gemessen"
+                          >U<sub>gemessen</sub>
+                          =
+                          <input
+                            id="U_gemessen"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 V"
+                          />
+                        </label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label for="I_eingestellt"
+                          >I<sub>eingestellt</sub>
+                          =
+                          <input
+                            id="I_eingestellt"
+                            size="20"
+                            maxlength="20"
+                            value="0.5 A"
+                            readonly=""
+                          />
+                        </label>
+                      </td>
+                      <td></td>
+                      <td>
+                        <label for="I_gemessen">
+                          I<sub>gemessen</sub>
+                          =
+                          <input
+                            id="I_gemessen"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 A"
+                          />
+                        </label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </ul>
+          </fieldset>
+
+          <fieldset>
+            <legend>
+              <span id="mess"></span>
+              <h4>3.1 Messungen am Ohmschen Widerstand</h4>
+            </legend>
+            <ul>
+              <li>
+                Skizzieren Sie je ein Schaltbild zur Bestimmung des
+                Spannungsabfalls über einem Ohmschen Widerstand und des Stromes
+                der durch diesen Widerstand fließt.
+              </li>
+              <li>
+                Nutzen Sie bewusst zwei getrennte Messschaltungen zur Lösung
+                dieser Aufgabe.
+              </li>
+              <div class="center">
+                <iframe
+                  id="frame-0"
+                  class="embed-container"
+                  src="ZeichenTool/zeichentool.html"
+                  style="width: 80vw; height: 45vw"
+                  onload="setZeichenTool(document.getElementById(`frame-0`), `0`)"
+                  data-vdevtools-injection="true"
+                ></iframe>
+              </div>
+              <li>Messen Sie Strom und Spannung anhand Ihrer Schaltungen.</li>
+              <li>
+                Stellen Sie die Spannungsquelle auf 4 V ein und achten Sie
+                darauf, dass die Strombegrenzung auf 0,5 A eingestellt ist.
+              </li>
+              <li>Berechnen Sie den tatsächlichen Widerstand.</li>
+              <div>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label for="R1"
+                          >R<sub>1</sub>
+                          =
+                          <input
+                            id="R1"
+                            size="20"
+                            maxlength="20"
+                            value="100 Ω"
+                            readonly=""
+                          />
+                        </label>
+                      </td>
+                      <td></td>
+                      <td>
+                        <label for="U_gemessen1"
+                          >U =
+                          <input
+                            id="U_gemessen1"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 V"
+                          />
+                        </label>
+                      </td>
+                      <td></td>
+                      <td>
+                        <label for="I_gemessen1"
+                          >I =
+                          <input
+                            id="I_gemessen1"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 A"
+                          />
+                        </label>
+                      </td>
+                      <td></td>
+                      <td>
+                        <label for="R_gemessen1"
+                          >R =
+                          <input
+                            id="R_gemessen1"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 Ω"
+                          />
+                        </label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label for="R2"
+                          >R<sub>2</sub>
+                          =
+                          <input
+                            id="R2"
+                            size="20"
+                            maxlength="20"
+                            value="220 Ω"
+                            readonly=""
+                          />
+                        </label>
+                      </td>
+                      <td></td>
+                      <td>
+                        <label for="U_gemessen2"
+                          >U =
+                          <input
+                            id="U_gemessen2"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 V"
+                          />
+                        </label>
+                      </td>
+                      <td></td>
+                      <td>
+                        <label for="I_gemessen2"
+                          >I =
+                          <input
+                            id="I_gemessen2"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 A"
+                          />
+                        </label>
+                      </td>
+                      <td></td>
+                      <td>
+                        <label for="R_gemessen2"
+                          >R =
+                          <input
+                            id="R_gemessen2"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 Ω"
+                          />
+                        </label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>Zeichnen Sie die U-I-Kennlinie mit den ermittelten Werten</li>
+              <div class="center">
+                <iframe
+                  id="frame-3"
+                  class="embed-container"
+                  src="ZeichenTool/zeichentool.html"
+                  style="width: 80vw; height: 45.2vw"
+                  onload="setZeichenTool(document.getElementById(`frame-3`), `3`)"
+                  data-vdevtools-injection="true"
+                ></iframe>
+              </div>
+              <li>Warum genügt ein Wertepaar, um die Funktion zu zeichnen?</li>
+              <div>
+                <textarea
+                  rows="8"
+                  cols="80"
+                  placeholder="Schreiben Sie hier..."
+                ></textarea>
+              </div>
+              <li>
+                Ermitteln Sie zeichnerisch den Spannungsabfall an beiden
+                Widerständen bei I = 12 mA und den Strom durch beide Widerstände
+                bei U = 3 V.
+              </li>
+              <div>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label for="I"
+                          >I =
+                          <input
+                            id="I"
+                            size="20"
+                            maxlength="20"
+                            value="12 mA"
+                            readonly=""
+                          />
+                        </label>
+                      </td>
+
+                      <td>
+                        <label for="U_R1"
+                          >U<sub>R1</sub>
+                          =
+                          <input
+                            id="U_R1_Abfall"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 V"
+                          />
+                        </label>
+                      </td>
+
+                      <td>
+                        <label for="U_R2"
+                          >U<sub>R2</sub>
+                          =
+                          <input
+                            id="U_R2_Abfall"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 V"
+                          />
+                        </label>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <label for="U"
+                          >U =
+                          <input
+                            id="U"
+                            size="20"
+                            maxlength="20"
+                            value="3 V"
+                            readonly=""
+                          />
+                        </label>
+                      </td>
+
+                      <td>
+                        <label for="I_R1"
+                          >I<sub>R1</sub>
+                          =
+                          <input
+                            id="I_R1_Fluss"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 A"
+                          />
+                        </label>
+                      </td>
+
+                      <td>
+                        <label for="I_R2">
+                          I<sub>R2</sub>
+                          =
+                          <input
+                            id="I_R2_Fluss"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 A"
+                          />
+                        </label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>
+                Welchen Einfluss hat die Größe des Widerstandes auf den Anstieg
+                der Funktion?
+              </li>
+              <div>
+                <textarea
+                  rows="8"
+                  cols="80"
+                  placeholder="Schreiben Sie hier..."
+                ></textarea>
+              </div>
+            </ul>
+          </fieldset>
+
+          <fieldset>
+            <legend>
+              <h4 id="stro">3.2 Strom- und spannungsrichtige Messung</h4>
+            </legend>
+            <ul>
+              <li>
+                Berechnen Sie zunächst für beide Messobjekte, aus der maximal
+                zulässigen Verlustleistung, die zulässigen Grenzwerte für Strom
+                und Spannung, mit denen diese Widerstände maximal betrieben
+                werden dürfen! Tragen Sie die ermittelten Werte in die folgende
+                Tabelle ein.
+              </li>
+              <div>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label for="R_1"
+                          >R<sub>1</sub>
+                          =
+                          <input
+                            id="R_1"
+                            size="20"
+                            maxlength="20"
+                            value="330 kΩ"
+                            readonly=""
+                          />
+                        </label>
+                      </td>
+
+                      <td>
+                        <label for="U_max"
+                          >U<sub>max</sub>
+                          =
+                          <input
+                            id="U_max1"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 V"
+                          />
+                        </label>
+                      </td>
+
+                      <td>
+                        <label for="I_max"
+                          >I<sub>max</sub>
+                          =
+                          <input
+                            id="I_max1"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 A"
+                          />
+                        </label>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        <label for="R_2"
+                          >R<sub>2</sub>
+                          =
+                          <input
+                            id="R_2"
+                            size="20"
+                            maxlength="20"
+                            value="10 Ω"
+                            readonly=""
+                          />
+                        </label>
+                      </td>
+
+                      <td>
+                        <label for="U_max2"
+                          >U<sub>max</sub>
+                          =
+                          <input
+                            id="U_max2"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 V"
+                          />
+                        </label>
+                      </td>
+
+                      <td>
+                        <label for="I_max2"
+                          >I<sub>max</sub>
+                          =
+                          <input
+                            id="I_max2"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 A"
+                          />
+                        </label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>
+                Markieren Sie die Grenzwerte, auf die Sie hier im Praktikum
+                besonders acht geben müssen, um das Bauelement nicht zu
+                zerstören. Erläutern Sie ihre Antwort.
+              </li>
+              <div>
+                <textarea
+                  rows="8"
+                  cols="80"
+                  placeholder="Schreiben Sie hier..."
+                ></textarea>
+              </div>
+              <li>
+                Messen Sie jeweils mit der Widerstandsmessung des DMM die beiden
+                Messobjekte und notieren Sie die Werte in der unteren Tabelle
+                (Spalte DMM).
+              </li>
+              <li>
+                Ermitteln Sie nun den Widerstandswert beider Messobjekte durch
+                Strom - und Spannungsmessung mit Hilfe der Zeigermessgeräte!
+                Messen Sie dabei einmal stromrichtig und einmal
+                spannungsrichtig.
+              </li>
+              <li>
+                Bauen Sie die Messschaltungen entsprechend Ihrer Vorbereitung
+                auf.
+              </li>
+              <li>
+                Für die Messung am R<sub>1</sub>
+                stellen Sie einen Spannungsabfall von 10 V am Messgerät ein und
+                notieren den Strom am 2. Messgerät.
+              </li>
+              <li>
+                Für die Messung am R<sub>2</sub>
+                stellen Sie einen Strom von 100 mA am Messgerät ein und notieren
+                den Spannungsabfall am anderen Messgerät.
+              </li>
+              <li>
+                Die relative Messabweichung lässt sich berechnen mit (x<sub
+                  >a</sub
+                >
+                ist der gemessene Wert, x<sub>r</sub> ist der Referenzwert
+                (Messung DMM)): f = ((x<sub>a</sub> - x<sub>r</sub>) * 100%) /
+                x<sub>r</sub>
+              </li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th>
+                        R<sub>1</sub>
+                        = 330 kΩ
+                      </th>
+
+                      <th>U</th>
+
+                      <th>I (in uA)</th>
+
+                      <th>R<br />mit DMM bestimmt</th>
+
+                      <th>R<br />gemessen</th>
+
+                      <th>rel. Messab-<br />weichung (in %)</th>
+                    </tr>
+
+                    <tr>
+                      <td>stromrichtig</td>
+
+                      <td>
+                        <input
+                          id="U_stromrichtig_R1"
+                          value="10 V"
+                          readonly=""
+                        />
+                      </td>
+
+                      <td>
+                        <input id="I_stromrichtig_R1" placeholder="10 A" />
+                      </td>
+
+                      <td rowspan="2">
+                        <input
+                          id="R_soll_R1"
+                          placeholder="10 Ω"
+                          align="middle"
+                        />
+                      </td>
+
+                      <td>
+                        <input id="Rist_stromrichtig_R1" placeholder="10 Ω" />
+                      </td>
+
+                      <td>
+                        <input
+                          id="Prozent_stromrichtig_R1"
+                          placeholder="10 %"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>spannungsrichtig</td>
+
+                      <td>
+                        <input
+                          id="U_spannungsrichtig_R1"
+                          value="10 V"
+                          readonly=""
+                        />
+                      </td>
+
+                      <td>
+                        <input id="I_spannungsrichtig_R1" placeholder="10 A" />
+                      </td>
+
+                      <td>
+                        <input
+                          id="Rist_spannungsrichtig_R1"
+                          placeholder="10 Ω"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          id="Prozent_spannungsrichtig_R1"
+                          placeholder="10 %"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li style="color: #a52f33">
+                Regeln Sie vor dem Einsetzen des Widerstandes R<sub>2</sub>
+                die Spannung am DC-Netzteil nach unten, um den Widerstand nicht
+                zu überlasten!
+              </li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th>
+                        R<sub>2</sub>
+                        = 10 Ω
+                      </th>
+
+                      <th>U</th>
+
+                      <th>I (in mA)</th>
+
+                      <th>R<br />mit DMM bestimmt</th>
+
+                      <th>R<br />gemessen</th>
+
+                      <th>rel. Messab-<br />weichung (in %)</th>
+                    </tr>
+
+                    <tr>
+                      <td>stromrichtig</td>
+
+                      <td>
+                        <input id="U_stromrichtig_R2" placeholder="10 V" />
+                      </td>
+
+                      <td>
+                        <input
+                          id="I_stromrichtig_R2"
+                          value="100 mA"
+                          readonly=""
+                        />
+                      </td>
+
+                      <td rowspan="2">
+                        <input
+                          id="R_soll_R2"
+                          placeholder="10 Ω"
+                          align="middle"
+                        />
+                      </td>
+
+                      <td>
+                        <input id="Rist_stromrichtig_R2" placeholder="10 Ω" />
+                      </td>
+
+                      <td>
+                        <input
+                          id="Prozent_stromrichtig_R2"
+                          placeholder="10 %"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>spannungsrichtig</td>
+
+                      <td>
+                        <input id="U_spannungsrichtig_R2" placeholder="10 V" />
+                      </td>
+
+                      <td>
+                        <input
+                          id="I_spannungsrichtig_R2"
+                          value="100 mA"
+                          readonly=""
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          id="Rist_spannungsrichtig_R2"
+                          placeholder="10 Ω"
+                        />
+                      </td>
+
+                      <td>
+                        <input
+                          id="Prozent_spannungsrichtig_R2"
+                          placeholder="10 %"
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>
+                Formulieren Sie einen Grundsatz für die Messung von Strom und
+                Spannung an einem Widerstand. (Zielstellung ist ein minimaler
+                Messfehler)
+              </li>
+              <div>
+                <textarea
+                  rows="8"
+                  cols="80"
+                  placeholder="Schreiben Sie hier..."
+                ></textarea>
+              </div>
+            </ul>
+          </fieldset>
+
+          <!-- Literaturhinweise -->
+          <fieldset>
+            <legend>
+              <span id="lite"></span>
+              <h4>Literaturhinweise</h4>
+            </legend>
+            <ul>
+              <li>
+                <div>siehe Vorlesung</div>
+              </li>
+            </ul>
+          </fieldset>
+        </article>
+      </div>
+
+      <!-- Druckoptionen -->
+      <div id="wrapper">
+        <p>
+          <b>zum drucken der Datei auf dem iPad:</b><br />
+          Klicken Sie auf den nachfolgenden Button<br />
+          Anschließend die Druckvorschau mit der Zoom-Geste groß ziehen und das
+          Dokument speichern
+        </p>
+
+        <a><button id="pbtn" class="button">Drucken</button></a>
+        <a
+          ><button class="button" onclick="toggletheme()">
+            Toggle dark mode
+          </button></a
+        >
+
+        <p>
+          <b>Hinweise zur Selbstkontrolle:</b><br />
+          Achten Sie auf richtige eingabe der Einheit. Zulässige Einheiten sind:
+          "Ohm, Ω, A, V, %".<br />
+          Anschließend können Sie auch folgende Zehnerpotenzen benuntzen: "n, u,
+          m, k"<br />
+          In den Feldern ist keine Berechnung des Ergebnisses zulässig.<br />
+          <b>Beteutung der Farben:</b><br />
+          Grau: das Feld wurde nicht ausgefüllt.<br />
+          Gelb: die verlangte Einheit ist nicht richtig oder entspricht nicht
+          den Vorgaben.<br />
+          Türkies: kein Zahlenwert vor erforderlicher Basiseinheit gefunden.<br />
+          Rot: das eingegebene Ergebnis ist falsch.<br />
+          Grün: das eingegebene Ergebnis ist richtig.<br />
+        </p>
+
+        <p>
+          <button onclick="kontrolle()" class="button">Selbstkontrolle</button>
+        </p>
+      </div>
+
+      <!-- Fußzeile -->
+      <footer>
+        <br />
+        <hr />
+        <a href="mailto:oliver.reimer@eah-jena.de">Kontakt - Mail</a>
+        <p>
+          © 2020
+          <a href="https://www2.eah-jena.de/et/"
+            >EAH Jena - FB Elektrotechnik und Informationstechnik</a
+          >
+        </p>
+      </footer>
+      <!-- zum drucken -->
+    </div>
+  </body>
+  <script src="Javascript/Drucken.js"></script>
+</html>
+
+<script>
+  function kontrolle() {
+    const U_gemessen = document.querySelector("#U_gemessen");
+    const I_gemessen = document.querySelector("#I_gemessen");
+    const U_gemessen1 = document.querySelector("#U_gemessen1");
+    const I_gemessen1 = document.querySelector("#I_gemessen1");
+    const U_gemessen2 = document.querySelector("#U_gemessen2");
+    const I_gemessen2 = document.querySelector("#I_gemessen2");
+    const R_gemessen1 = document.querySelector("#R_gemessen1");
+    const R_gemessen2 = document.querySelector("#R_gemessen2");
+    checkSingleInput(U_gemessen, 10, "V");
+    checkSingleInput(I_gemessen, 0.5, "A");
+    checkSingleInput(U_gemessen1, 4.45, "V");
+    checkSingleInput(I_gemessen1, 0.045, "A");
+    checkSingleInput(U_gemessen2, 4.45, "V");
+    checkSingleInput(I_gemessen2, 0.0209, "A");
+    checkSingleInputWithMultipleUnit(R_gemessen1, 100, [
+      "Ohm",
+      "\u{2126}",
+      "\u{03A9}",
+    ]);
+    checkSingleInputWithMultipleUnit(R_gemessen2, 220, [
+      "Ohm",
+      "\u{2126}",
+      "\u{03A9}",
+    ]);
+
+    const U_R1_Abfall = document.querySelector("#U_R1_Abfall");
+    const U_R2_Abfall = document.querySelector("#U_R2_Abfall");
+    const I_R1_Fluss = document.querySelector("#I_R1_Fluss");
+    const I_R2_Fluss = document.querySelector("#I_R2_Fluss");
+    const U_max1 = document.querySelector("#U_max1");
+    const I_max1 = document.querySelector("#I_max1");
+    const U_max2 = document.querySelector("#U_max2");
+    const I_max2 = document.querySelector("#I_max2");
+    checkSingleInput(U_R1_Abfall, 1.2, "V");
+    checkSingleInput(U_R2_Abfall, 2.6, "V");
+    checkSingleInput(I_R1_Fluss, 0.03, "A");
+    checkSingleInput(I_R2_Fluss, 0.014, "A");
+    checkSingleInput(U_max1, 406, "V");
+    checkSingleInput(I_max1, 0.00123, "A");
+    checkSingleInput(U_max2, 4.47, "V");
+    checkSingleInput(I_max2, 0.45, "A");
+
+    //const U_stromrichtig_R1 = document.querySelector("#U_stromrichtig_R1");
+    const I_stromrichtig_R1 = document.querySelector("#I_stromrichtig_R1");
+    const R_soll_R1 = document.querySelector("#R_soll_R1");
+    const Rist_stromrichtig_R1 = document.querySelector(
+      "#Rist_stromrichtig_R1"
+    );
+    const Prozent_stromrichtig_R1 = document.querySelector(
+      "#Prozent_stromrichtig_R1"
+    );
+
+    //const U_spannungsrichtig_R1 = document.querySelector("#U_spannungsrichtig_R1");
+    const I_spannungsrichtig_R1 = document.querySelector(
+      "#I_spannungsrichtig_R1"
+    );
+    const Rist_spannungsrichtig_R1 = document.querySelector(
+      "#Rist_spannungsrichtig_R1"
+    );
+    const Prozent_spannungsrichtig_R1 = document.querySelector(
+      "#Prozent_spannungsrichtig_R1"
+    );
+
+    //checkSingleInput(U_stromrichtig_R1, 10, Faktor, "V", false);
+    checkSingleInput(I_stromrichtig_R1, 0.00003, "A");
+    checkSingleInputWithMultipleUnit(R_soll_R1, 330120, [
+      "Ohm",
+      "\u{2126}",
+      "\u{03A9}",
+    ]);
+    checkSingleInputWithMultipleUnit(Rist_stromrichtig_R1, 333300, [
+      "Ohm",
+      "\u{2126}",
+      "\u{03A9}",
+    ]);
+    //checkSingleInput(Rist_stromrichtig_R1, 333300, Faktor, "Ohm", Bool);
+    checkSingleInput(Prozent_stromrichtig_R1, -2.4, "%");
+
+    //checkSingleInput(U_spannungsrichtig_R1, 10, Faktor, "V", false);
+    checkSingleInput(I_spannungsrichtig_R1, 0.00008, "A");
+    checkSingleInputWithMultipleUnit(Rist_spannungsrichtig_R1, 125000, [
+      "Ohm",
+      "\u{2126}",
+      "\u{03A9}",
+    ]);
+    checkSingleInput(Prozent_spannungsrichtig_R1, -62.1, "%");
+
+    const U_stromrichtig_R2 = document.querySelector("#U_stromrichtig_R2");
+    //const I_stromrichtig_R2 = document.querySelector("#I_stromrichtig_R2");
+    const R_soll_R2 = document.querySelector("#R_soll_R2");
+    const Rist_stromrichtig_R2 = document.querySelector(
+      "#Rist_stromrichtig_R2"
+    );
+    const Prozent_stromrichtig_R2 = document.querySelector(
+      "#Prozent_stromrichtig_R2"
+    );
+
+    const U_spannungsrichtig_R2 = document.querySelector(
+      "#U_spannungsrichtig_R2"
+    );
+    //const I_spannungsrichtig_R2 = document.querySelector("#I_spannungsrichtig_R2");
+    const Rist_spannungsrichtig_R2 = document.querySelector(
+      "#Rist_spannungsrichtig_R2"
+    );
+    const Prozent_spannungsrichtig_R2 = document.querySelector(
+      "#Prozent_spannungsrichtig_R2"
+    );
+
+    checkSingleInput(U_stromrichtig_R2, 1.5, "V");
+    //checkSingleInput(I_stromrichtig_R2, 0.1, Faktor, "A", false);
+    checkSingleInputWithMultipleUnit(R_soll_R2, 10.1, [
+      "Ohm",
+      "\u{2126}",
+      "\u{03A9}",
+    ]); //10.1
+    checkSingleInputWithMultipleUnit(Rist_stromrichtig_R2, 15, [
+      "Ohm",
+      "\u{2126}",
+      "\u{03A9}",
+    ]);
+    checkSingleInput(Prozent_stromrichtig_R2, 45.5, "%");
+
+    checkSingleInput(U_spannungsrichtig_R2, 1, "V");
+    //checkSingleInput(I_spannungsrichtig_R2, 0.1, Faktor, "A", false);
+    checkSingleInputWithMultipleUnit(Rist_spannungsrichtig_R2, 10, [
+      "Ohm",
+      "\u{2126}",
+      "\u{03A9}",
+    ]);
+    checkSingleInput(Prozent_spannungsrichtig_R2, 3.9, "%");
+  }
+</script>
