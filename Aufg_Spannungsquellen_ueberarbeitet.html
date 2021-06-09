@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktikum Elektrotechnik Spannungsquellen</title>
+    <!-- Scriptdatein -->
+    <script src="Javascript/MeineFunktionen.js"></script>
+    <script src="Javascript/protokollMain.js"></script>
+    <link rel="stylesheet" href="CSS/stylesheet.css" />
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <link rel="stylesheet" href="CSS/plyr.css" />
+    <!-- Temporäre sicherrung der HTML -->
+    <script>
+      neuladen();
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="Bilder/favicon.ico" />
+  </head>
+
+  <body>
+    <!-- zum drucken -->
+    <div id="capture">
+      <header>
+        <!-- Seitenkopf -->
+        <div class="row border">
+          <div class="column small-4">
+            <img src="Bilder/EAH.png" title="EAH Logo" />
+          </div>
+          <div class="colum small-8">
+            <p class="pnebenlogo" id="pnebenlogo">
+              <b>Fachbereich Elektrotechnik und Informationstechnik</b> <br />
+              Laborpraktikum <br />
+              Grundlagen der Elektrotechnik <br />
+              Dipl.-Ing. O.Reimer<br />
+              <span id="datum" class="datum"> </span>
+            </p>
+          </div>
+
+          <script>
+            Datum();
+          </script>
+        </div>
+
+        <!-- Titel -->
+        <div class="divtitle" id="element-to-print">
+          <h1>Kennenlernen der Elektrotechnik: Spannungsquellen</h1>
+        </div>
+
+        <!-- Eintragungen Studenten -->
+        <div class="links" width="50%" height="400">
+          <table>
+            <tr>
+              <td>
+                <label for="Studiengang"> Studiengang/Set:</label>
+              </td>
+              <td>
+                <input
+                  for="StudiengangEingabe"
+                  type="search"
+                  list="Studiengang"
+                  size="25"
+                  maxlength="25"
+                  placeholder="Studiengang"
+                  style="margin-left: 25px"
+                  required
+                />
+                <datalist id="Studiengang">
+                  <option value="WI"></option>
+                  <option value="UT"></option>
+                  <option value="MT"></option>
+                </datalist>
+                <input
+                  for="Setnummer"
+                  type="search"
+                  list="Set"
+                  size="9"
+                  maxlength="15"
+                  placeholder="1.01"
+                  required
+                />
+                <datalist id="Set">
+                  <option value="2.01"></option>
+                  <option value="2.02"></option>
+                  <option value="2.03"></option>
+                  <option value="2.04"></option>
+                  <option value="2.05"></option>
+                  <option value="2.06"></option>
+                  <option value="2.07"></option>
+                  <option value="2.08"></option>
+                </datalist>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Teilnehmer">Teilnehmer:</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="Teilnehmer"
+                  size="40"
+                  maxlength="50"
+                  placeholder="Erika Mustermann"
+                  style="margin-left: 25px"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Matrikelnummer">Matrikelnummer:</label>
+              </td>
+              <td>
+                <input
+                  id="Matrikelnummer"
+                  size="40"
+                  maxlength="50"
+                  placeholder="665544"
+                  style="margin-left: 25px"
+                  required
+                />
+              </td>
+            </tr>
+          </table>
+
+          <label>Versuchs-ID: GET-01</label>
+          <label
+            >persönliche Prüf-ID:
+            <script type="text/javascript">
+              var min = 9,
+                max = 99999;
+              document.write(
+                20201407 + Math.floor(Math.random() * (max - min)) + min
+              );
+            </script>
+          </label>
+        </div>
+
+        <!-- Eintragung Testat -->
+        <div class="rechts">
+          <table>
+            <tr>
+              <td>Betreuer</td>
+              <td><input readonly /></td>
+            </tr>
+            <tr>
+              <td>Datum</td>
+              <td><input readonly /></td>
+            </tr>
+            <tr>
+              <td>Unterschrift</td>
+              <td><input readonly /></td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Inhaltsverzeichnis -->
+        <div class="inhalt">
+          <hr />
+          <h2>Inhaltsverzeichnis</h2>
+          <a href="#batt">Batterie als Spannungsquelle</a><br /><br />
+          <a href="#anal">Analyse linearer Spannungsquellen</a><br /><br />
+          <a href="#mess">Messung an nicht linearen U-Quellen</a><br /><br />
+          <a href="#lite">Literaturhinweise</a><br /><br />
+        </div>
+
+        <!-- hinweise -->
+        <div class="hinweise">
+          <h2>Hinweise zum Praktikum</h2>
+          <ul>
+            <li>
+              Für die Lösungen zu den einzelnen Aufgaben sind im Protokoll
+              Leerstellen vorgesehen. <br />
+              Verwenden Sie bitte für die Nebenrechnungen kein eigenes Papier.
+            </li>
+            <li style="color: #a52f33">
+              Folgen Sie immer den Anweisungen der Aufsichtspersonen! <br />
+              Wenn Sie sich unsicher sind, stellen Sie Fragen.<br />
+              Lassen Sie sich Ihren Versuchsaufbau vor dem Einschalten abnehmen.
+            </li>
+          </ul>
+        </div>
+
+        <div class="Druckhinweis">
+          <h2>Druckhinweis</h2>
+          <ul>
+            <li>
+              <p id="datumdruck"></p>
+              <script>
+                Datum1();
+              </script>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Inhalt -->
+      <div>
+        <article class="article">
+          <h2>Versuchaufgaben</h2>
+          <fieldset>
+            <legend><h4>Video</h4></legend>
+            <div class="videoscreen">
+              <span id="vid"></span>
+              <video
+                id="player"
+                playsinline
+                controls
+                data-poster="Bilder/EAH_LOGO.jpg"
+              >
+                <source
+                  src="Videos/Praktikum Grundlagen ET Versuch 4 Teil2.webm"
+                  type="video/webm"
+                />
+              </video>
+              <script>
+                const player = new Plyr("#player");
+              </script>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>
+              <span id="batt"></span>
+              <h4>Batterie als Spannungsquelle</h4>
+            </legend>
+            <ul>
+              <li>
+                Bauen Sie die folgende Schaltung mit einer R20-Batterie
+                (Monozelle) auf.
+              </li>
+              <div>
+                <img src="Bilder/Schaltung1.PNG" style="width: 90%" />
+              </div>
+              <li style="color: #a52f33">
+                Strommessungen im Ampere-Bereich des Multimeters! <br />
+                Taster nur kurzzeitig zur Messung schließen!
+              </li>
+              <li>Messen Sie zuerst die Leerlaufspannung der Batterie.</li>
+              <label for="uleer"
+                >U<sub>Leerlauf</sub>
+                =
+                <input id="uleer" size="20" maxlength="20" placeholder="10 V" />
+              </label>
+              <li>
+                Belasten sie die Batterie jetzt nacheinander mit den
+                Widerständen R<sub>a</sub>
+                von 10 Ω, 5,1 Ω und 1 Ω. Messen Sie jeweils Strom und Spannung.
+              </li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th></th>
+
+                      <th>1 Ω</th>
+
+                      <th>5,1 Ω</th>
+
+                      <th>10 Ω</th>
+                    </tr>
+
+                    <tr>
+                      <td>I in A</td>
+
+                      <td><input id="i311" placeholder="10 A" /></td>
+
+                      <td><input id="i312" placeholder="10 A" /></td>
+
+                      <td><input id="i313" placeholder="10 A" /></td>
+                    </tr>
+                    <tr>
+                      <td>U in V</td>
+
+                      <td><input id="u311" placeholder="10 V" /></td>
+
+                      <td><input id="u312" placeholder="10 V" /></td>
+
+                      <td><input id="u313" placeholder="10 V" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>Zeichnen Sie die Kennlinie.</li>
+
+              <div class="center">
+                <iframe
+                  id="frame-0"
+                  class="embed-container"
+                  src="ZeichenTool/zeichentool.html"
+                  style="width: 80vw; height: 96.224vw"
+                  onload="setZeichenTool(document.getElementById(`frame-0`), `5`)"
+                ></iframe>
+              </div>
+
+              <li>
+                Bestimmen Sie aus dem Diagramm den Innenwiederstand der Batterie
+                R<sub>i</sub> und <b>berechnen</b> Sie den Kurzschlussstrom
+                I<sub>K</sub> .
+              </li>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label for="ri"
+                        >R<sub>i</sub>
+                        =
+                        <input
+                          id="ri"
+                          size="20"
+                          maxlength="20"
+                          placeholder="10 Ω"
+                        />
+                      </label>
+                    </td>
+                    <td></td>
+                    <td>
+                      <label for="Ik"
+                        >I<sub>K </sub>
+                        =
+                        <input
+                          id="Ik"
+                          size="20"
+                          maxlength="20"
+                          placeholder="10 A"
+                        />
+                      </label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>
+              <span id="anal"></span>
+              <h4>Analyse linearer Spannungsquellen</h4>
+            </legend>
+            <ul>
+              <li>
+                Ersetzen sie die Batterie aus der vorhergehenden Aufgabe durch
+                das DC-Netzteil.
+              </li>
+              <li>Messobjekt 1: nur das DC-Netzteil</li>
+              <li>
+                Messobjekt 2: DC-Netzteil mit einem eusätzlichen
+                Reiheninnenwiderstand R<sub>i</sub> = 1 Ω
+              </li>
+              <li>
+                Stellen Sie am Ausgang des DC-Netzteils die gemessene
+                Leerlaufspannung der Batterie ein.
+              </li>
+              <li>Stellen Sie die Strombegrenzung am DC-Netzteil auf 1,6 A!</li>
+              <li style="color: #a52f33">
+                Strommessungen weiterhin im Ampere-Bereich des Multimeters!
+              </li>
+              <li>
+                Belasten sie die Batterie jetzt nacheinander mit den
+                Widerständen R<sub>a</sub>
+                von 10 Ω, 5,1 Ω und 1 Ω. Messen Sie jeweils Strom und Spannung.
+              </li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th>DC-Netzteil</th>
+
+                      <th>1 Ω</th>
+
+                      <th>5,1 Ω</th>
+
+                      <th>10 Ω</th>
+                    </tr>
+
+                    <tr>
+                      <td>I in A</td>
+
+                      <td><input id="i321" placeholder="10 A" /></td>
+
+                      <td><input id="i322" placeholder="10 A" /></td>
+
+                      <td><input id="i323" placeholder="10 A" /></td>
+                    </tr>
+                    <tr>
+                      <td>U in V</td>
+
+                      <td><input id="u321" placeholder="10 V" /></td>
+
+                      <td><input id="u322" placeholder="10 V" /></td>
+
+                      <td><input id="u323" placeholder="10 V" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th>
+                        DC-Netzteil +<br />
+                        R<sub>i</sub>
+                        = 1 Ω
+                      </th>
+
+                      <th>1 Ω</th>
+
+                      <th>5,1 Ω</th>
+
+                      <th>10 Ω</th>
+                    </tr>
+
+                    <tr>
+                      <td>I in A</td>
+
+                      <td><input id="i324" placeholder="10 A" /></td>
+
+                      <td><input id="i325" placeholder="10 A" /></td>
+
+                      <td><input id="i326" placeholder="10 A" /></td>
+                    </tr>
+                    <tr>
+                      <td>U in V</td>
+
+                      <td><input id="u324" placeholder="10 V" /></td>
+
+                      <td><input id="u325" placeholder="10 V" /></td>
+
+                      <td><input id="u326" placeholder="10 V" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>
+                Tragen Sie für beide Quellen die Kennlinie in das vorhergehende
+                Diagramm ein.
+              </li>
+              <li>
+                Berechnen Sie den Innenwiderstand R<sub>i</sub> und
+                Kurzschlussstrom I<sub>K</sub>
+                der beiden Quellen.
+              </li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th></th>
+
+                      <th>Messobjekt 1</th>
+
+                      <th>Messobjekt 2</th>
+                    </tr>
+
+                    <tr>
+                      <td>R<sub>i</sub></td>
+
+                      <td><input id="ri1" placeholder="10 Ω" /></td>
+
+                      <td><input id="ri2" placeholder="10 Ω" /></td>
+                    </tr>
+                    <tr>
+                      <td>I<sub>K</sub></td>
+
+                      <td><input id="ik1" placeholder="10 A" /></td>
+
+                      <td><input id="ik2" placeholder="10 A" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>
+                Wählen Sie sich einen Arbeitspunkt aus. Wie verändert sich der
+                Arbeitspunkt, wenn:<br />
+                a) R<sub>i</sub> = const. und der Lastwiderstand R<sub>a</sub>
+                vergrößert wird<br />
+                <div>
+                  <textarea
+                    rows="8"
+                    cols="80"
+                    placeholder="Schreiben Sie hier..."
+                  ></textarea>
+                </div>
+                b)R<sub>a</sub> = const. und der Innenwiderstand R<sub>i</sub>
+                verkleinert wird.<br />
+                <div>
+                  <textarea
+                    rows="8"
+                    cols="80"
+                    placeholder="Schreiben Sie hier..."
+                  ></textarea>
+                </div>
+              </li>
+              <li>
+                Wählen Sie je ein Beispiel aus und kennzeichnen Sie die
+                Verschiebung des Arbeitspunktes im Diagramm.
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset>
+            <legend>
+              <span id="mess"></span>
+              <h4>Messung an nicht linearen U-Quellen</h4>
+            </legend>
+            <ul>
+              <li>
+                Bauen Sie die nachfolgende Schaltung mit einer Solarzelle als
+                Quelle auf.
+              </li>
+              <li style="color: #a52f33">
+                Vermeiden Sie unbedingt Fremdspannungen an der Solarzelle!
+              </li>
+              <div>
+                <img src="Bilder/Schaltung2.PNG" style="width: 90%" />
+              </div>
+              <li>
+                Die AutoRange-Funktion am DMM ist durch Drücken der Taste RANGE
+                auszuschalten. Der Messbereich kann durch mehrfaches Drücken der
+                RANGE-Taste verändert werden (die Kommastelle Anzeige verschiebt
+                sich und die eingestellte Einheit verändert sich). Benutzen Sie
+                zur Strommessung einen Messbereich von 10 mA.
+              </li>
+              <li>
+                Ermitteln Sie die Funktion U = f(I) durch Veränderung des
+                Lastwiderstandes.Zur Skalierung messen Sie zuvor die
+                Leerlaufspannung und den Kurzschlussstrom.
+              </li>
+              <li>
+                Stellen Sie zunächst die Messwerte von U und I in einer Tabelle
+                zusammen.
+              </li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <td>I</td>
+
+                      <td><input id="i331" value="0 A" readonly="" /></td>
+
+                      <td><input id="i332" placeholder="10 A" /></td>
+
+                      <td><input id="i333" placeholder="10 A" /></td>
+
+                      <td><input id="i334" placeholder="10 A" /></td>
+
+                      <td><input id="i335" placeholder="10 A" /></td>
+                    </tr>
+                    <tr>
+                      <td>U</td>
+
+                      <td><input id="u331" placeholder="10 V" /></td>
+
+                      <td><input id="u332" placeholder="10 V" /></td>
+
+                      <td><input id="u333" placeholder="10 V" /></td>
+
+                      <td><input id="u334" placeholder="10 V" /></td>
+
+                      <td><input id="u335" placeholder="10 V" /></td>
+                    </tr>
+                    <tr>
+                      <td>P</td>
+
+                      <td><input id="p331" placeholder="10 W" /></td>
+
+                      <td><input id="p332" placeholder="10 W" /></td>
+
+                      <td><input id="p333" placeholder="10 W" /></td>
+
+                      <td><input id="p334" placeholder="10 W" /></td>
+
+                      <td><input id="p335" placeholder="10 W" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              Fortsetzung<br />
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <td>I</td>
+
+                      <td><input id="i336" placeholder="10 A" /></td>
+
+                      <td><input id="i337" placeholder="10 A" /></td>
+
+                      <td><input id="i338" placeholder="10 A" /></td>
+
+                      <td><input id="i339" placeholder="10 A" /></td>
+
+                      <td><input id="i330" placeholder="10 A" /></td>
+                    </tr>
+                    <tr>
+                      <td>U</td>
+
+                      <td><input id="u336" placeholder="10 V" /></td>
+
+                      <td><input id="u337" placeholder="10 V" /></td>
+
+                      <td><input id="u338" placeholder="10 V" /></td>
+
+                      <td><input id="u339" placeholder="10 V" /></td>
+
+                      <td><input id="u330" value="0 V" readonly="" /></td>
+                    </tr>
+                    <tr>
+                      <td>P</td>
+
+                      <td><input id="p336" placeholder="10 W" /></td>
+
+                      <td><input id="p337" placeholder="10 W" /></td>
+
+                      <td><input id="p338" placeholder="10 W" /></td>
+
+                      <td><input id="p339" placeholder="10 W" /></td>
+
+                      <td><input id="p330" placeholder="10 W" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>
+                Errechnen Sie für alle Belastungsfälle die abgegebene Leistung P
+                der Solarzelle.
+              </li>
+              <li>
+                Zeichnen Sie die Funktionen U = f(I), P = (I) in ein Diagramm.
+              </li>
+              <div class="center">
+                <iframe
+                  id="frame-1"
+                  class="embed-container"
+                  src="ZeichenTool/zeichentool.html"
+                  style="width: 80vw; height: 45vw"
+                  onload="setZeichenTool(document.getElementById(`frame-1`), `6`)"
+                ></iframe>
+              </div>
+              <li>
+                Bei welchem Lastwiderstand gibt die Solarzelle die maximale
+                Leistung ab? Ermitteln Sie für die Solarzelle bei P = max
+                graphisch
+              </li>
+              <div>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label for="i"
+                          >I<sub>P<sub>max</sub></sub>
+
+                          =
+                          <input
+                            id="i"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 A"
+                          />
+                        </label>
+                      </td>
+                      <td></td>
+                      <td>
+                        <label for="ra"
+                          >R<sub>a</sub>
+                          =
+                          <input
+                            id="ra"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 Ω"
+                          />
+                        </label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label for="Ri">
+                          R<sub>i</sub>
+                          =
+                          <input
+                            id="Ri"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 Ω"
+                          />
+                        </label>
+                      </td>
+                      <td></td>
+                      <td>
+                        <label for="ri4"
+                          >r<sub>i</sub>
+                          =
+                          <input
+                            id="ri4"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 Ω"
+                          />
+                        </label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </ul>
+          </fieldset>
+
+          <!-- Literaturhinweise -->
+          <fieldset>
+            <legend>
+              <span id="lite"></span>
+              <h4>Literaturhinweise</h4>
+            </legend>
+            <ul>
+              <li>
+                <div>siehe Vorlesung</div>
+              </li>
+            </ul>
+          </fieldset>
+        </article>
+      </div>
+
+      <!-- Druckoptionen -->
+      <div id="wrapper">
+        <p>
+          <b>zum drucken der Datei auf dem iPad:</b><br />
+          Klicken Sie auf den nachfolgenden Button<br />
+          Anschließend die Druckvorschau mit der Zoom-Geste groß ziehen und das
+          Dokument speichern
+        </p>
+
+        <a><button id="pbtn" class="button">Drucken</button></a>
+        <a
+          ><button class="button" onclick="toggletheme()">
+            Toggle dark mode
+          </button></a
+        >
+
+        <p>
+          <b>Hinweise zur Selbstkontrolle:</b><br />
+          Achten Sie auf richtige eingabe der Einheit. Zulässige Einheiten sind:
+          "Ohm, Ω, A, V, %".<br />
+          Anschließend können Sie auch folgende Zehnerpotenzen benuntzen: "n, u,
+          m, k"<br />
+          In den Feldern ist keine Berechnung des Ergebnisses zulässig.<br />
+          <b>Beteutung der Farben:</b><br />
+          Grau: das Feld wurde nicht ausgefüllt.<br />
+          Gelb: die verlangte Einheit ist nicht richtig oder entspricht nicht
+          den Vorgaben.<br />
+          T&uuml;rkies: kein Zahlenwert vor erforderlicher Basiseinheit
+          gefunden.<br />
+          Rot: das eingegebene Ergebnis ist falsch.<br />
+          Gr&uuml;n: das eingegebene Ergebnis ist richtig.<br />
+        </p>
+
+        <p>
+          <button onclick="kontrolle()" class="button">Selbstkontrolle</button>
+        </p>
+      </div>
+
+      <!-- Fußzeile -->
+      <footer>
+        <br />
+        <hr />
+        <a href="mailto:oliver.reimer@eah-jena.de" target="_blank"
+          >Kontakt - Mail</a
+        >
+        <p>
+          © 2020
+          <a href="https://www2.eah-jena.de/et/"
+            >EAH Jena - FB Elektrotechnik und Informationstechnik</a
+          >
+        </p>
+      </footer>
+      <!-- zum drucken -->
+    </div>
+  </body>
+  <script src="Javascript/Drucken.js"></script>
+</html>
+
+<script>
+  function kontrolle() {
+    const uleer = document.querySelector("#uleer");
+    checkSingleInput(uleer, 1.53, "V");
+
+    const i311 = document.querySelector("#i311");
+    const i312 = document.querySelector("#i312");
+    const i313 = document.querySelector("#i313");
+    const u311 = document.querySelector("#u311");
+    const u312 = document.querySelector("#u312");
+    const u313 = document.querySelector("#u313");
+    checkSingleInput(i311, 1.12, "A");
+    checkSingleInput(i312, 0.27, "A");
+    checkSingleInput(i313, 0.14, "A");
+    checkSingleInput(u311, 1.28, "V");
+    checkSingleInput(u312, 1.44, "V");
+    checkSingleInput(u313, 1.48, "V");
+
+    const ri = document.querySelector("#ri");
+    checkSingleInputWithMultipleUnit(ri, 0.2, ["Ohm", "\u{2126}", "\u{03A9}"]);
+    const Ik = document.querySelector("#Ik");
+    checkSingleInput(Ik, 7.4, "A");
+
+    const i321 = document.querySelector("#i321");
+    const i322 = document.querySelector("#i322");
+    const i323 = document.querySelector("#i323");
+    const u321 = document.querySelector("#u321");
+    const u322 = document.querySelector("#u322");
+    const u323 = document.querySelector("#u323");
+    checkSingleInput(i321, 13, "A");
+    checkSingleInput(i322, 0.28, "A");
+    checkSingleInput(i323, 0.15, "A");
+    checkSingleInput(u321, 1.47, "V");
+    checkSingleInput(u322, 1.51, "V");
+    checkSingleInput(u323, 1.52, "V");
+
+    const i324 = document.querySelector("#i324");
+    const i325 = document.querySelector("#i325");
+    const i326 = document.querySelector("#i326");
+    const u324 = document.querySelector("#u324");
+    const u325 = document.querySelector("#u325");
+    const u326 = document.querySelector("#u326");
+    checkSingleInput(i324, 0.7, "A");
+    checkSingleInput(i325, 0.23, "A");
+    checkSingleInput(i326, 0.1, "A");
+    checkSingleInput(u324, 0.78, "V");
+    checkSingleInput(u325, 1.28, "V");
+    checkSingleInput(u326, 1.4, "V");
+
+    const ri1 = document.querySelector("#ri1");
+    checkSingleInputWithMultipleUnit(ri1, 0.4, ["Ohm", "\u{2126}", "\u{03A9}"]);
+    const ri2 = document.querySelector("#ri2");
+    checkSingleInputWithMultipleUnit(ri2, 1.03, [
+      "Ohm",
+      "\u{2126}",
+      "\u{03A9}",
+    ]);
+    const ik1 = document.querySelector("#ik1");
+    checkSingleInput(ik1, 35.2, "A");
+    const ik2 = document.querySelector("#ik2");
+    checkSingleInput(ik2, 1.48, "A");
+
+    const i332 = document.querySelector("#i332");
+    const i333 = document.querySelector("#i333");
+    const i334 = document.querySelector("#i334");
+    const i335 = document.querySelector("#i335");
+    const i336 = document.querySelector("#i336");
+    const i337 = document.querySelector("#i337");
+    const i338 = document.querySelector("#i338");
+    const i339 = document.querySelector("#i339");
+    const i330 = document.querySelector("#i330");
+
+    checkSingleInput(i332, 0.0023, "A");
+    checkSingleInput(i333, 0.0036, "A");
+    checkSingleInput(i334, 0.0047, "A");
+    checkSingleInput(i335, 0.0061, "A");
+    checkSingleInput(i336, 0.0065, "A");
+    checkSingleInput(i337, 0.0073, "A");
+    checkSingleInput(i338, 0.009, "A");
+    checkSingleInput(i339, 0.0094, "A");
+    checkSingleInput(i330, 0.0097, "A");
+
+    const u331 = document.querySelector("#u331");
+    const u332 = document.querySelector("#u332");
+    const u333 = document.querySelector("#u333");
+    const u334 = document.querySelector("#u334");
+    const u335 = document.querySelector("#u335");
+    const u336 = document.querySelector("#u336");
+    const u337 = document.querySelector("#u337");
+    const u338 = document.querySelector("#u338");
+    const u339 = document.querySelector("#u339");
+
+    checkSingleInput(u331, 0.52, "V");
+    checkSingleInput(u332, 0.49, "V");
+    checkSingleInput(u333, 0.48, "V");
+    checkSingleInput(u334, 0.46, "V");
+    checkSingleInput(u335, 0.45, "V");
+    checkSingleInput(u336, 0.44, "V");
+    checkSingleInput(u337, 0.43, "V");
+    checkSingleInput(u338, 0.37, "V");
+    checkSingleInput(u339, 0.23, "V");
+
+    const p331 = document.querySelector("#p331");
+    const p332 = document.querySelector("#p332");
+    const p333 = document.querySelector("#p333");
+    const p334 = document.querySelector("#p334");
+    const p335 = document.querySelector("#p335");
+    const p336 = document.querySelector("#p336");
+    const p337 = document.querySelector("#p337");
+    const p338 = document.querySelector("#p338");
+    const p339 = document.querySelector("#p339");
+    const p330 = document.querySelector("#p330");
+    checkSingleInput(p331, 0, "W");
+    checkSingleInput(p332, 0.00113, "W");
+    checkSingleInput(p333, 0.00173, "W");
+    checkSingleInput(p334, 0.00216, "W");
+    checkSingleInput(p335, 0.00275, "W");
+    checkSingleInput(p336, 0.00286, "W");
+    checkSingleInput(p337, 0.00314, "W");
+    checkSingleInput(p338, 0.00333, "W");
+    checkSingleInput(p339, 0.00216, "W");
+    checkSingleInput(p330, 0, "W");
+
+    const i = document.querySelector("#i");
+    checkSingleInput(i, 0.009, "A");
+    const ra = document.querySelector("#ra");
+    checkSingleInputWithMultipleUnit(ra, 41, ["Ohm", "\u{2126}", "\u{03A9}"]);
+    const Ri = document.querySelector("#Ri");
+    checkSingleInputWithMultipleUnit(Ri, 100, ["Ohm", "\u{2126}", "\u{03A9}"]);
+    const ri4 = document.querySelector("#ri4");
+    checkSingleInputWithMultipleUnit(ri4, 41, ["Ohm", "\u{2126}", "\u{03A9}"]);
+  }
+</script>
