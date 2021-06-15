@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strom und Spannungsteiler</title>
+    <!-- Scriptdatein -->
+    <script src="Javascript/MeineFunktionen.js"></script>
+    <script src="Javascript/protokollMain.js"></script>
+    <link rel="stylesheet" href="CSS/stylesheet.css" />
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <link rel="stylesheet" href="CSS/plyr.css" />
+    <!-- Temporäre sicherrung der HTML -->
+    <script>
+      neuladen();
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="Bilder/favicon.ico" />
+  </head>
+
+  <body>
+    <!-- zum drucken -->
+    <div id="capture">
+      <header>
+        <!-- Seitenkopf -->
+        <div class="row border">
+          <div class="column small-4">
+            <img src="Bilder/EAH.png" title="EAH Logo" />
+          </div>
+          <div class="colum small-8">
+            <p class="pnebenlogo" id="pnebenlogo">
+              <b>Fachbereich Elektrotechnik und Informationstechnik</b> <br />
+              Laborpraktikum <br />
+              Grundlagen der Elektrotechnik <br />
+              Dipl.-Ing. O.Reimer<br />
+              <span id="datum" class="datum"> </span>
+            </p>
+          </div>
+
+          <script>
+            Datum();
+          </script>
+        </div>
+
+        <!-- Titel -->
+        <div class="divtitle" id="element-to-print">
+          <h1>Kennenlernen der Elektrotechnik: Strom und Spannungsteiler</h1>
+        </div>
+
+        <!-- Eintragungen Studenten -->
+        <div class="links" width="50%" height="400">
+          <table>
+            <tr>
+              <td>
+                <label for="Studiengang"> Studiengang/Set:</label>
+              </td>
+              <td>
+                <input
+                  for="StudiengangEingabe"
+                  type="search"
+                  list="Studiengang"
+                  size="25"
+                  maxlength="25"
+                  placeholder="Studiengang"
+                  style="margin-left: 25px"
+                  required
+                />
+                <datalist id="Studiengang">
+                  <option value="WI"></option>
+                  <option value="UT"></option>
+                  <option value="MT"></option>
+                </datalist>
+                <input
+                  for="Setnummer"
+                  type="search"
+                  list="Set"
+                  size="9"
+                  maxlength="15"
+                  placeholder="1.01"
+                  required
+                />
+                <datalist id="Set">
+                  <option value="2.01"></option>
+                  <option value="2.02"></option>
+                  <option value="2.03"></option>
+                  <option value="2.04"></option>
+                  <option value="2.05"></option>
+                  <option value="2.06"></option>
+                  <option value="2.07"></option>
+                  <option value="2.08"></option>
+                </datalist>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Teilnehmer">Teilnehmer:</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="Teilnehmer"
+                  size="40"
+                  maxlength="50"
+                  placeholder="Erika Mustermann"
+                  style="margin-left: 25px"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Matrikelnummer">Matrikelnummer:</label>
+              </td>
+              <td>
+                <input
+                  id="Matrikelnummer"
+                  size="40"
+                  maxlength="50"
+                  placeholder="665544"
+                  style="margin-left: 25px"
+                  required
+                />
+              </td>
+            </tr>
+          </table>
+
+          <label>Versuchs-ID: GET-01</label>
+          <label
+            >persönliche Prüf-ID:
+            <script type="text/javascript">
+              var min = 9,
+                max = 99999;
+              document.write(
+                20201407 + Math.floor(Math.random() * (max - min)) + min
+              );
+            </script>
+          </label>
+        </div>
+
+        <!-- Eintragung Testat -->
+        <div class="rechts">
+          <table>
+            <tr>
+              <td>Betreuer</td>
+              <td><input readonly /></td>
+            </tr>
+            <tr>
+              <td>Datum</td>
+              <td><input readonly /></td>
+            </tr>
+            <tr>
+              <td>Unterschrift</td>
+              <td><input readonly /></td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Inhaltsverzeichnis -->
+        <div class="inhalt">
+          <hr />
+          <h2>Inhaltsverzeichnis</h2>
+          <a href="#span">Spannungs- und Stromteiler</a><br /><br />
+          <a href="#lite">Literaturhinweise</a><br /><br />
+        </div>
+
+        <!-- hinweise -->
+        <div class="hinweise">
+          <h2>Hinweise zum Praktikum</h2>
+          <ul>
+            <li>
+              Für die Lösungen zu den einzelnen Aufgaben sind im Protokoll
+              Leerstellen vorgesehen. <br />
+              Verwenden Sie bitte für die Nebenrechnungen kein eigenes Papier.
+            </li>
+            <li style="color: #a52f33">
+              Folgen Sie immer den Anweisungen der Aufsichtspersonen! <br />
+              Wenn Sie sich unsicher sind, stellen Sie Fragen.<br />
+              Lassen Sie sich Ihren Versuchsaufbau vor dem Einschalten abnehmen.
+            </li>
+          </ul>
+        </div>
+
+        <div class="Druckhinweis">
+          <h2>Druckhinweis</h2>
+          <ul>
+            <li>
+              <p id="datumdruck"></p>
+              <script>
+                Datum1();
+              </script>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Inhalt -->
+      <div>
+        <fieldset>
+          <legend>
+            <span id="span"></span>
+            <h4>Spannungs- und Stromteiler</h4>
+          </legend>
+          <ul>
+            <li>Bauen Sie folgendes Netzwerk auf.</li>
+            <li>
+              U<sub>DC</sub> = 10 V, R<sub>1</sub> = 100 Ω, R<sub>2</sub> = 330
+              Ω, R<sub>3</sub> = 150 Ω und R<sub>4</sub>
+              = 470 Ω.
+            </li>
+            <div class="schaltplan">
+              <img src="Bilder/Schaltung_Spannungsteiler.png" />
+            </div>
+            <li>Messen Sie alle Spannungen und Ströme in der Schaltung.</li>
+            <div>
+              <table class="w3-table w3-striped w3-border">
+                <tbody>
+                  <tr>
+                    <th>Messstelle</th>
+
+                    <th>R<sub>1</sub></th>
+
+                    <th>R<sub>2</sub></th>
+
+                    <th>R<sub>3</sub></th>
+
+                    <th>R<sub>4</sub></th>
+                  </tr>
+
+                  <tr>
+                    <td>I in mA</td>
+
+                    <td><input id="ir1" placeholder="10 A" /></td>
+
+                    <td><input id="ir2" placeholder="10 A" /></td>
+
+                    <td><input id="ir3" placeholder="10 A" /></td>
+
+                    <td><input id="ir4" placeholder="10 A" /></td>
+                  </tr>
+                  <tr>
+                    <td>U in V</td>
+
+                    <td><input id="ur1" placeholder="10 V" /></td>
+
+                    <td><input id="ur2" placeholder="10 V" /></td>
+
+                    <td><input id="ur3" placeholder="10 V" /></td>
+
+                    <td><input id="ur4" placeholder="10 V" /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <li>Erklären Sie die Feststellungen.</li>
+            <div>
+              <textarea
+                rows="8"
+                cols="80"
+                placeholder="Schreiben Sie hier..."
+              ></textarea>
+            </div>
+            <li>
+              Bestimmen Sie den Ersatzinnenwiderstand des Netzwerkes durch
+              Zuschalten eines Lastwiderstandes an den Ausgangsklemmen!
+            </li>
+            <div>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label for="UL">
+                        U<sub>qers</sub> =
+                        <input
+                          id="UL"
+                          size="20"
+                          maxlength="20"
+                          placeholder="10 V"
+                        />
+                      </label>
+                    </td>
+
+                    <td>
+                      <label for="IL">
+                        I<sub>L</sub> =
+
+                        <input
+                          id="IL"
+                          size="20"
+                          maxlength="20"
+                          placeholder="10 A"
+                        />
+                      </label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label for="RERS">
+                        R<sub>iers</sub> =
+                        <input
+                          id="RERS"
+                          size="20"
+                          maxlength="20"
+                          placeholder="10 Ω"
+                        />
+                      </label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <li>
+              Zeichnen Sie das Spannungsquellen - Ersatzschaltbild.<br />Tragen
+              Sie die konkreten Werte für die Ersatzkomponenten ein.
+            </li>
+            <div class="center">
+              <iframe
+                id="frame-2"
+                class="embed-container"
+                src="ZeichenTool/zeichentool.html"
+                style="width: 80vw; height: 45vw"
+                onload="setZeichenTool(document.getElementById(`frame-2`), `0`)"
+              ></iframe>
+            </div>
+          </ul>
+        </fieldset>
+      </div>
+
+      <!-- Druckoptionen -->
+      <div id="wrapper">
+        <p>
+          <b>zum drucken der Datei auf dem iPad:</b><br />
+          Klicken Sie auf den nachfolgenden Button<br />
+          Anschließend die Druckvorschau mit der Zoom-Geste groß ziehen und das
+          Dokument speichern
+        </p>
+
+        <a><button id="pbtn" class="button">Drucken</button></a>
+        <a
+          ><button class="button" onclick="toggletheme()">
+            Toggle dark mode
+          </button></a
+        >
+
+        <p>
+          <b>Hinweise zur Selbstkontrolle:</b><br />
+          Achten Sie auf richtige eingabe der Einheit. Zulässige Einheiten sind:
+          "Ohm, Ω, A, V, %".<br />
+          Anschließend können Sie auch folgende Zehnerpotenzen benuntzen: "n, u,
+          m, k"<br />
+          In den Feldern ist keine Berechnung des Ergebnisses zulässig.<br />
+          <b>Beteutung der Farben:</b><br />
+          Grau: das Feld wurde nicht ausgefüllt.<br />
+          Gelb: die verlangte Einheit ist nicht richtig oder entspricht nicht
+          den Vorgaben.<br />
+          T&uuml;rkies: kein Zahlenwert vor erforderlicher Basiseinheit
+          gefunden.<br />
+          Rot: das eingegebene Ergebnis ist falsch.<br />
+          Gr&uuml;n: das eingegebene Ergebnis ist richtig.<br />
+        </p>
+
+        <p>
+          <button onclick="kontrolle()" class="button">Selbstkontrolle</button>
+        </p>
+      </div>
+
+      <!-- Fußzeile -->
+      <footer>
+        <br />
+        <hr />
+        <a href="mailto:oliver.reimer@eah-jena.de" target="_blank"
+          >Kontakt - Mail</a
+        >
+        <p>
+          © 2020
+          <a href="https://www2.eah-jena.de/et/"
+            >EAH Jena - FB Elektrotechnik und Informationstechnik</a
+          >
+        </p>
+      </footer>
+      <!-- zum drucken -->
+    </div>
+  </body>
+  <script src="Javascript/Drucken.js"></script>
+</html>
+
+<script>
+  function kontrolle(params) {
+    const ir1 = document.querySelector("#ir1");
+    const ir2 = document.querySelector("#ir2");
+    const ir3 = document.querySelector("#ir3");
+    const ir4 = document.querySelector("#ir4");
+
+    checkSingleInput(ir1, 10, "A");
+    checkSingleInput(ir2, 10, "A");
+    checkSingleInput(ir3, 10, "A");
+    checkSingleInput(ir4, 10, "A");
+
+    const ur1 = document.querySelector("#ur1");
+    const ur2 = document.querySelector("#ur2");
+    const ur3 = document.querySelector("#ur3");
+    const ur4 = document.querySelector("#ur4");
+
+    checkSingleInput(ur1, 10, "V");
+    checkSingleInput(ur2, 10, "V");
+    checkSingleInput(ur3, 10, "V");
+    checkSingleInput(ur4, 10, "V");
+
+    const UL = document.querySelector("#UL");
+    const IL = document.querySelector("#IL");
+    const RERS = document.querySelector("#RERS");
+
+    checkSingleInput(UL, 10, "V");
+    checkSingleInput(IL, 10, "A");
+    checkSingleInputWithMultipleUnit(RERS, 10, ["Ohm", "\u{2126}", "\u{03A9}"]);
+  }
+</script>

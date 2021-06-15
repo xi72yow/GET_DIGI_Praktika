@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -160,29 +161,11 @@
         <div class="inhalt">
           <hr />
           <h2>Inhaltsverzeichnis</h2>
-          <a href="#span">Spannungs- und Stromteiler</a><br /><br />
-          <a href="#mess">Messung an nicht linearen Zweipolen (VDR)</a
+          <a href="#mess">2. Messung an nicht linearen Zweipolen (VDR)</a
           ><br /><br />
-          <a href="#diod">Diodenkennlinie (Zusatzaufgabe)</a><br /><br />
           <a href="#lite">Literaturhinweise</a><br /><br />
         </div>
 
-        <!-- hinweise -->
-        <div class="hinweise">
-          <h2>Hinweise zum Praktikum</h2>
-          <ul>
-            <li>
-              Für die Lösungen zu den einzelnen Aufgaben sind im Protokoll
-              Leerstellen vorgesehen. <br />
-              Verwenden Sie bitte für die Nebenrechnungen kein eigenes Papier.
-            </li>
-            <li style="color: #a52f33">
-              Folgen Sie immer den Anweisungen der Aufsichtspersonen! <br />
-              Wenn Sie sich unsicher sind, stellen Sie Fragen.<br />
-              Lassen Sie sich Ihren Versuchsaufbau vor dem Einschalten abnehmen.
-            </li>
-          </ul>
-        </div>
 
         <div class="Druckhinweis">
           <h2>Druckhinweis</h2>
@@ -222,139 +205,12 @@
             </div>
           </fieldset>
 
-          <fieldset>
-            <legend>
-              <span id="span"></span>
-              <h4>Spannungs- und Stromteiler</h4>
-            </legend>
-            <ul>
-              <li>Bauen Sie folgendes Netzwerk auf.</li>
-              <li>
-                U<sub>DC</sub> = 10 V, R<sub>1</sub> = 100 Ω, R<sub>2</sub> =
-                330 Ω, R<sub>3</sub> = 150 Ω und R<sub>4</sub>
-                = 470 Ω.
-              </li>
-              <div>
-                <img src="Bilder/Schaltung1.PNG" style="width: 90%" />
-              </div>
-              <li>Messen Sie alle Spannungen und Ströme in der Schaltung.</li>
-              <div>
-                <table class="w3-table w3-striped w3-border">
-                  <tbody>
-                    <tr>
-                      <th>Messstelle</th>
-
-                      <th>R<sub>1</sub></th>
-
-                      <th>R<sub>2</sub></th>
-
-                      <th>R<sub>3</sub></th>
-
-                      <th>R<sub>4</sub></th>
-                    </tr>
-
-                    <tr>
-                      <td>I in mA</td>
-
-                      <td><input id="ir1" placeholder="10 A" /></td>
-
-                      <td><input id="ir2" placeholder="10 A" /></td>
-
-                      <td><input id="ir3" placeholder="10 A" /></td>
-
-                      <td><input id="ir4" placeholder="10 A" /></td>
-                    </tr>
-                    <tr>
-                      <td>U in V</td>
-
-                      <td><input id="ur1" placeholder="10 V" /></td>
-
-                      <td><input id="ur2" placeholder="10 V" /></td>
-
-                      <td><input id="ur3" placeholder="10 V" /></td>
-
-                      <td><input id="ur4" placeholder="10 V" /></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <li>Erklären Sie die Feststellungen.</li>
-              <div>
-                <textarea
-                  rows="8"
-                  cols="80"
-                  placeholder="Schreiben Sie hier..."
-                ></textarea>
-              </div>
-              <li>
-                Bestimmen Sie den Ersatzinnenwiderstand des Netzwerkes durch
-                Zuschalten eines Lastwiderstandes an den Ausgangsklemmen!
-              </li>
-              <div>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <label for="UL">
-                          U<sub>qers</sub> =
-                          <input
-                            id="UL"
-                            size="20"
-                            maxlength="20"
-                            placeholder="10 V"
-                          />
-                        </label>
-                      </td>
-
-                      <td>
-                        <label for="IL">
-                          I<sub>L</sub> =
-
-                          <input
-                            id="IL"
-                            size="20"
-                            maxlength="20"
-                            placeholder="10 A"
-                          />
-                        </label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <label for="RERS">
-                          R<sub>iers</sub> =
-                          <input
-                            id="RERS"
-                            size="20"
-                            maxlength="20"
-                            placeholder="10 Ω"
-                          />
-                        </label>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <li>
-                Zeichnen Sie das Spannungsquellen - Ersatzschaltbild.<br />Tragen
-                Sie die konkreten Werte für die Ersatzkomponenten ein.
-              </li>
-              <div class="center">
-                <iframe
-                  id="frame-2"
-                  class="embed-container"
-                  src="ZeichenTool/zeichentool.html"
-                  style="width: 80vw; height: 45vw"
-                  onload="setZeichenTool(document.getElementById(`frame-2`), `0`)"
-                ></iframe>
-              </div>
-            </ul>
-          </fieldset>
+          
 
           <fieldset>
             <legend>
               <span id="mess"></span>
-              <h4>Messung an nicht linearen Zweipolen (VDR)</h4>
+              <h4>2. Messung an nicht linearen Zweipolen (VDR)</h4>
             </legend>
             <ul>
               <li>
@@ -493,7 +349,7 @@
                   id="frame-0"
                   class="embed-container"
                   src="ZeichenTool/zeichentool.html"
-                  style="width: 80vw; height: 45vw"
+                  style="width: 80vw; height: 60vw"
                   onload="setZeichenTool(document.getElementById(`frame-0`), `4`)"
                 ></iframe>
               </div>
@@ -514,7 +370,7 @@
                   class="embed-container"
                   src="ZeichenTool/zeichentool.html"
                   style="width: 80vw; height: 45vw"
-                  onload="setZeichenTool(document.getElementById(`frame-1`), `4`)"
+                  onload="setZeichenTool(document.getElementById(`frame-1`), `0`)"
                 ></iframe>
               </div>
               <div>
@@ -589,82 +445,6 @@
                     </tr>
                   </tbody>
                 </table>
-              </div>
-            </ul>
-          </fieldset>
-
-          <fieldset>
-            <legend>
-              <span id="diod"></span>
-              <h4>Diodenkennlinie (Zusatzaufgabe)</h4>
-            </legend>
-            <ul>
-              <li>Bauen Sie folgendes Netzwerk auf.</li>
-              <li>U<sub>DC</sub> = 0...3 V, R = 100 Ω.</li>
-              <div>
-                <img src="Bilder/Schaltung2.PNG" style="width: 90%" />
-              </div>
-              <li>U<sub>DC</sub> = 0...3 V auf.</li>
-              <li>Beachten Sie den signifikaten Bereich der Kennlinie.</li>
-              <div>
-                <table class="w3-table w3-striped w3-border">
-                  <tbody>
-                    <tr>
-                      <th>U<sub>DC</sub></th>
-
-                      <th><input id="udc1" placeholder="10 V" /></th>
-
-                      <th><input id="udc2" placeholder="10 V" /></th>
-
-                      <th><input id="udc3" placeholder="10 V" /></th>
-
-                      <th><input id="udc4" placeholder="10 V" /></th>
-
-                      <th><input id="udc5" placeholder="10 V" /></th>
-
-                      <th><input id="udc6" placeholder="10 V" /></th>
-                    </tr>
-
-                    <tr>
-                      <td>I in mA</td>
-
-                      <td><input id="i1" placeholder="10 A" /></td>
-
-                      <td><input id="i2" placeholder="10 A" /></td>
-
-                      <td><input id="i3" placeholder="10 A" /></td>
-
-                      <td><input id="i4" placeholder="10 A" /></td>
-
-                      <td><input id="i5" placeholder="10 A" /></td>
-
-                      <td><input id="i6" placeholder="10 A" /></td>
-                    </tr>
-                    <tr>
-                      <td>U in V</td>
-
-                      <td><input id="u1" placeholder="10 V" /></td>
-
-                      <td><input id="u2" placeholder="10 V" /></td>
-
-                      <td><input id="u3" placeholder="10 V" /></td>
-
-                      <td><input id="u4" placeholder="10 V" /></td>
-
-                      <td><input id="u5" placeholder="10 V" /></td>
-
-                      <td><input id="u6" placeholder="10 V" /></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <li>Erklären Sie die Feststellungen.</li>
-              <div>
-                <textarea
-                  rows="8"
-                  cols="80"
-                  placeholder="Schreiben Sie hier..."
-                ></textarea>
               </div>
             </ul>
           </fieldset>
@@ -744,34 +524,7 @@
 
 <script>
   function kontrolle() {
-    const ir1 = document.querySelector("#ir1");
-    const ir2 = document.querySelector("#ir2");
-    const ir3 = document.querySelector("#ir3");
-    const ir4 = document.querySelector("#ir4");
-
-    checkSingleInput(ir1, 10, "A");
-    checkSingleInput(ir2, 10, "A");
-    checkSingleInput(ir3, 10, "A");
-    checkSingleInput(ir4, 10, "A");
-
-    const ur1 = document.querySelector("#ur1");
-    const ur2 = document.querySelector("#ur2");
-    const ur3 = document.querySelector("#ur3");
-    const ur4 = document.querySelector("#ur4");
-
-    checkSingleInput(ur1, 10, "V");
-    checkSingleInput(ur2, 10, "V");
-    checkSingleInput(ur3, 10, "V");
-    checkSingleInput(ur4, 10, "V");
-
-    const UL = document.querySelector("#UL");
-    const IL = document.querySelector("#IL");
-    const RERS = document.querySelector("#RERS");
-
-    checkSingleInput(UL, 10, "V");
-    checkSingleInput(IL, 10, "A");
-    checkSingleInputWithMultipleUnit(RERS, 10, ["Ohm", "\u{2126}", "\u{03A9}"]);
-
+   
     const v11 = document.querySelector("#v11");
     const v12 = document.querySelector("#v12");
     const v13 = document.querySelector("#v13");
@@ -839,12 +592,12 @@
       "\u{2126}",
       "\u{03A9}",
     ]);
-    checkSingleInputWithMultipleUnit(r22, 87.5, [
+    checkSingleInputWithMultipleUnit(r22, 87500, [
       "Ohm",
       "\u{2126}",
       "\u{03A9}",
     ]);
-    checkSingleInputWithMultipleUnit(r23, 59.2, [
+    checkSingleInputWithMultipleUnit(r23, 59200, [
       "Ohm",
       "\u{2126}",
       "\u{03A9}",
@@ -865,51 +618,11 @@
     const RVDR = document.querySelector("#RVDR");
     const rVDR = document.querySelector("#rVDR");
 
-    checkSingleInput(UVDR, 1, "V");
-    checkSingleInput(URI, 7, "V");
-    checkSingleInput(RVDR, 70000, "Ohm");
+    checkSingleInput(UVDR, 7.1, "V");
+    checkSingleInput(URI, 0.9, "V");
+    checkSingleInput(RVDR, 74000, "Ohm");
     checkSingleInput(rVDR, 3571, "Ohm");
 
-    const udc1 = document.querySelector("#udc1");
-    const udc2 = document.querySelector("#udc2");
-    const udc3 = document.querySelector("#udc3");
-    const udc4 = document.querySelector("#udc4");
-    const udc5 = document.querySelector("#udc5");
-    const udc6 = document.querySelector("#udc6");
-
-    checkSingleInput(udc1, 10, "V");
-    checkSingleInput(udc2, 10, "V");
-    checkSingleInput(udc3, 10, "V");
-    checkSingleInput(udc4, 10, "V");
-    checkSingleInput(udc5, 10, "V");
-    checkSingleInput(udc6, 10, "V");
-
-    const i1 = document.querySelector("#i1");
-    const i2 = document.querySelector("#i2");
-    const i3 = document.querySelector("#i3");
-    const i4 = document.querySelector("#i4");
-    const i5 = document.querySelector("#i5");
-    const i6 = document.querySelector("#i6");
-
-    checkSingleInput(i1, 10, "A");
-    checkSingleInput(i2, 10, "A");
-    checkSingleInput(i3, 10, "A");
-    checkSingleInput(i4, 10, "A");
-    checkSingleInput(i5, 10, "A");
-    checkSingleInput(i6, 10, "A");
-
-    const u1 = document.querySelector("#u1");
-    const u2 = document.querySelector("#u2");
-    const u3 = document.querySelector("#u3");
-    const u4 = document.querySelector("#u4");
-    const u5 = document.querySelector("#u5");
-    const u6 = document.querySelector("#u6");
-
-    checkSingleInput(u1, 10, "V");
-    checkSingleInput(u2, 10, "V");
-    checkSingleInput(u3, 10, "V");
-    checkSingleInput(u4, 10, "V");
-    checkSingleInput(u5, 10, "V");
-    checkSingleInput(u6, 10, "V");
+   
   }
 </script>

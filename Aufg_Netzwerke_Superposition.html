@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Superposition</title>
+    <!-- Scriptdatein -->
+    <script src="Javascript/MeineFunktionen.js"></script>
+    <script src="Javascript/protokollMain.js"></script>
+    <link rel="stylesheet" href="CSS/stylesheet.css" />
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <link rel="stylesheet" href="CSS/plyr.css" />
+    <!-- Temporäre sicherrung der HTML -->
+    <script>
+      neuladen();
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="Bilder/favicon.ico" />
+  </head>
+
+  <body>
+    <!-- zum drucken -->
+    <div id="capture">
+      <header>
+        <!-- Seitenkopf -->
+        <div class="row border">
+          <div class="column small-4">
+            <img src="Bilder/EAH.png" title="EAH Logo" />
+          </div>
+          <div class="colum small-8">
+            <p class="pnebenlogo" id="pnebenlogo">
+              <b>Fachbereich Elektrotechnik und Informationstechnik</b> <br />
+              Laborpraktikum <br />
+              Grundlagen der Elektrotechnik <br />
+              Dipl.-Ing. O.Reimer<br />
+              <span id="datum" class="datum"> </span>
+            </p>
+          </div>
+
+          <script>
+            Datum();
+          </script>
+        </div>
+
+        <!-- Titel -->
+        <div class="divtitle" id="element-to-print">
+          <h1>Kennenlernen der Elektrotechnik: ##############</h1>
+        </div>
+
+        <!-- Eintragungen Studenten -->
+        <div class="links" width="50%" height="400">
+          <table>
+            <tr>
+              <td>
+                <label for="Studiengang"> Studiengang/Set:</label>
+              </td>
+              <td>
+                <input
+                  for="StudiengangEingabe"
+                  type="search"
+                  list="Studiengang"
+                  size="25"
+                  maxlength="25"
+                  placeholder="Studiengang"
+                  style="margin-left: 25px"
+                  required
+                />
+                <datalist id="Studiengang">
+                  <option value="WI"></option>
+                  <option value="UT"></option>
+                  <option value="MT"></option>
+                </datalist>
+                <input
+                  for="Setnummer"
+                  type="search"
+                  list="Set"
+                  size="9"
+                  maxlength="15"
+                  placeholder="1.01"
+                  required
+                />
+                <datalist id="Set">
+                  <option value="2.01"></option>
+                  <option value="2.02"></option>
+                  <option value="2.03"></option>
+                  <option value="2.04"></option>
+                  <option value="2.05"></option>
+                  <option value="2.06"></option>
+                  <option value="2.07"></option>
+                  <option value="2.08"></option>
+                </datalist>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Teilnehmer">Teilnehmer:</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="Teilnehmer"
+                  size="40"
+                  maxlength="50"
+                  placeholder="Erika Mustermann"
+                  style="margin-left: 25px"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Matrikelnummer">Matrikelnummer:</label>
+              </td>
+              <td>
+                <input
+                  id="Matrikelnummer"
+                  size="40"
+                  maxlength="50"
+                  placeholder="665544"
+                  style="margin-left: 25px"
+                  required
+                />
+              </td>
+            </tr>
+          </table>
+
+          <label>Versuchs-ID: GET-01</label>
+          <label
+            >persönliche Prüf-ID:
+            <script type="text/javascript">
+              var min = 9,
+                max = 99999;
+              document.write(
+                20201407 + Math.floor(Math.random() * (max - min)) + min
+              );
+            </script>
+          </label>
+        </div>
+
+        <!-- Eintragung Testat -->
+        <div class="rechts">
+          <table>
+            <tr>
+              <td>Betreuer</td>
+              <td><input readonly /></td>
+            </tr>
+            <tr>
+              <td>Datum</td>
+              <td><input readonly /></td>
+            </tr>
+            <tr>
+              <td>Unterschrift</td>
+              <td><input readonly /></td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Inhaltsverzeichnis -->
+        <div class="inhalt">
+          <hr />
+          <h2>Inhaltsverzeichnis</h2>
+          <a href="#supe">Superposition</a><br /><br />
+        </div>
+
+        <div class="Druckhinweis">
+          <h2>Druckhinweis</h2>
+          <ul>
+            <li>
+              <p id="datumdruck"></p>
+              <script>
+                Datum1();
+              </script>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Inhalt -->
+      <div>
+        <fieldset>
+          <legend>
+            <span id="supe"></span>
+            <h4>Superposition</h4>
+          </legend>
+          <ul>
+            <li>Bauen Sie folgendes Netzwerk auf.</li>
+            <div class="schaltplan">
+              <img src="Bilder/Schaltung1.png" style="width: 90%" />
+            </div>
+            <li>Tauschen Sie die Quelle 2 mit einer Brücke.</li>
+            <li>Messen Sie alle Spannungen und Ströme.</li>
+            <div>
+              <table class="w3-table w3-striped w3-border">
+                <tbody>
+                  <tr>
+                    <th>Messstelle</th>
+                    <th>R<sub>1</sub></th>
+                    <th>R<sub>2</sub></th>
+                    <th>R<sub>3</sub></th>
+                    <th>R<sub>4</sub></th>
+                    <th>R<sub>5</sub></th>
+                    <th>R<sub>6</sub></th>
+                    <th>R<sub>7</sub></th>
+                  </tr>
+
+                  <tr>
+                    <td>I in mA</td>
+                    <td><input id="SupI11" placeholder="10 A" /></td>
+                    <td><input id="SupI12" placeholder="10 A" /></td>
+                    <td><input id="SupI13" placeholder="10 A" /></td>
+                    <td><input id="SupI14" placeholder="10 A" /></td>
+                    <td><input id="SupI15" placeholder="10 A" /></td>
+                    <td><input id="SupI16" placeholder="10 A" /></td>
+                    <td><input id="SupI17" placeholder="10 A" /></td>
+                  </tr>
+                  <tr>
+                    <td>U in V</td>
+                    <td><input id="SupU11" placeholder="10 V" /></td>
+                    <td><input id="SupU12" placeholder="10 V" /></td>
+                    <td><input id="SupU13" placeholder="10 V" /></td>
+                    <td><input id="SupU14" placeholder="10 V" /></td>
+                    <td><input id="SupU15" placeholder="10 V" /></td>
+                    <td><input id="SupU16" placeholder="10 V" /></td>
+                    <td><input id="SupU17" placeholder="10 V" /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <li>
+              Ergänzen Sie die Schaltung wieder um die Quelle 2 und ersetzen Sie
+              die Quelle 1.
+            </li>
+            <li>Messen Sie alle Spannungen und Ströme.</li>
+            <div>
+              <table class="w3-table w3-striped w3-border">
+                <tbody>
+                  <tr>
+                    <th>Messstelle</th>
+                    <th>R<sub>1</sub></th>
+                    <th>R<sub>2</sub></th>
+                    <th>R<sub>3</sub></th>
+                    <th>R<sub>4</sub></th>
+                    <th>R<sub>5</sub></th>
+                    <th>R<sub>6</sub></th>
+                    <th>R<sub>7</sub></th>
+                  </tr>
+
+                  <tr>
+                    <td>I in mA</td>
+                    <td><input id="SupI21" placeholder="10 A" /></td>
+                    <td><input id="SupI22" placeholder="10 A" /></td>
+                    <td><input id="SupI23" placeholder="10 A" /></td>
+                    <td><input id="SupI24" placeholder="10 A" /></td>
+                    <td><input id="SupI25" placeholder="10 A" /></td>
+                    <td><input id="SupI26" placeholder="10 A" /></td>
+                    <td><input id="SupI27" placeholder="10 A" /></td>
+                  </tr>
+                  <tr>
+                    <td>U in V</td>
+                    <td><input id="SupU21" placeholder="10 V" /></td>
+                    <td><input id="SupU22" placeholder="10 V" /></td>
+                    <td><input id="SupU23" placeholder="10 V" /></td>
+                    <td><input id="SupU24" placeholder="10 V" /></td>
+                    <td><input id="SupU25" placeholder="10 V" /></td>
+                    <td><input id="SupU26" placeholder="10 V" /></td>
+                    <td><input id="SupU27" placeholder="10 V" /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <li>Errechnen Sie die Gesamtströme und Spannungen.</li>
+            <div>
+              <table class="w3-table w3-striped w3-border">
+                <tbody>
+                  <tr>
+                    <th>Messstelle</th>
+                    <th>R<sub>1</sub></th>
+                    <th>R<sub>2</sub></th>
+                    <th>R<sub>3</sub></th>
+                    <th>R<sub>4</sub></th>
+                    <th>R<sub>5</sub></th>
+                    <th>R<sub>6</sub></th>
+                    <th>R<sub>7</sub></th>
+                  </tr>
+
+                  <tr>
+                    <td>I in mA</td>
+                    <td><input id="SupI31" placeholder="10 A" /></td>
+                    <td><input id="SupI32" placeholder="10 A" /></td>
+                    <td><input id="SupI33" placeholder="10 A" /></td>
+                    <td><input id="SupI34" placeholder="10 A" /></td>
+                    <td><input id="SupI35" placeholder="10 A" /></td>
+                    <td><input id="SupI36" placeholder="10 A" /></td>
+                    <td><input id="SupI37" placeholder="10 A" /></td>
+                  </tr>
+                  <tr>
+                    <td>U in V</td>
+                    <td><input id="SupU31" placeholder="10 V" /></td>
+                    <td><input id="SupU32" placeholder="10 V" /></td>
+                    <td><input id="SupU33" placeholder="10 V" /></td>
+                    <td><input id="SupU34" placeholder="10 V" /></td>
+                    <td><input id="SupU35" placeholder="10 V" /></td>
+                    <td><input id="SupU36" placeholder="10 V" /></td>
+                    <td><input id="SupU37" placeholder="10 V" /></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <li>Vergleichen Sie.</li>
+            <div>
+              <textarea
+                rows="8"
+                cols="80"
+                placeholder="Schreiben Sie hier..."
+              ></textarea>
+            </div>
+          </ul>
+        </fieldset>
+      </div>
+
+      <!-- Druckoptionen -->
+      <div id="wrapper">
+        <p>
+          <b>zum drucken der Datei auf dem iPad:</b><br />
+          Klicken Sie auf den nachfolgenden Button<br />
+          Anschließend die Druckvorschau mit der Zoom-Geste groß ziehen und das
+          Dokument speichern
+        </p>
+
+        <a><button id="pbtn" class="button">Drucken</button></a>
+        <a
+          ><button class="button" onclick="toggletheme()">
+            Toggle dark mode
+          </button></a
+        >
+
+        <p>
+          <b>Hinweise zur Selbstkontrolle:</b><br />
+          Achten Sie auf richtige eingabe der Einheit. Zulässige Einheiten sind:
+          "Ohm, Ω, A, V, %".<br />
+          Anschließend können Sie auch folgende Zehnerpotenzen benuntzen: "n, u,
+          m, k"<br />
+          In den Feldern ist keine Berechnung des Ergebnisses zulässig.<br />
+          <b>Beteutung der Farben:</b><br />
+          Grau: das Feld wurde nicht ausgefüllt.<br />
+          Gelb: die verlangte Einheit ist nicht richtig oder entspricht nicht
+          den Vorgaben.<br />
+          T&uuml;rkies: kein Zahlenwert vor erforderlicher Basiseinheit
+          gefunden.<br />
+          Rot: das eingegebene Ergebnis ist falsch.<br />
+          Gr&uuml;n: das eingegebene Ergebnis ist richtig.<br />
+        </p>
+
+        <p>
+          <button onclick="kontrolle()" class="button">Selbstkontrolle</button>
+        </p>
+      </div>
+
+      <!-- Fußzeile -->
+      <footer>
+        <br />
+        <hr />
+        <a href="mailto:oliver.reimer@eah-jena.de" target="_blank"
+          >Kontakt - Mail</a
+        >
+        <p>
+          © 2020
+          <a href="https://www2.eah-jena.de/et/"
+            >EAH Jena - FB Elektrotechnik und Informationstechnik</a
+          >
+        </p>
+      </footer>
+      <!-- zum drucken -->
+    </div>
+  </body>
+  <script src="Javascript/Drucken.js"></script>
+</html>
+
+<script>
+  function kontrolle(params) {
+    const SupI11 = document.querySelector("#SupI11");
+    const SupI12 = document.querySelector("#SupI12");
+    const SupI13 = document.querySelector("#SupI13");
+    const SupI14 = document.querySelector("#SupI14");
+    const SupI15 = document.querySelector("#SupI15");
+    const SupI16 = document.querySelector("#SupI16");
+    const SupI17 = document.querySelector("#SupI17");
+
+    const SupI21 = document.querySelector("#SupI21");
+    const SupI22 = document.querySelector("#SupI22");
+    const SupI23 = document.querySelector("#SupI23");
+    const SupI24 = document.querySelector("#SupI24");
+    const SupI25 = document.querySelector("#SupI25");
+    const SupI26 = document.querySelector("#SupI26");
+    const SupI27 = document.querySelector("#SupI27");
+
+    const SupI31 = document.querySelector("#SupI31");
+    const SupI32 = document.querySelector("#SupI32");
+    const SupI33 = document.querySelector("#SupI33");
+    const SupI34 = document.querySelector("#SupI34");
+    const SupI35 = document.querySelector("#SupI35");
+    const SupI36 = document.querySelector("#SupI36");
+    const SupI37 = document.querySelector("#SupI37");
+
+    checkSingleInput(SupI11, 10, "A");
+    checkSingleInput(SupI12, 10, "A");
+    checkSingleInput(SupI13, 10, "A");
+    checkSingleInput(SupI14, 10, "A");
+    checkSingleInput(SupI15, 10, "A");
+    checkSingleInput(SupI16, 10, "A");
+    checkSingleInput(SupI17, 10, "A");
+
+    checkSingleInput(SupI21, 10, "A");
+    checkSingleInput(SupI22, 10, "A");
+    checkSingleInput(SupI23, 10, "A");
+    checkSingleInput(SupI24, 10, "A");
+    checkSingleInput(SupI25, 10, "A");
+    checkSingleInput(SupI26, 10, "A");
+    checkSingleInput(SupI27, 10, "A");
+
+    checkSingleInput(SupI31, 10, "A");
+    checkSingleInput(SupI32, 10, "A");
+    checkSingleInput(SupI33, 10, "A");
+    checkSingleInput(SupI34, 10, "A");
+    checkSingleInput(SupI35, 10, "A");
+    checkSingleInput(SupI36, 10, "A");
+    checkSingleInput(SupI37, 10, "A");
+
+    const SupU11 = document.querySelector("#SupU11");
+    const SupU12 = document.querySelector("#SupU12");
+    const SupU13 = document.querySelector("#SupU13");
+    const SupU14 = document.querySelector("#SupU14");
+    const SupU15 = document.querySelector("#SupU15");
+    const SupU16 = document.querySelector("#SupU16");
+    const SupU17 = document.querySelector("#SupU17");
+
+    const SupU21 = document.querySelector("#SupU21");
+    const SupU22 = document.querySelector("#SupU22");
+    const SupU23 = document.querySelector("#SupU23");
+    const SupU24 = document.querySelector("#SupU24");
+    const SupU25 = document.querySelector("#SupU25");
+    const SupU26 = document.querySelector("#SupU26");
+    const SupU27 = document.querySelector("#SupU27");
+
+    const SupU31 = document.querySelector("#SupU31");
+    const SupU32 = document.querySelector("#SupU32");
+    const SupU33 = document.querySelector("#SupU33");
+    const SupU34 = document.querySelector("#SupU34");
+    const SupU35 = document.querySelector("#SupU35");
+    const SupU36 = document.querySelector("#SupU36");
+    const SupU37 = document.querySelector("#SupU37");
+
+    checkSingleInput(SupU11, 10, "V");
+    checkSingleInput(SupU12, 10, "V");
+    checkSingleInput(SupU13, 10, "V");
+    checkSingleInput(SupU14, 10, "V");
+    checkSingleInput(SupU15, 10, "V");
+    checkSingleInput(SupU16, 10, "V");
+    checkSingleInput(SupU17, 10, "V");
+
+    checkSingleInput(SupU21, 10, "V");
+    checkSingleInput(SupU22, 10, "V");
+    checkSingleInput(SupU23, 10, "V");
+    checkSingleInput(SupU24, 10, "V");
+    checkSingleInput(SupU25, 10, "V");
+    checkSingleInput(SupU26, 10, "V");
+    checkSingleInput(SupU27, 10, "V");
+
+    checkSingleInput(SupU31, 10, "V");
+    checkSingleInput(SupU32, 10, "V");
+    checkSingleInput(SupU33, 10, "V");
+    checkSingleInput(SupU34, 10, "V");
+    checkSingleInput(SupU35, 10, "V");
+    checkSingleInput(SupU36, 10, "V");
+    checkSingleInput(SupU37, 10, "V");
+  }
+</script>

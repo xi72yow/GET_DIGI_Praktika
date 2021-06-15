@@ -63,7 +63,10 @@ function ausgabe() {
     '</html>';
 
   let video = dupNode.querySelector(".videoscreen");
-  video.parentNode.removeChild(video);
+  if (video) {
+    video.parentNode.removeChild(video);
+  }
+  
 
   placeImages(findHTMLdeleteAndReturnParrents(dupNode, "IFRAME"), getImagefromZeichentool(node));
 
