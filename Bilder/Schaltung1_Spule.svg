@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" viewBox="717.16535 609.4488 576.55905 223.29762" width="576.55905" height="223.29762">
+  <defs>
+    <font-face font-family="Times" font-size="13" panose-1="0 0 5 0 0 0 0 2 0 0" units-per-em="1000" underline-position="-75.68359" underline-thickness="49.316406" slope="0" x-height="453.6133" cap-height="661.6211" ascent="750" descent="-250" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Times-Roman"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Times" font-size="7" panose-1="0 0 5 0 0 0 0 2 0 0" units-per-em="1000" underline-position="-75.68359" underline-thickness="49.316406" slope="0" x-height="453.6133" cap-height="661.6211" ascent="750" descent="-250" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Times-Roman"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Times" font-size="15" panose-1="0 0 5 0 0 0 0 2 0 0" units-per-em="1000" underline-position="-75.68359" underline-thickness="49.316406" slope="0" x-height="453.6133" cap-height="661.6211" ascent="750" descent="-250" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Times-Roman"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledCenterBall_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-4 -3 5 6" markerWidth="5" markerHeight="6" color="black">
+      <g>
+        <circle cx="-1.4999993" cy="0" r="1.4999984765516" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledCenterBall_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -3 5 6" markerWidth="5" markerHeight="6" color="black">
+      <g>
+        <circle cx="1.4999993" cy="0" r="1.4999984765516" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.16 
+    <dc:date>2020-06-23 06:17:07 +0000</dc:date>
+  </metadata>
+  <g id="Canvas_1" fill-opacity="1" stroke-opacity="1" stroke="none" fill="none" stroke-dasharray="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1: Layer 1">
+      <title>Layer 1</title>
+      <g id="Group_1424">
+        <g id="Graphic_1426">
+          <circle cx="928.0866" cy="671.811" r="17.0079010935399" fill="white"/>
+          <circle cx="928.0866" cy="671.811" r="17.0079010935399" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Line_1425">
+          <path d="M 918.1653 674.6457 L 932.3386 668.9764 L 932.3386 674.6457 L 938.0079 674.6457" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Group_1439">
+        <g id="Group_1447">
+          <g id="Line_1451">
+            <path d="M 1015.8425 769.685 L 1015.4067 769.666 L 1014.9743 769.6091 L 1014.5484 769.5147 L 1014.1324 769.3835 L 1013.7294 769.2166 L 1013.3425 769.0152 L 1012.9746 768.7808 L 1012.6286 768.5153 L 1012.307 768.2206 L 1012.0123 767.899 L 1011.7468 767.5529 L 1011.5124 767.185 L 1011.311 766.7981 L 1011.144 766.3951 L 1011.0129 765.9791 L 1010.9185 765.5533 L 1010.8615 765.1208 L 1010.8425 764.685 L 1010.8615 764.2493 L 1010.9185 763.8168 L 1011.0129 763.3909 L 1011.144 762.9749 L 1011.311 762.5719 L 1011.5124 762.185 L 1011.7468 761.81715 L 1012.0123 761.4711 L 1012.307 761.1495 L 1012.6286 760.8548 L 1012.9746 760.5893 L 1013.3425 760.3549 L 1013.7294 760.1535 L 1014.1324 759.9866 L 1014.5484 759.8554 L 1014.9743 759.761 L 1015.4067 759.7041 L 1015.8425 759.685" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+          <g id="Line_1450">
+            <path d="M 1015.9606 779.5669 L 1015.5248 779.5479 L 1015.0924 779.491 L 1014.6665 779.39655 L 1014.2505 779.2654 L 1013.8475 779.0985 L 1013.4606 778.89705 L 1013.0927 778.6627 L 1012.7467 778.3971 L 1012.4251 778.1025 L 1012.1304 777.7809 L 1011.8649 777.4348 L 1011.6305 777.0669 L 1011.4291 776.68 L 1011.2622 776.277 L 1011.131 775.861 L 1011.0366 775.4352 L 1010.9797 775.0027 L 1010.9606 774.5669 L 1010.9797 774.1311 L 1011.0366 773.6987 L 1011.131 773.2728 L 1011.2622 772.8568 L 1011.4291 772.4538 L 1011.6305 772.0669 L 1011.8649 771.699 L 1012.1304 771.353 L 1012.4251 771.0314 L 1012.7467 770.7367 L 1013.0927 770.4712 L 1013.4606 770.2368 L 1013.8475 770.0354 L 1014.2505 769.8685 L 1014.6665 769.7373 L 1015.0924 769.6429 L 1015.5248 769.58595 L 1015.9606 769.5669" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+          <g id="Line_1449">
+            <path d="M 1015.9606 789.4094 L 1015.5248 789.3904 L 1015.0924 789.3335 L 1014.6665 789.2391 L 1014.2505 789.1079 L 1013.8475 788.941 L 1013.4606 788.7396 L 1013.0927 788.5052 L 1012.7467 788.2397 L 1012.4251 787.945 L 1012.1304 787.6234 L 1011.8649 787.2773 L 1011.6305 786.9094 L 1011.4291 786.5225 L 1011.2622 786.1195 L 1011.131 785.7035 L 1011.0366 785.2777 L 1010.9797 784.8452 L 1010.9606 784.4094 L 1010.9797 783.9737 L 1011.0366 783.5412 L 1011.131 783.11535 L 1011.2622 782.6993 L 1011.4291 782.29635 L 1011.6305 781.9094 L 1011.8649 781.5416 L 1012.1304 781.1955 L 1012.4251 780.8739 L 1012.7467 780.5792 L 1013.0927 780.3137 L 1013.4606 780.0793 L 1013.8475 779.8779 L 1014.2505 779.711 L 1014.6665 779.5798 L 1015.0924 779.4854 L 1015.5248 779.4285 L 1015.9606 779.4094" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+          <g id="Line_1448">
+            <path d="M 1015.9606 799.4094 L 1015.5248 799.3904 L 1015.0924 799.3335 L 1014.6665 799.2391 L 1014.2505 799.1079 L 1013.8475 798.941 L 1013.4606 798.7396 L 1013.0927 798.5052 L 1012.7467 798.2397 L 1012.4251 797.945 L 1012.1304 797.6234 L 1011.8649 797.2773 L 1011.6305 796.9094 L 1011.4291 796.5225 L 1011.2622 796.1195 L 1011.131 795.7035 L 1011.0366 795.2777 L 1010.9797 794.8452 L 1010.9606 794.4094 L 1010.9797 793.9737 L 1011.0366 793.5412 L 1011.131 793.11535 L 1011.2622 792.6993 L 1011.4291 792.29635 L 1011.6305 791.9094 L 1011.8649 791.5416 L 1012.1304 791.1955 L 1012.4251 790.8739 L 1012.7467 790.5792 L 1013.0927 790.3137 L 1013.4606 790.0793 L 1013.8475 789.8779 L 1014.2505 789.711 L 1014.6665 789.5798 L 1015.0924 789.4854 L 1015.5248 789.4285 L 1015.9606 789.4094" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+        </g>
+        <g id="Group_1442">
+          <g id="Line_1446">
+            <path d="M 996.2362 769.7244 L 996.672 769.7054 L 997.1045 769.6484 L 997.5303 769.554 L 997.9463 769.4229 L 998.3493 769.2559 L 998.7362 769.0545 L 999.1041 768.8202 L 999.4502 768.5546 L 999.7717 768.2599 L 1000.0664 767.9383 L 1000.332 767.5923 L 1000.5663 767.2244 L 1000.7678 766.8375 L 1000.9347 766.4345 L 1001.0658 766.0185 L 1001.1603 765.5926 L 1001.2172 765.1602 L 1001.2362 764.7244 L 1001.2172 764.2886 L 1001.1603 763.8562 L 1001.0658 763.4303 L 1000.9347 763.0143 L 1000.7678 762.6113 L 1000.5663 762.2244 L 1000.332 761.8565 L 1000.0664 761.5105 L 999.7717 761.1889 L 999.4502 760.8942 L 999.1041 760.6286 L 998.7362 760.3943 L 998.3493 760.1929 L 997.9463 760.0259 L 997.5303 759.8948 L 997.1045 759.8004 L 996.672 759.7434 L 996.2362 759.7244" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+          <g id="Line_1445">
+            <path d="M 996.1181 779.6063 L 996.5539 779.5873 L 996.9863 779.5303 L 997.4122 779.4359 L 997.8282 779.3048 L 998.2312 779.1378 L 998.6181 778.9364 L 998.986 778.7021 L 999.332 778.4365 L 999.6536 778.1418 L 999.9483 777.8202 L 1000.2139 777.4742 L 1000.4482 777.1063 L 1000.6496 776.7194 L 1000.8166 776.3164 L 1000.9477 775.9004 L 1001.0421 775.4745 L 1001.0991 775.0421 L 1001.1181 774.6063 L 1001.0991 774.1705 L 1001.0421 773.73805 L 1000.9477 773.3122 L 1000.8166 772.8962 L 1000.6496 772.4932 L 1000.4482 772.1063 L 1000.2139 771.7384 L 999.9483 771.3924 L 999.6536 771.0708 L 999.332 770.7761 L 998.986 770.5105 L 998.6181 770.2762 L 998.2312 770.0748 L 997.8282 769.9078 L 997.4122 769.7767 L 996.9863 769.6823 L 996.5539 769.6253 L 996.1181 769.6063" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+          <g id="Line_1444">
+            <path d="M 996.1181 789.4488 L 996.5539 789.4298 L 996.9863 789.37285 L 997.4122 789.2784 L 997.8282 789.1473 L 998.2312 788.98035 L 998.6181 788.7789 L 998.986 788.5446 L 999.332 788.279 L 999.6536 787.98435 L 999.9483 787.66275 L 1000.2139 787.3167 L 1000.4482 786.9488 L 1000.6496 786.5619 L 1000.8166 786.1589 L 1000.9477 785.7429 L 1001.0421 785.3171 L 1001.0991 784.8846 L 1001.1181 784.4488 L 1001.0991 784.013 L 1001.0421 783.5806 L 1000.9477 783.1547 L 1000.8166 782.7387 L 1000.6496 782.3357 L 1000.4482 781.9488 L 1000.2139 781.5809 L 999.9483 781.2349 L 999.6536 780.9133 L 999.332 780.6186 L 998.986 780.35305 L 998.6181 780.1187 L 998.2312 779.9173 L 997.8282 779.75035 L 997.4122 779.6192 L 996.9863 779.5248 L 996.5539 779.4678 L 996.1181 779.4488" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+          <g id="Line_1443">
+            <path d="M 996.1181 799.4488 L 996.5539 799.4298 L 996.9863 799.37285 L 997.4122 799.2784 L 997.8282 799.1473 L 998.2312 798.98035 L 998.6181 798.7789 L 998.986 798.5446 L 999.332 798.279 L 999.6536 797.9843 L 999.9483 797.66275 L 1000.2139 797.3167 L 1000.4482 796.9488 L 1000.6496 796.5619 L 1000.8166 796.1589 L 1000.9477 795.7429 L 1001.0421 795.3171 L 1001.0991 794.8846 L 1001.1181 794.4488 L 1001.0991 794.013 L 1001.0421 793.5806 L 1000.9477 793.1547 L 1000.8166 792.7387 L 1000.6496 792.3357 L 1000.4482 791.9488 L 1000.2139 791.5809 L 999.9483 791.2349 L 999.6536 790.9133 L 999.332 790.6186 L 998.986 790.3531 L 998.6181 790.1187 L 998.2312 789.9173 L 997.8282 789.75035 L 997.4122 789.6192 L 996.9863 789.5248 L 996.5539 789.4678 L 996.1181 789.4488" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+          </g>
+        </g>
+        <g id="Line_1441">
+          <line x1="1004.622" y1="759.7244" x2="1004.622" y2="799.4094" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Line_1440">
+          <line x1="1007.4567" y1="759.7244" x2="1007.4567" y2="799.4094" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Graphic_1452">
+        <rect x="902.5748" y="714.3307" width="51.02362" height="17.007875" fill="white"/>
+        <rect x="902.5748" y="714.3307" width="51.02362" height="17.007875" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_1453">
+        <text transform="translate(904.4691 733.5039)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="13">R</tspan>
+          <tspan font-family="Times" font-size="7" font-weight="400" fill="black" y="16">M</tspan>
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" y="13">=10Ω</tspan>
+        </text>
+      </g>
+      <g id="Graphic_1454">
+        <circle cx="755.1732" cy="771.0236" r="17.00790109354" fill="white"/>
+        <circle cx="755.1732" cy="771.0236" r="17.00790109354" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_1455">
+        <circle cx="809.0315" cy="771.0236" r="17.00790109354" fill="white"/>
+        <circle cx="809.0315" cy="771.0236" r="17.00790109354" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(800.4252 762.0236)" fill="black">
+          <tspan font-family="Times" font-size="15" font-weight="400" fill="black" x="3.1900396" y="14">V</tspan>
+        </text>
+      </g>
+      <g id="Graphic_1456">
+        <circle cx="860.0551" cy="722.8346" r="17.00790109354" fill="white"/>
+        <circle cx="860.0551" cy="722.8346" r="17.00790109354" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(851.4488 713.8346)" fill="black">
+          <tspan font-family="Times" font-size="15" font-weight="400" fill="black" x="3.1900396" y="14">A</tspan>
+        </text>
+      </g>
+      <g id="Line_1457">
+        <line x1="902.5748" y1="722.8346" x2="877.063" y2="722.8346" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_1458">
+        <path d="M 843.0472 722.8346 L 809.0315 722.8346 L 809.0315 754.0157" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_1459">
+        <path d="M 953.5984 722.8346 L 996.1181 722.8346 L 996.1181 759.685" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_1460">
+        <path d="M 996.1181 799.4488 L 996.1181 830.5512 L 809.0315 830.5512 L 809.0315 788.0315" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_1461">
+        <path d="M 807.5315 722.8346 L 755.1732 722.8346 L 755.1732 754.0157" marker-start="url(#FilledCenterBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_1462">
+        <path d="M 755.1732 788.0315 L 755.1732 830.5512 L 807.5315 830.5512" marker-end="url(#FilledCenterBall_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_1463">
+        <text transform="translate(722.2774 761.8504)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="13">u</tspan>
+          <tspan font-family="Times" font-size="7" font-weight="400" fill="black" y="16">E</tspan>
+        </text>
+      </g>
+      <g id="Line_1464">
+        <path d="M 945.0945 671.811 L 967.7716 671.811 L 967.7716 721.3346" marker-end="url(#FilledCenterBall_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_1465">
+        <path d="M 911.0787 671.811 L 891.2362 671.811 L 891.2362 721.3346" marker-end="url(#FilledCenterBall_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_1466">
+        <rect x="1041.4724" y="714.3307" width="51.02362" height="17.007875" fill="white"/>
+        <rect x="1041.4724" y="714.3307" width="51.02362" height="17.007875" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Group_1467">
+        <g id="Line_1471">
+          <line x1="1115.1732" y1="776.6929" x2="1143.5197" y2="776.6929" stroke="black" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2"/>
+        </g>
+        <g id="Line_1470">
+          <line x1="1115.1732" y1="782.3622" x2="1143.5197" y2="782.3622" stroke="black" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2"/>
+        </g>
+        <g id="Line_1469">
+          <line x1="1129.401" y1="776.6929" x2="1129.3465" y2="762.5197" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+        </g>
+        <g id="Line_1468">
+          <line x1="1129.359" y1="782.3622" x2="1129.3465" y2="796.5354" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Line_1472">
+        <path d="M 1041.4724 722.8346 L 1015.9606 722.8346 L 1015.9606 759.685" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_1473">
+        <path d="M 1015.9606 799.3701 L 1015.9606 830.5512 L 1129.3465 830.5512 L 1129.3465 796.5354" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_1474">
+        <path d="M 1129.3465 762.5197 L 1129.3465 722.8346 L 1092.496 722.8346" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_1475">
+        <text transform="translate(1046.0634 733.5039)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="13">R=47kΩ</tspan>
+        </text>
+      </g>
+      <g id="Graphic_1476">
+        <text transform="translate(1063.317 770.3543)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="13">C=4,7μF</tspan>
+        </text>
+      </g>
+      <g id="Group_1477">
+        <g id="Graphic_1479">
+          <circle cx="1191.7087" cy="779.5276" r="17.00790109354" fill="white"/>
+          <circle cx="1191.7087" cy="779.5276" r="17.00790109354" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Line_1478">
+          <path d="M 1181.7874 782.3622 L 1195.9606 776.6929 L 1195.9606 782.3622 L 1201.6299 782.3622" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Line_1480">
+        <path d="M 1130.8465 722.8346 L 1191.7087 722.8346 L 1191.7087 762.5197" marker-start="url(#FilledCenterBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_1481">
+        <path d="M 1130.8465 830.5512 L 1191.7087 830.5512 L 1191.7087 796.5354" marker-start="url(#FilledCenterBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_1482">
+        <path d="M 743.8346 771.0236 C 744.4645 769.6064 745.09455 767.999 745.7244 766.77165 C 746.3543 765.5443 746.9843 764.3676 747.6142 763.659 C 748.244 762.9504 748.8741 762.5197 749.5039 762.5197 C 750.1338 762.5197 750.7638 762.9504 751.3937 763.659 C 752.02355 764.3676 752.6536 765.5443 753.2835 766.77165 C 753.9133 767.999 754.5434 769.6064 755.1732 771.0236 C 755.8031 772.4408 756.4331 774.0483 757.063 775.2756 C 757.69285 776.5029 758.3229 777.67965 758.95275 778.3882 C 759.5826 779.0968 760.2127 779.5276 760.8425 779.5276 C 761.4724 779.5276 762.1024 779.0968 762.7323 778.3882 C 763.3621 777.67965 763.9922 776.5029 764.622 775.2756 C 765.2519 774.0483 765.88195 772.4408 766.5118 771.0236" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+      </g>
+      <g id="Graphic_1483">
+        <text transform="translate(890.4266 614.4488)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="2.1696777" y="13">c</tspan>
+          <tspan font-family="Times" font-size="7" font-weight="400" fill="black" y="16">x</tspan>
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" y="13">=0,5V/DIV</tspan>
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="31">CH1(X Input)</tspan>
+        </text>
+      </g>
+      <g id="Graphic_1484">
+        <text transform="translate(1212.1892 761.8504)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="3.5566406" y="13">c</tspan>
+          <tspan font-family="Times" font-size="7" font-weight="400" fill="black" y="16">y</tspan>
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" y="13">=0,2V/DIV</tspan>
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="31">CH2 (Y Input)</tspan>
+        </text>
+      </g>
+      <g id="Graphic_1485">
+        <text transform="translate(952.0771 787.7087)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="13">N</tspan>
+          <tspan font-family="Times" font-size="7" font-weight="400" fill="black" y="16">1</tspan>
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" y="13">=500</tspan>
+        </text>
+      </g>
+      <g id="Graphic_1486">
+        <text transform="translate(1021.6126 788.2913)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="13">N</tspan>
+          <tspan font-family="Times" font-size="7" font-weight="400" fill="black" y="16">2</tspan>
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" y="13">=500</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

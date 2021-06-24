@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktikum Elektrotechnik Kondensator</title>
+    <!-- Scriptdatein -->
+    <script src="Javascript/MeineFunktionen.js"></script>
+    <script src="Javascript/protokollMain.js"></script>
+    <link rel="stylesheet" href="CSS/stylesheet.css" />
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <link rel="stylesheet" href="CSS/plyr.css" />
+    <!-- Temporäre sicherrung der HTML -->
+    <script>
+      neuladen();
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="Bilder/favicon.ico" />
+  </head>
+
+  <body>
+    <!-- zum drucken -->
+    <div id="capture">
+      <header>
+        <!-- Seitenkopf -->
+        <div class="row border">
+          <div class="column small-4">
+            <img src="Bilder/EAH.png" title="EAH Logo" />
+          </div>
+          <div class="colum small-8">
+            <p class="pnebenlogo" id="pnebenlogo">
+              <b>Fachbereich Elektrotechnik und Informationstechnik</b> <br />
+              Laborpraktikum <br />
+              Grundlagen der Elektrotechnik <br />
+              Dipl.-Ing. O.Reimer<br />
+              <span id="datum" class="datum"> </span>
+            </p>
+          </div>
+
+          <script>
+            Datum();
+          </script>
+        </div>
+
+        <!-- Titel -->
+        <div class="divtitle" id="element-to-print">
+          <h1>Kennenlernen der Elektrotechnik: Kondensator</h1>
+        </div>
+
+        <!-- Eintragungen Studenten -->
+        <div class="links" width="50%" height="400">
+          <table>
+            <tr>
+              <td>
+                <label for="Studiengang"> Studiengang/Set:</label>
+              </td>
+              <td>
+                <input
+                  for="StudiengangEingabe"
+                  type="search"
+                  list="Studiengang"
+                  size="25"
+                  maxlength="25"
+                  placeholder="Studiengang"
+                  style="margin-left: 25px"
+                  required
+                />
+                <datalist id="Studiengang">
+                  <option value="WI"></option>
+                  <option value="UT"></option>
+                  <option value="MT"></option>
+                </datalist>
+                <input
+                  for="Setnummer"
+                  type="search"
+                  list="Set"
+                  size="9"
+                  maxlength="15"
+                  placeholder="1.01"
+                  required
+                />
+                <datalist id="Set">
+                  <option value="2.01"></option>
+                  <option value="2.02"></option>
+                  <option value="2.03"></option>
+                  <option value="2.04"></option>
+                  <option value="2.05"></option>
+                  <option value="2.06"></option>
+                  <option value="2.07"></option>
+                  <option value="2.08"></option>
+                </datalist>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Teilnehmer">Teilnehmer:</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="Teilnehmer"
+                  size="40"
+                  maxlength="50"
+                  placeholder="Erika Mustermann"
+                  style="margin-left: 25px"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Matrikelnummer">Matrikelnummer:</label>
+              </td>
+              <td>
+                <input
+                  id="Matrikelnummer"
+                  size="40"
+                  maxlength="50"
+                  placeholder="665544"
+                  style="margin-left: 25px"
+                  required
+                />
+              </td>
+            </tr>
+          </table>
+
+          <label>Versuchs-ID: GET-01</label>
+          <label
+            >persönliche Prüf-ID:
+            <script type="text/javascript">
+              var min = 9,
+                max = 99999;
+              document.write(
+                20201407 + Math.floor(Math.random() * (max - min)) + min
+              );
+            </script>
+          </label>
+        </div>
+
+        <!-- Eintragung Testat -->
+        <div class="rechts">
+          <table>
+            <tr>
+              <td>Betreuer</td>
+              <td><input readonly /></td>
+            </tr>
+            <tr>
+              <td>Datum</td>
+              <td><input readonly /></td>
+            </tr>
+            <tr>
+              <td>Unterschrift</td>
+              <td><input readonly /></td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Inhaltsverzeichnis -->
+        <div class="inhalt">
+          <hr />
+          <h2>Inhaltsverzeichnis</h2>
+          <a href="#kapa">Kapazitätsbestimmung über Halbwertszeit</a
+          ><br /><br />
+          <a href="#best1">Bestimmung Isolationswiderstand</a><br /><br />
+          <a href="#best2">Bestimmung Zeitfunktion</a><br /><br />
+          <a href="#lite">Literaturhinweise</a><br /><br />
+        </div>
+
+        <!-- hinweise -->
+        <div class="hinweise">
+          <h2>Hinweise zum Praktikum</h2>
+          <ul>
+            <li>
+              Für die Lösungen zu den einzelnen Aufgaben sind im Protokoll
+              Leerstellen vorgesehen. <br />
+              Verwenden Sie bitte für die Nebenrechnungen kein eigenes Papier.
+            </li>
+            <li style="color: #a52f33">
+              Folgen Sie immer den Anweisungen der Aufsichtspersonen! <br />
+              Wenn Sie sich unsicher sind, stellen Sie Fragen.<br />
+              Lassen Sie sich Ihren Versuchsaufbau vor dem Einschalten abnehmen.
+            </li>
+          </ul>
+        </div>
+
+        <div class="Druckhinweis">
+          <h2>Druckhinweis</h2>
+          <ul>
+            <li>
+              <p id="datumdruck"></p>
+              <script>
+                Datum1();
+              </script>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Inhalt -->
+      <div>
+        <article class="article">
+          <h2>Versuchaufgaben</h2>
+          <fieldset>
+            <legend><h4>Video</h4></legend>
+            <div class="videoscreen">
+              <span id="vid"></span>
+              <video
+                id="player"
+                playsinline
+                controls
+                data-poster="Bilder/EAH_LOGO.jpg"
+              >
+                <source
+                  src="Videos/Praktikum Grundlagen ET Versuch 3 Teil1.webm"
+                  type="video/webm"
+                />
+              </video>
+              <script>
+                const player = new Plyr("#player");
+              </script>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>
+              <span id="kapa"></span>
+              <h4>Kapazitätsbestimmung über Halbwertszeit</h4>
+            </legend>
+            <ul>
+              <li>
+                Legen Sie an einen 1 μF Kondensator eine sinusförmige
+                Wechselspannung (U<sub>eff</sub> = 5 V, f = 100 Hz) an.<br />
+                Messen Sie den fließenden Strom I und überprüfen Sie den
+                angegebenen Kapazitätswert.
+              </li>
+              <div>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label for="Ic"
+                          >I<sub>c</sub> =
+                          <input
+                            id="Ic"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 A"
+                          />
+                        </label>
+                      </td>
+
+                      <td>
+                        <label for="C_gemessen"
+                          >C<sub>gemessen</sub> =
+                          <input
+                            id="C_gemessen"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 F"
+                          />
+                        </label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>
+                Bauen Sie folgendes Netzwerk auf und Messen Sie alle Ströme und
+                Spanungen
+              </li>
+              <div>
+                <img
+                  src="Bilder/Schaltung1_Kondensator.svg"
+                  style="width: 90%"
+                />
+              </div>
+              <li>
+                Ermitteln Sie die Kapazität des Kondensators über die
+                Halbwertszeit.
+              </li>
+              <li>Nennwert: C = 1000 μF</li>
+              <li>
+                Messen Sie den Wert des Widerstandes mit dem Nennwert R = 39 kΩ
+                mit dem digitalen Handmultimeter!
+              </li>
+              <div>
+                <label for="ra"
+                  >R<sub></sub> =
+                  <input id="ra" size="20" maxlength="20" placeholder="10 Ω" />
+                </label>
+              </div>
+              <li>Berechnung:</li>
+              <div>
+                <textarea
+                  rows="8"
+                  cols="80"
+                  placeholder="Schreiben Sie hier..."
+                ></textarea>
+              </div>
+              <div>
+                <label for="c"
+                  >C<sub></sub> =
+                  <input id="c" size="20" maxlength="20" placeholder="10 Ω" />
+                </label>
+              </div>
+            </ul>
+          </fieldset>
+
+          <fieldset>
+            <legend>
+              <span id="best1"></span>
+              <h4>Bestimmung Isolationswiderstand</h4>
+            </legend>
+            <ul>
+              <li>
+                Bestimmen Sie den Isolationswiderstand des
+                Elektrolytkondensators mit C = 1000 μF über die Selbstentladung!
+              </li>
+              <div>
+                <img
+                  src="Bilder/Schaltung2_Kondensator.svg"
+                  style="width: 90%"
+                />
+              </div>
+              <li>
+                Laden Sie den Kondensator vollständig auf eine gewählte Spannung
+                U<sub>q</sub> auf!
+              </li>
+              <li>Messen Sie den exakten Wert von U<sub>q</sub>.</li>
+              <div>
+                <label for="uq"
+                  >U<sub>q</sub> =
+                  <input id="uq" size="20" maxlength="20" placeholder="10 V" />
+                </label>
+              </div>
+
+              <li>
+                Trennen Sie gleichzeitig Spannungsquelle und Messgerät vom
+                Kondensator und starten Sie die Zeitnahme!
+              </li>
+              <li>Messen Sie nach t = 180 s die Kondensatorspannung!</li>
+              <div>
+                <label for="u"
+                  >U<sub></sub> =
+                  <input id="u" size="20" maxlength="20" placeholder="10 V" />
+                </label>
+              </div>
+              <li>Berechnen Sie den Isolationswiderstand!</li>
+              <div>
+                <textarea
+                  rows="8"
+                  cols="80"
+                  placeholder="Schreiben Sie hier..."
+                ></textarea>
+              </div>
+              <div>
+                <label for="r1"
+                  >R<sub></sub> =
+                  <input id="r1" size="20" maxlength="20" placeholder="10 Ω" />
+                </label>
+                Hinweis: Hier bitte als kOhm angeben.
+              </div>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>
+              <span id="best2"></span>
+              <h4>Bestimmung Zeitfunktion</h4>
+            </legend>
+            <ul>
+              <li>
+                Ermitteln Sie messtechnisch die Zeitfunktionen U<sub>c</sub> von
+                Spannung und Strom am Kondensator für die Auf- und Entladung an
+                einem RC-Reihenschaltung (R = 47 kΩ und C = 470 μF).
+              </li>
+              <li>Messen sie in 5 s Schritten im Intervallen von 0 bis 5τ.</li>
+              <li>
+                Für die Aufladung ist eine Ladespannung von U<sub>q</sub> = 15V
+                zu verwenden. Die Entladevorgänge sind bei einer Spannung von
+                U<sub>0</sub> = 15V zu starten.
+              </li>
+              <li>
+                Erweitern Sie die Schaltung im die Möglichkeit der Messung des
+                Kondensatorstroms!
+              </li>
+              <li style="color: #a52f33">
+                Achten Sie auf die Polung der Kondensatoren, bei Falschpolung
+                droht Zerstörung der Bauelemente!
+              </li>
+              <li>
+                Der Messaufbau kann wieder analog zu der Schaltung aus Aufgabe
+                2.1. erfolgen.
+              </li>
+              <li>
+                Stellen Sie die zwei Spannungsfunktionen für den Auf- und
+                Entladevorgang in jeweils einem Diagramm auf Millimeterpapier
+                dar.
+              </li>
+              <li><strong>Aufladung:</strong></li>
+              <div class="center">
+                <iframe
+                  id="frame-0"
+                  class="embed-container"
+                  src="ZeichenTool/zeichentool.html"
+                  style="width: 80vw; height: 50.448vw"
+                  onload="setZeichenTool(document.getElementById(`frame-0`), `7`)"
+                ></iframe>
+              </div>
+              <li><strong>Entladung:</strong></li>
+              <div class="center">
+                <iframe
+                  id="frame-1"
+                  class="embed-container"
+                  src="ZeichenTool/zeichentool.html"
+                  style="width: 80vw; height: 50.448vw"
+                  onload="setZeichenTool(document.getElementById(`frame-1`), `7`)"
+                ></iframe>
+              </div>
+              <li>
+                Bestimmen Sie grafisch die Zeitkonstanten und die Halbwertzeiten
+                und tragen Sie die Werte in die nachfolgende Tabelle ein.
+              </li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th></th>
+                      <th colspan="2">R = 47 kΩ und C = 470 μF</th>
+                      <th colspan="2">R = 15 kΩ und C = 470 μF</th>
+                    </tr>
+
+                    <tr>
+                      <th></th>
+                      <th>t<sub>H</sub></th>
+                      <th>τ</th>
+                      <th>t<sub>H</sub></th>
+                      <th>τ</th>
+                    </tr>
+                    <tr>
+                      <th>berechnet (s. Vorbereitung)</th>
+                      <th><input id="t1131" placeholder="10 s" /></th>
+                      <th><input id="t1132" placeholder="10 s" /></th>
+                      <th><input id="t1133" placeholder="10 s" /></th>
+                      <th><input id="t1134" placeholder="10 s" /></th>
+                    </tr>
+                    <tr>
+                      <th>bestimmt (2.3) aufladen</th>
+                      <th><input id="t231" placeholder="10 s" /></th>
+                      <th><input id="t232" placeholder="10 s" /></th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                    <tr>
+                      <th>bestimmt (2.3) endladen</th>
+                      <th><input id="t233" placeholder="10 s" /></th>
+                      <th><input id="t234" placeholder="10 s" /></th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>
+                Vergleichen Sie die theoretischen und messtechnisch ermittelten
+                Werte für die Zeitkonstanten und die Halbwertzeiten. Diskutieren
+                Sie die Unterschiede.
+              </li>
+              <div>
+                <textarea
+                  rows="8"
+                  cols="80"
+                  placeholder="Schreiben Sie hier..."
+                ></textarea>
+              </div>
+            </ul>
+          </fieldset>
+
+          <!-- Literaturhinweise -->
+          <fieldset>
+            <legend>
+              <span id="lite"></span>
+              <h4>Literaturhinweise</h4>
+            </legend>
+            <ul>
+              <li>
+                <div>siehe Vorlesung</div>
+              </li>
+            </ul>
+          </fieldset>
+        </article>
+      </div>
+
+      <!-- Druckoptionen -->
+      <div id="wrapper">
+        <p>
+          <b>zum drucken der Datei auf dem iPad:</b><br />
+          Klicken Sie auf den nachfolgenden Button<br />
+          Anschließend die Druckvorschau mit der Zoom-Geste groß ziehen und das
+          Dokument speichern
+        </p>
+
+        <a><button id="pbtn" class="button">Drucken</button></a>
+        <a
+          ><button class="button" onclick="toggletheme()">
+            Toggle dark mode
+          </button></a
+        >
+
+        <p>
+          <b>Hinweise zur Selbstkontrolle:</b><br />
+          Achten Sie auf richtige eingabe der Einheit. Zulässige Einheiten sind:
+          "Ohm, Ω, A, V, %".<br />
+          Anschließend können Sie auch folgende Zehnerpotenzen benuntzen: "n, u,
+          m, k"<br />
+          In den Feldern ist keine Berechnung des Ergebnisses zulässig.<br />
+          <b>Beteutung der Farben:</b><br />
+          Grau: das Feld wurde nicht ausgefüllt.<br />
+          Gelb: die verlangte Einheit ist nicht richtig oder entspricht nicht
+          den Vorgaben.<br />
+          T&uuml;rkies: kein Zahlenwert vor erforderlicher Basiseinheit
+          gefunden.<br />
+          Rot: das eingegebene Ergebnis ist falsch.<br />
+          Gr&uuml;n: das eingegebene Ergebnis ist richtig.<br />
+        </p>
+
+        <p>
+          <button onclick="kontrolle()" class="button">Selbstkontrolle</button>
+        </p>
+      </div>
+
+      <!-- Fußzeile -->
+      <footer>
+        <br />
+        <hr />
+        <a href="mailto:oliver.reimer@eah-jena.de" target="_blank"
+          >Kontakt - Mail</a
+        >
+        <p>
+          © 2020
+          <a href="https://www2.eah-jena.de/et/"
+            >EAH Jena - FB Elektrotechnik und Informationstechnik</a
+          >
+        </p>
+      </footer>
+      <!-- zum drucken -->
+    </div>
+  </body>
+  <script src="Javascript/Drucken.js"></script>
+</html>
+
+<script>
+  function kontrolle() {
+    const Ic = document.querySelector("#Ic");
+    const C_gemessen = document.querySelector("#C_gemessen");
+    const ra = document.querySelector("#ra");
+    const c = document.querySelector("#c");
+    const u = document.querySelector("#u");
+    const uq = document.querySelector("#uq");
+    const r1 = document.querySelector("#r1");
+
+    checkSingleInput(Ic, 0.00326, "A");
+    checkSingleInput(C_gemessen, 0.00000103, "F");
+    checkSingleInput(ra, 38980, "Ohm");
+    checkSingleInput(c, 0.001245, "F");
+    checkSingleInput(uq, 15.02, "V");
+    checkSingleInput(u, 14.75, "V");
+    checkSingleInput(r1, 7240000, "Ohm");
+
+    const t1131 = document.querySelector("#t1131");
+    const t1132 = document.querySelector("#t1132");
+    const t1133 = document.querySelector("#t1133");
+    const t1134 = document.querySelector("#t1134");
+
+    const t231 = document.querySelector("#t231");
+    const t232 = document.querySelector("#t232");
+    const t233 = document.querySelector("#t233");
+    const t234 = document.querySelector("#t234");
+
+    checkSingleInput(t1131, 15.4, "s");
+    checkSingleInput(t1132, 22, "s");
+    checkSingleInput(t1133, 4.9, "s");
+    checkSingleInput(t1134, 7.05, "s");
+
+    checkSingleInput(t231, 16.2, "s");
+    checkSingleInput(t232, 24, "s");
+    checkSingleInput(t233, 15.5, "s");
+    checkSingleInput(t234, 23, "s");
+  }
+</script>

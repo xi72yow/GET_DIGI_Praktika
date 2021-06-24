@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" viewBox="115.74016 708.1614 295.78346 121.75038" width="295.78346" height="121.75038">
+  <defs>
+    <font-face font-family="Times" font-size="13" panose-1="0 0 5 0 0 0 0 2 0 0" units-per-em="1000" underline-position="-75.68359" underline-thickness="49.316406" slope="0" x-height="453.6133" cap-height="661.6211" ascent="750" descent="-250" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Times-Roman"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledCenterBall_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -3 5 6" markerWidth="5" markerHeight="6" color="black">
+      <g>
+        <circle cx="1.4999993" cy="0" r="1.4999984765516" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledCenterBall_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-4 -3 5 6" markerWidth="5" markerHeight="6" color="black">
+      <g>
+        <circle cx="-1.4999993" cy="0" r="1.4999984765516" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.16 
+    <dc:date>2020-06-23 06:17:07 +0000</dc:date>
+  </metadata>
+  <g id="Canvas_1" fill-opacity="1" stroke-opacity="1" stroke="none" fill="none" stroke-dasharray="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1: Layer 1">
+      <title>Layer 1</title>
+      <g id="Graphic_1387">
+        <rect x="226.77165" y="708.6614" width="51.02362" height="17.007875" fill="white"/>
+        <rect x="226.77165" y="708.6614" width="51.02362" height="17.007875" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_1389">
+        <text transform="translate(120.9362 761.8504)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="13">Û=4V</tspan>
+        </text>
+      </g>
+      <g id="Line_1401">
+        <path d="M 311.81102 799.4094 L 311.81102 827.7165 L 175.74803 827.7165 L 175.74803 717.16535 L 226.77165 717.16535" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Group_1391">
+        <g id="Graphic_1393">
+          <circle cx="175.74803" cy="771.0236" r="17.00790109354" fill="white"/>
+          <circle cx="175.74803" cy="771.0236" r="17.00790109354" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Line_1392">
+          <path d="M 164.40945 772.4409 L 164.40945 763.937 L 175.74803 763.937 L 175.74803 779.5276 L 187.08661 779.5276 L 187.08661 771.0236" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+        </g>
+      </g>
+      <g id="Graphic_1404">
+        <text transform="translate(257.25944 764.685)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="13">L=18mH</tspan>
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="2.5263672" y="29">N=1000</tspan>
+        </text>
+      </g>
+      <g id="Group_1413">
+        <g id="Line_1417">
+          <path d="M 311.92913 769.685 L 312.3649 769.666 L 312.79737 769.6091 L 313.22323 769.5147 L 313.63923 769.3835 L 314.04222 769.2166 L 314.42913 769.0152 L 314.797 768.7808 L 315.14307 768.5153 L 315.46467 768.2206 L 315.75935 767.899 L 316.0249 767.5529 L 316.25926 767.185 L 316.46067 766.7981 L 316.6276 766.3951 L 316.75876 765.9791 L 316.85317 765.5533 L 316.9101 765.1208 L 316.92913 764.685 L 316.9101 764.2493 L 316.85317 763.8168 L 316.75876 763.3909 L 316.6276 762.9749 L 316.46067 762.5719 L 316.25926 762.185 L 316.0249 761.81715 L 315.75935 761.4711 L 315.46467 761.1495 L 315.14307 760.8548 L 314.797 760.5893 L 314.42913 760.3549 L 314.04222 760.1535 L 313.63923 759.9866 L 313.22323 759.8554 L 312.79737 759.761 L 312.3649 759.7041 L 311.92913 759.685" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Line_1416">
+          <path d="M 311.81102 779.5669 L 312.2468 779.5479 L 312.67926 779.491 L 313.1051 779.39655 L 313.52112 779.2654 L 313.9241 779.0985 L 314.31102 778.89705 L 314.6789 778.6627 L 315.02496 778.3971 L 315.34656 778.1025 L 315.64124 777.7809 L 315.9068 777.4348 L 316.14115 777.0669 L 316.34256 776.68 L 316.5095 776.277 L 316.64065 775.861 L 316.73506 775.4352 L 316.792 775.0027 L 316.81102 774.5669 L 316.792 774.1311 L 316.73506 773.6987 L 316.64065 773.2728 L 316.5095 772.8568 L 316.34256 772.4538 L 316.14115 772.0669 L 315.9068 771.699 L 315.64124 771.353 L 315.34656 771.0314 L 315.02496 770.7367 L 314.6789 770.4712 L 314.31102 770.2368 L 313.9241 770.0354 L 313.52112 769.8685 L 313.1051 769.7373 L 312.67926 769.6429 L 312.2468 769.58595 L 311.81102 769.5669" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Line_1415">
+          <path d="M 311.81102 789.4094 L 312.2468 789.3904 L 312.67926 789.3335 L 313.1051 789.2391 L 313.52112 789.1079 L 313.9241 788.941 L 314.31102 788.7396 L 314.6789 788.5052 L 315.02496 788.2397 L 315.34656 787.945 L 315.64124 787.6234 L 315.9068 787.2773 L 316.14115 786.9094 L 316.34256 786.5225 L 316.5095 786.1195 L 316.64065 785.7035 L 316.73506 785.2777 L 316.792 784.8452 L 316.81102 784.4094 L 316.792 783.9737 L 316.73506 783.5412 L 316.64065 783.11535 L 316.5095 782.6993 L 316.34256 782.29635 L 316.14115 781.9094 L 315.9068 781.5416 L 315.64124 781.1955 L 315.34656 780.8739 L 315.02496 780.5792 L 314.6789 780.3137 L 314.31102 780.0793 L 313.9241 779.8779 L 313.52112 779.711 L 313.1051 779.5798 L 312.67926 779.4854 L 312.2468 779.4285 L 311.81102 779.4094" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Line_1414">
+          <path d="M 311.81102 799.4094 L 312.2468 799.3904 L 312.67926 799.3335 L 313.1051 799.2391 L 313.52112 799.1079 L 313.9241 798.941 L 314.31102 798.7396 L 314.6789 798.5052 L 315.02496 798.2397 L 315.34656 797.945 L 315.64124 797.6234 L 315.9068 797.2773 L 316.14115 796.9094 L 316.34256 796.5225 L 316.5095 796.1195 L 316.64065 795.7035 L 316.73506 795.2777 L 316.792 794.8452 L 316.81102 794.4094 L 316.792 793.9737 L 316.73506 793.5412 L 316.64065 793.11535 L 316.5095 792.6993 L 316.34256 792.29635 L 316.14115 791.9094 L 315.9068 791.5416 L 315.64124 791.1955 L 315.34656 790.8739 L 315.02496 790.5792 L 314.6789 790.3137 L 314.31102 790.0793 L 313.9241 789.8779 L 313.52112 789.711 L 313.1051 789.5798 L 312.67926 789.4854 L 312.2468 789.4285 L 311.81102 789.4094" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Line_1418">
+        <path d="M 311.92913 759.685 L 311.81102 717.16535 L 277.79527 717.16535" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_1419">
+        <path d="M 313.31102 717.16535 L 394.01575 717.16535 L 394.01575 827.7165 L 313.31102 827.7165" marker-end="url(#FilledCenterBall_Marker)" marker-start="url(#FilledCenterBall_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Group_1396">
+        <g id="Graphic_1398">
+          <circle cx="394.01575" cy="773.8583" r="17.0079010935399" fill="white"/>
+          <circle cx="394.01575" cy="773.8583" r="17.0079010935399" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Line_1397">
+          <path d="M 384.0945 776.6929 L 398.2677 771.0236 L 398.2677 776.6929 L 403.937 776.6929" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Graphic_1420">
+        <text transform="translate(229.19335 727.8346)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="13">R=470Ω</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

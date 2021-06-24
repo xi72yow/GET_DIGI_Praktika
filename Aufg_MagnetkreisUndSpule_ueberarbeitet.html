@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktikum Elektrotechnik Magnetkreis und Spule</title>
+    <!-- Scriptdatein -->
+    <script src="Javascript/MeineFunktionen.js"></script>
+    <script src="Javascript/protokollMain.js"></script>
+    <link rel="stylesheet" href="CSS/stylesheet.css" />
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <link rel="stylesheet" href="CSS/plyr.css" />
+    <!-- Temporäre sicherrung der HTML -->
+    <script>
+      neuladen();
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="Bilder/favicon.ico" />
+  </head>
+
+  <body>
+    <!-- zum drucken -->
+    <div id="capture">
+      <header>
+        <!-- Seitenkopf -->
+        <div class="row border">
+          <div class="column small-4">
+            <img src="Bilder/EAH.png" title="EAH Logo" />
+          </div>
+          <div class="colum small-8">
+            <p class="pnebenlogo" id="pnebenlogo">
+              <b>Fachbereich Elektrotechnik und Informationstechnik</b> <br />
+              Laborpraktikum <br />
+              Grundlagen der Elektrotechnik <br />
+              Dipl.-Ing. O.Reimer<br />
+              <span id="datum" class="datum"> </span>
+            </p>
+          </div>
+
+          <script>
+            Datum();
+          </script>
+        </div>
+
+        <!-- Titel -->
+        <div class="divtitle" id="element-to-print">
+          <h1>Kennenlernen der Elektrotechnik: Magnetkreis und Spule</h1>
+        </div>
+
+        <!-- Eintragungen Studenten -->
+        <div class="links" width="50%" height="400">
+          <table>
+            <tr>
+              <td>
+                <label for="Studiengang"> Studiengang/Set:</label>
+              </td>
+              <td>
+                <input
+                  for="StudiengangEingabe"
+                  type="search"
+                  list="Studiengang"
+                  size="25"
+                  maxlength="25"
+                  placeholder="Studiengang"
+                  style="margin-left: 25px"
+                  required
+                />
+                <datalist id="Studiengang">
+                  <option value="WI"></option>
+                  <option value="UT"></option>
+                  <option value="MT"></option>
+                </datalist>
+                <input
+                  for="Setnummer"
+                  type="search"
+                  list="Set"
+                  size="9"
+                  maxlength="15"
+                  placeholder="1.01"
+                  required
+                />
+                <datalist id="Set">
+                  <option value="2.01"></option>
+                  <option value="2.02"></option>
+                  <option value="2.03"></option>
+                  <option value="2.04"></option>
+                  <option value="2.05"></option>
+                  <option value="2.06"></option>
+                  <option value="2.07"></option>
+                  <option value="2.08"></option>
+                </datalist>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Teilnehmer">Teilnehmer:</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="Teilnehmer"
+                  size="40"
+                  maxlength="50"
+                  placeholder="Erika Mustermann"
+                  style="margin-left: 25px"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Matrikelnummer">Matrikelnummer:</label>
+              </td>
+              <td>
+                <input
+                  id="Matrikelnummer"
+                  size="40"
+                  maxlength="50"
+                  placeholder="665544"
+                  style="margin-left: 25px"
+                  required
+                />
+              </td>
+            </tr>
+          </table>
+
+          <label>Versuchs-ID: GET-01</label>
+          <label
+            >persönliche Prüf-ID:
+            <script type="text/javascript">
+              var min = 9,
+                max = 99999;
+              document.write(
+                20201407 + Math.floor(Math.random() * (max - min)) + min
+              );
+            </script>
+          </label>
+        </div>
+
+        <!-- Eintragung Testat -->
+        <div class="rechts">
+          <table>
+            <tr>
+              <td>Betreuer</td>
+              <td><input readonly /></td>
+            </tr>
+            <tr>
+              <td>Datum</td>
+              <td><input readonly /></td>
+            </tr>
+            <tr>
+              <td>Unterschrift</td>
+              <td><input readonly /></td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Inhaltsverzeichnis -->
+        <div class="inhalt">
+          <hr />
+          <h2>Inhaltsverzeichnis</h2>
+          <a href="#best">Bestimmung Magnetisierungskennlinie</a><br /><br />
+          <a href="#aufe">Auf- und Entmagnetisierungsfunktion</a><br /><br />
+          <a href="#lite">Literaturhinweise</a><br /><br />
+        </div>
+
+        <!-- hinweise -->
+        <div class="hinweise">
+          <h2>Hinweise zum Praktikum</h2>
+          <ul>
+            <li>
+              Für die Lösungen zu den einzelnen Aufgaben sind im Protokoll
+              Leerstellen vorgesehen. <br />
+              Verwenden Sie bitte für die Nebenrechnungen kein eigenes Papier.
+            </li>
+            <li style="color: #a52f33">
+              Folgen Sie immer den Anweisungen der Aufsichtspersonen! <br />
+              Wenn Sie sich unsicher sind, stellen Sie Fragen.<br />
+              Lassen Sie sich Ihren Versuchsaufbau vor dem Einschalten abnehmen.
+            </li>
+          </ul>
+        </div>
+
+        <div class="Druckhinweis">
+          <h2>Druckhinweis</h2>
+          <ul>
+            <li>
+              <p id="datumdruck"></p>
+              <script>
+                Datum1();
+              </script>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Inhalt -->
+      <div>
+        <article class="article">
+          <h2>Versuchaufgaben</h2>
+          <fieldset>
+            <legend><h4>Video</h4></legend>
+            <div class="videoscreen">
+              <span id="vid"></span>
+              <video
+                id="player"
+                playsinline
+                controls
+                data-poster="Bilder/EAH_LOGO.jpg"
+              >
+                <source
+                  src="Videos/Praktikum Grundlagen ET Versuch 3 Teil1.webm"
+                  type="video/webm"
+                />
+              </video>
+              <script>
+                const player = new Plyr("#player");
+              </script>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>
+              <span id="best"></span>
+              <h4>Bestimmung Magnetisierungskennlinie</h4>
+            </legend>
+            <ul>
+              <li style="color: #a52f33">
+                Berechnen Sie anhand der gegebenen Bauelementekennwerte des
+                Messwiderstandes R<sub>M</sub> (2 W) den Grenz­wert des Stromes
+                im Primärkreis. Achten Sie darauf, dass der Grenzwert nicht
+                überschritten wird!
+              </li>
+              <li>
+                <label for="grenzwert"
+                  >I<sub>grenz</sub> =
+                  <input
+                    id="grenzwert"
+                    size="20"
+                    maxlength="20"
+                    placeholder="10 A"
+                  />
+                </label>
+              </li>
+              <li>
+                Bauen Sie die nachfolgende Schaltung auf. Verwenden Sie als
+                Versuchsobjekt einen Transformator mit N<sub>1</sub> = N<sub
+                  >2</sub
+                >
+                = 500 Windungen ohne Luftspalt im Eisenkern.
+              </li>
+              <li style="color: #a52f33">
+                Achtung! Arbeiten Sie mit der Einstellbaren Wechselspannung
+                ausschließlich in Schalterstellung 0 - 50 V! <br />Befolgen Sie
+                genau die Anweisungen und beachten Sie die
+                Sicherheitsvorschriften!
+              </li>
+              <li>
+                Stellen Sie den Drehknopf vor dem Einschalten auf Linksanschlag!
+              </li>
+              <li>Berühren Sie keine spannungsführenden Teile!</li>
+              <li>
+                Stellen Sie nach jedem Versuchsteil den Stellknopf wieder auf
+                Linksanschlag!
+              </li>
+              <li>
+                Betreiben sie das Oszilloskop im xy-Betrieb mit DC-Ankopplung.
+              </li>
+              <div>
+                <img src="Bilder/Schaltung1_Spule.svg" style="width: 90%" />
+              </div>
+              <li>
+                Stellen Sie die Spannung am Stelltrafo auf U<sub>E</sub> = 40 V
+                (Eingangsspannung der Messschaltung). Achten Sie darauf, dass
+                diese nicht überschritten wird!
+              </li>
+              <li>
+                Übertragen Sie die Darstellung der Kennlinie B = f(H) in die
+                nachfolgende Abbildung.
+              </li>
+              <div class="center">
+                <iframe
+                  id="frame-0"
+                  class="embed-container"
+                  src="ZeichenTool/zeichentool.html"
+                  style="width: 80vw; height: 41.216vw"
+                  onload="setZeichenTool(document.getElementById(`frame-0`), `12`)"
+                ></iframe>
+              </div>
+              <li>
+                Ermitteln Sie mittels folgender Formeln die Koeffizienten c<sub
+                  >B</sub
+                >
+                und c<sub>H</sub> und ergänzen Sie diese in der Abbildung.
+              </li>
+              <div>
+                <textarea
+                  rows="8"
+                  cols="80"
+                  placeholder="Schreiben Sie hier..."
+                ></textarea>
+              </div>
+              <li>c<sub>B</sub> und c<sub>H</sub></li>
+              <div>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <label for="cb"
+                          >c<sub>B</sub> =
+                          <input
+                            id="cb"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 T/div"
+                          />
+                        </label>
+                      </td>
+                      <td></td>
+                      <td>
+                        <label for="ch"
+                          >c<sub>H</sub> =
+                          <input
+                            id="ch"
+                            size="20"
+                            maxlength="20"
+                            placeholder="10 A/m/div"
+                          />
+                        </label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>
+                Nehmen Sie die Neukurve auf und zeichnen Sie diese in die
+                Abbildung ein.
+              </li>
+              <li>
+                Bestimmen Sie aus der Neukurve für die in der Tabelle
+                vorgegebenen Werte der magnetischen Flussdichte B die
+                zugehörigen Werte der magnetischen Feldstärke H und errechnen
+                Sie μ<sub>r</sub>.
+              </li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th>B in T</th>
+                      <th>0,12</th>
+                      <th>0,24</th>
+                      <th>0,36</th>
+                      <th>0,48</th>
+                      <th>0,6</th>
+                      <th>0,72</th>
+                      <th>0,84</th>
+                    </tr>
+
+                    <tr>
+                      <td>H in A/m</td>
+                      <td><input id="h1" placeholder="10 A/m" /></td>
+                      <td><input id="h2" placeholder="10 A/m" /></td>
+                      <td><input id="h3" placeholder="10 A/m" /></td>
+                      <td><input id="h4" placeholder="10 A/m" /></td>
+                      <td><input id="h5" placeholder="10 A/m" /></td>
+                      <td><input id="h6" placeholder="10 A/m" /></td>
+                      <td><input id="h7" placeholder="10 A/m" /></td>
+                    </tr>
+                    <tr>
+                      <td>μ<sub>r</sub></td>
+                      <td><input id="u1" placeholder="10" /></td>
+                      <td><input id="u2" placeholder="10" /></td>
+                      <td><input id="u3" placeholder="10" /></td>
+                      <td><input id="u4" placeholder="10" /></td>
+                      <td><input id="u5" placeholder="10" /></td>
+                      <td><input id="u6" placeholder="10" /></td>
+                      <td><input id="u7" placeholder="10" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li style="color: #a52f33">
+                Stellen Sie die Eingangsspannung wieder auf 0V!
+              </li>
+              <li>
+                Realisieren Sie einen Luftspalt im Eisenkern durch Einbringen
+                eines Plastikstreifens mit d = 0,4 mm.
+              </li>
+              <li>
+                Erhöhen Sie nun langsam wieder die Spannung am Eingang bis die
+                Kennlinie den Rand des Oszilloskop berührt.
+              </li>
+              <li>
+                Übertragen Sie die Darstellung der Kennlinie B=f(H) in die
+                Abbildung.
+              </li>
+              <li>
+                Diskutieren Sie die Veränderungen im Kurvenverlauf der
+                Kennlinien mit und ohne Luftspalt.
+              </li>
+              <div>
+                <textarea
+                  rows="8"
+                  cols="80"
+                  placeholder="Schreiben Sie hier..."
+                ></textarea>
+              </div>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>
+              <span id="aufe"></span>
+              <h4>Auf- und Entmagnetisierungsfunktion</h4>
+            </legend>
+            <ul>
+              <li>
+                Ermitteln Sie die Funktionen u<sub>L</sub>(t) an der
+                RL-Reihenschaltung mit Hilfe des Oszilloskopes.
+              </li>
+              <li>Bauen Sie die folgende Schaltung auf.</li>
+              <div>
+                <img src="Bilder/Schaltung2_Spule.svg" style="width: 90%" />
+              </div>
+              <li>
+                Die Spule mit 1000 Windungen hat eine Induktivität von 18 mH.
+              </li>
+              <li>
+                Legen Sie am Eingang ein symmetrisches rechteckiges Signal mit Û
+                = 4 V und einer Frequenz von 5 kHz an.
+              </li>
+              <li>
+                Wählen Sie die Zeitablenkung so, dass eine halbe Periode
+                abgebildet wird. Verschieben Sie die Nulllinie des Oszilloskops
+                an den unteren Bildschirmrand (verwenden Sie hierzu die GND
+                Taste).
+              </li>
+              <li>
+                Achten Sie darauf, dass der Trigger auf die positive Flanke
+                eingestellt ist. Verschieben Sie nun das Spannungsmaximum an den
+                linken Bildschirmrand (Einstellung X Position).
+              </li>
+              <li>Zeichnen Sie u<sub>L</sub>(t)</li>
+              <div class="center">
+                <iframe
+                  id="frame-1"
+                  class="embed-container"
+                  src="ZeichenTool/zeichentool.html"
+                  style="width: 80vw; height: 41.216vw"
+                  onload="setZeichenTool(document.getElementById(`frame-1`), `12`)"
+                ></iframe>
+              </div>
+              <li>
+                Ermitteln Sie die Zeitkonstante τ und die Halbwertszeit t<sub
+                  >H</sub
+                >
+                aus der Funktion u<sub>L</sub>(t).
+              </li>
+              <li>Tragen Sie die Werte in die Tabelle ein.</li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th></th>
+                      <th>grafisch</th>
+                      <th>berechnet</th>
+                    </tr>
+
+                    <tr>
+                      <td>τ</td>
+                      <td><input id="tau1" placeholder="10 s" /></td>
+                      <td><input id="tau2" placeholder="10 s" /></td>
+                    </tr>
+                    <tr>
+                      <td>t<sub>H</sub></td>
+                      <td><input id="t1" placeholder="10 s" /></td>
+                      <td><input id="t2" placeholder="10 s" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </ul>
+          </fieldset>
+
+          <!-- Literaturhinweise -->
+          <fieldset>
+            <legend>
+              <span id="lite"></span>
+              <h4>Literaturhinweise</h4>
+            </legend>
+            <ul>
+              <li>
+                <div>siehe Vorlesung</div>
+              </li>
+            </ul>
+          </fieldset>
+        </article>
+      </div>
+
+      <!-- Druckoptionen -->
+      <div id="wrapper">
+        <p>
+          <b>zum drucken der Datei auf dem iPad:</b><br />
+          Klicken Sie auf den nachfolgenden Button<br />
+          Anschließend die Druckvorschau mit der Zoom-Geste groß ziehen und das
+          Dokument speichern
+        </p>
+
+        <a><button id="pbtn" class="button">Drucken</button></a>
+        <a
+          ><button class="button" onclick="toggletheme()">
+            Toggle dark mode
+          </button></a
+        >
+
+        <p>
+          <b>Hinweise zur Selbstkontrolle:</b><br />
+          Achten Sie auf richtige eingabe der Einheit. Zulässige Einheiten sind:
+          "Ohm, Ω, A, V, %".<br />
+          Anschließend können Sie auch folgende Zehnerpotenzen benuntzen: "n, u,
+          m, k"<br />
+          In den Feldern ist keine Berechnung des Ergebnisses zulässig.<br />
+          <b>Beteutung der Farben:</b><br />
+          Grau: das Feld wurde nicht ausgefüllt.<br />
+          Gelb: die verlangte Einheit ist nicht richtig oder entspricht nicht
+          den Vorgaben.<br />
+          T&uuml;rkies: kein Zahlenwert vor erforderlicher Basiseinheit
+          gefunden.<br />
+          Rot: das eingegebene Ergebnis ist falsch.<br />
+          Gr&uuml;n: das eingegebene Ergebnis ist richtig.<br />
+        </p>
+
+        <p>
+          <button onclick="kontrolle()" class="button">Selbstkontrolle</button>
+        </p>
+      </div>
+
+      <!-- Fußzeile -->
+      <footer>
+        <br />
+        <hr />
+        <a href="mailto:oliver.reimer@eah-jena.de" target="_blank"
+          >Kontakt - Mail</a
+        >
+        <p>
+          © 2020
+          <a href="https://www2.eah-jena.de/et/"
+            >EAH Jena - FB Elektrotechnik und Informationstechnik</a
+          >
+        </p>
+      </footer>
+      <!-- zum drucken -->
+    </div>
+  </body>
+  <script src="Javascript/Drucken.js"></script>
+</html>
+
+<script>
+  function kontrolle() {
+    const grenzwert = document.querySelector("#grenzwert");
+    checkSingleInput(grenzwert, 4.47, "A");
+
+    const cb = document.querySelector("#cb");
+    const ch = document.querySelector("#ch");
+
+    checkSingleInput(cb, 0.24, "T/div");
+    checkSingleInput(ch, 111.6, "A/m/div");
+
+    const h1 = document.querySelector("#h1");
+    const h2 = document.querySelector("#h2");
+    const h3 = document.querySelector("#h3");
+    const h4 = document.querySelector("#h4");
+    const h5 = document.querySelector("#h5");
+    const h6 = document.querySelector("#h6");
+    const h7 = document.querySelector("#h7");
+
+    checkSingleInput(h1, 89.3, "A/m");
+    checkSingleInput(h2, 133.9, "A/m");
+    checkSingleInput(h3, 178.6, "A/m");
+    checkSingleInput(h4, 223.2, "A/m");
+    checkSingleInput(h5, 279, "A/m");
+    checkSingleInput(h6, 379.4, "A/m");
+    checkSingleInput(h7, 513.4, "A/m");
+
+    const u1 = document.querySelector("#u1");
+    const u2 = document.querySelector("#u2");
+    const u3 = document.querySelector("#u3");
+    const u4 = document.querySelector("#u4");
+    const u5 = document.querySelector("#u5");
+    const u6 = document.querySelector("#u6");
+    const u7 = document.querySelector("#u7");
+
+    checkSingleInput(u1, 1069, "");
+    checkSingleInput(u2, 1426, "");
+    checkSingleInput(u3, 1604, "");
+    checkSingleInput(u4, 1711.3, "");
+    checkSingleInput(u5, 1711.3, "");
+    checkSingleInput(u6, 1510, "");
+    checkSingleInput(u7, 1302, "");
+
+    const tau1 = document.querySelector("#tau1");
+    const tau2 = document.querySelector("#tau2");
+
+    checkSingleInput(tau1, 0.000034, "s");
+    checkSingleInput(tau2, 0.0000383, "s");
+
+    const t1 = document.querySelector("#t1");
+    const t2 = document.querySelector("#t2");
+
+    checkSingleInput(t1, 0.000024, "s");
+    checkSingleInput(t2, 0.0000268, "s");
+  }
+</script>

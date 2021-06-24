@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" viewBox="394.01575 501.2323 397.3504 137.02835" width="397.3504" height="137.02835">
+  <defs>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="Ball_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -4 7 8" markerWidth="7" markerHeight="8" color="black">
+      <g>
+        <circle cx="2.249999" cy="0" r="2.24999801151249" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="Ball_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-6 -4 7 8" markerWidth="7" markerHeight="8" color="black">
+      <g>
+        <circle cx="-2.249999" cy="0" r="2.24999801151249" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="EmptyCenterBall_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-6 -4 7 8" markerWidth="7" markerHeight="8" color="black">
+      <g>
+        <circle cx="-2.249999" cy="0" r="2.2499977148274" fill="none" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Times" font-size="13" panose-1="0 0 5 0 0 0 0 2 0 0" units-per-em="1000" underline-position="-75.68359" underline-thickness="49.316406" slope="0" x-height="453.6133" cap-height="661.6211" ascent="750" descent="-250" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Times-Roman"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Times" font-size="8" panose-1="0 0 5 0 0 0 0 2 0 0" units-per-em="1000" underline-position="-75.68359" underline-thickness="49.316406" slope="0" x-height="453.6133" cap-height="661.6211" ascent="750" descent="-250" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Times-Roman"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="SharpArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-4 -4 9 8" markerWidth="9" markerHeight="8" color="black">
+      <g>
+        <path d="M 3.75 0 L -2.25 -2.25 L 0 0 L 0 0 L -2.25 2.25 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledCenterBall_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -3 5 6" markerWidth="5" markerHeight="6" color="black">
+      <g>
+        <circle cx="1.4999993" cy="0" r="1.4999984765516" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Times" font-size="15" panose-1="0 0 5 0 0 0 0 2 0 0" units-per-em="1000" underline-position="-75.68359" underline-thickness="49.316406" slope="0" x-height="453.6133" cap-height="661.6211" ascent="750" descent="-250" font-weight="400">
+      <font-face-src>
+        <font-face-name name="Times-Roman"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledCenterBall_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-4 -3 5 6" markerWidth="5" markerHeight="6" color="black">
+      <g>
+        <circle cx="-1.4999993" cy="0" r="1.4999984765516" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.16 
+    <dc:date>2020-06-23 06:17:07 +0000</dc:date>
+  </metadata>
+  <g id="Canvas_1" fill-opacity="1" stroke-opacity="1" stroke="none" fill="none" stroke-dasharray="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1: Layer 1">
+      <title>Layer 1</title>
+      <g id="Graphic_1372">
+        <circle cx="481.71653" cy="578.85046" r="17.00790109354" fill="white"/>
+        <circle cx="481.71653" cy="578.85046" r="17.00790109354" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_1346">
+        <line x1="584.25984" y1="524.40945" x2="551.9134" y2="524.40945" marker-end="url(#Ball_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_1368">
+        <path d="M 529.9055 634.9606 L 665.9685 634.9606 L 665.9685 578.2677" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_1371">
+        <path d="M 499.3937 524.40945 L 481.71653 524.40945 L 481.71653 634.9606 L 529.9055 634.9606" marker-start="url(#Ball_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_1349">
+        <line x1="538.40945" y1="524.40945" x2="514.40945" y2="538.5827" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_1350">
+        <line x1="538.40945" y1="524.40945" x2="546.9134" y2="524.40945" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_1351">
+        <path d="M 504.3937 524.40945 L 510.063 524.40945 L 510.063 530.07874" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Line_1352">
+        <path d="M 529.9055 547.67126 L 529.9055 544.25197 L 524.2362 544.25197" marker-start="url(#EmptyCenterBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+      </g>
+      <g id="Graphic_1353">
+        <text transform="translate(399.4618 570.4173)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="13">U</tspan>
+          <tspan font-family="Times" font-size="8" font-weight="400" fill="black" y="17">q</tspan>
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" y="13">=15V</tspan>
+        </text>
+      </g>
+      <g id="Line_1354">
+        <line x1="454.85827" y1="562.5827" x2="454.85827" y2="590.9484" marker-end="url(#SharpArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_1355">
+        <text transform="translate(577.1894 535.07874)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="13">R=39kΩ</tspan>
+        </text>
+      </g>
+      <g id="Line_1356">
+        <path d="M 665.9685 569.7638 L 665.9685 524.40945 L 620.6142 524.40945" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_1357">
+        <rect x="575.25984" y="516.4055" width="51.02362" height="17.007875" fill="white"/>
+        <rect x="575.25984" y="516.4055" width="51.02362" height="17.007875" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_1369">
+        <path d="M 731.3386 524.40945 L 773.8583 524.40945 L 773.8583 634.9606 L 667.4685 634.9606" marker-end="url(#FilledCenterBall_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_1377">
+        <circle cx="773.8583" cy="575.0535" r="17.00790109354" fill="white"/>
+        <circle cx="773.8583" cy="575.0535" r="17.00790109354" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(765.252 566.0535)" fill="black">
+          <tspan font-family="Times" font-size="15" font-weight="400" fill="black" x="3.1900396" y="14">V</tspan>
+        </text>
+      </g>
+      <g id="Graphic_1360">
+        <text transform="translate(587.2294 565.77165)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="13">C=1000μF</tspan>
+        </text>
+      </g>
+      <g id="Group_1361">
+        <g id="Line_1366">
+          <path d="M 651.7953 578.1622 L 670.0313 578.2677 L 680.1417 578.1622" stroke="black" stroke-linecap="square" stroke-linejoin="miter" stroke-width="6"/>
+        </g>
+        <g id="Line_1365">
+          <line x1="651.7953" y1="569.7638" x2="680.1417" y2="569.7638" stroke="black" stroke-linecap="square" stroke-linejoin="miter" stroke-width="2"/>
+        </g>
+        <g id="Line_1364">
+          <line x1="666.0232" y1="578.2445" x2="665.9685" y2="592.44094" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+        </g>
+        <g id="Line_1363">
+          <line x1="665.981" y1="569.7638" x2="665.9685" y2="558.4252" stroke="black" stroke-linecap="round" stroke-linejoin="miter" stroke-width="1"/>
+        </g>
+        <g id="Graphic_1362">
+          <rect x="648.9606" y="566.9291" width="34.015748" height="5.544291" fill="white"/>
+          <rect x="648.9606" y="566.9291" width="34.015748" height="5.544291" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+      <g id="Graphic_1367">
+        <text transform="translate(650.4681 551.5984)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="13">+</tspan>
+        </text>
+      </g>
+      <g id="Line_1378">
+        <line x1="667.4685" y1="524.40945" x2="702.9921" y2="524.40945" marker-start="url(#FilledCenterBall_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_1379">
+        <line x1="702.9921" y1="524.40945" x2="731.3386" y2="515.9055" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Line_1380">
+        <line x1="718.28405" y1="519.82187" x2="718.28405" y2="501.7323" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Line_1381">
+        <line x1="711.4961" y1="501.7323" x2="725.6693" y2="501.7323" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      </g>
+      <g id="Graphic_1593">
+        <text transform="translate(463.87753 548.7638)" fill="black">
+          <tspan font-family="Times" font-size="13" font-weight="400" fill="black" x="0" y="13">+</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
