@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktikum Elektrotechnik Wechselstromnetzwerke I</title>
+    <!-- Scriptdatein -->
+    <script src="Javascript/MeineFunktionen.js"></script>
+    <script src="Javascript/protokollMain.js"></script>
+    <link rel="stylesheet" href="CSS/stylesheet.css" />
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <link rel="stylesheet" href="CSS/plyr.css" />
+    <!-- Temporäre sicherrung der HTML -->
+    <script>
+      neuladen();
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="Bilder/favicon.ico" />
+  </head>
+
+  <body>
+    <!-- zum drucken -->
+    <div id="capture">
+      <header>
+        <!-- Seitenkopf -->
+        <div class="row border">
+          <div class="column small-4">
+            <img src="Bilder/EAH.png" title="EAH Logo" />
+          </div>
+          <div class="colum small-8">
+            <p class="pnebenlogo" id="pnebenlogo">
+              <b>Fachbereich Elektrotechnik und Informationstechnik</b> <br />
+              Laborpraktikum <br />
+              Grundlagen der Elektrotechnik <br />
+              Dipl.-Ing. O.Reimer<br />
+              <span id="datum" class="datum"> </span>
+            </p>
+          </div>
+
+          <script>
+            Datum();
+          </script>
+        </div>
+
+        <!-- Titel -->
+        <div class="divtitle" id="element-to-print">
+          <h1>Kennenlernen der Elektrotechnik: Wechselstromnetzwerke I</h1>
+        </div>
+
+        <!-- Eintragungen Studenten -->
+        <div class="links" width="50%" height="400">
+          <table>
+            <tr>
+              <td>
+                <label for="Studiengang"> Studiengang/Set:</label>
+              </td>
+              <td>
+                <input
+                  for="StudiengangEingabe"
+                  type="search"
+                  list="Studiengang"
+                  size="25"
+                  maxlength="25"
+                  placeholder="Studiengang"
+                  style="margin-left: 25px"
+                  required
+                />
+                <datalist id="Studiengang">
+                  <option value="WI"></option>
+                  <option value="UT"></option>
+                  <option value="MT"></option>
+                </datalist>
+                <input
+                  for="Setnummer"
+                  type="search"
+                  list="Set"
+                  size="9"
+                  maxlength="15"
+                  placeholder="1.01"
+                  required
+                />
+                <datalist id="Set">
+                  <option value="2.01"></option>
+                  <option value="2.02"></option>
+                  <option value="2.03"></option>
+                  <option value="2.04"></option>
+                  <option value="2.05"></option>
+                  <option value="2.06"></option>
+                  <option value="2.07"></option>
+                  <option value="2.08"></option>
+                </datalist>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Teilnehmer">Teilnehmer:</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="Teilnehmer"
+                  size="40"
+                  maxlength="50"
+                  placeholder="Erika Mustermann"
+                  style="margin-left: 25px"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Matrikelnummer">Matrikelnummer:</label>
+              </td>
+              <td>
+                <input
+                  id="Matrikelnummer"
+                  size="40"
+                  maxlength="50"
+                  placeholder="665544"
+                  style="margin-left: 25px"
+                  required
+                />
+              </td>
+            </tr>
+          </table>
+
+          <label>Versuchs-ID: GET-01</label>
+          <label
+            >persönliche Prüf-ID:
+            <script type="text/javascript">
+              var min = 9,
+                max = 99999;
+              document.write(
+                20201407 + Math.floor(Math.random() * (max - min)) + min
+              );
+            </script>
+          </label>
+        </div>
+
+        <!-- Eintragung Testat -->
+        <div class="rechts">
+          <table>
+            <tr>
+              <td>Betreuer</td>
+              <td><input readonly /></td>
+            </tr>
+            <tr>
+              <td>Datum</td>
+              <td><input readonly /></td>
+            </tr>
+            <tr>
+              <td>Unterschrift</td>
+              <td><input readonly /></td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Inhaltsverzeichnis -->
+        <div class="inhalt">
+          <hr />
+          <h2>Inhaltsverzeichnis</h2>
+          <a href="#best">2 Bestimmung der Ersatzkomponenten einer Spule</a
+          ><br /><br />
+          <a href="#freq">3 Frequenzverhalten von Bauelementen</a><br /><br />
+          <a href="#lite">Literaturhinweise</a><br /><br />
+        </div>
+
+        <!-- hinweise -->
+        <div class="hinweise">
+          <h2>Hinweise zum Praktikum</h2>
+          <ul>
+            <li>
+              Für die Lösungen zu den einzelnen Aufgaben sind im Protokoll
+              Leerstellen vorgesehen. <br />
+              Verwenden Sie bitte für die Nebenrechnungen kein eigenes Papier.
+            </li>
+            <li style="color: #a52f33">
+              Folgen Sie immer den Anweisungen der Aufsichtspersonen! <br />
+              Wenn Sie sich unsicher sind, stellen Sie Fragen.<br />
+              Lassen Sie sich Ihren Versuchsaufbau vor dem Einschalten abnehmen.
+            </li>
+          </ul>
+        </div>
+
+        <div class="Druckhinweis">
+          <h2>Druckhinweis</h2>
+          <ul>
+            <li>
+              <p id="datumdruck"></p>
+              <script>
+                Datum1();
+              </script>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Inhalt -->
+      <div>
+        <article class="article">
+          <h2>Versuchaufgaben</h2>
+          <fieldset>
+            <legend><h4>Video</h4></legend>
+            <div class="videoscreen">
+              <span id="vid"></span>
+              <video
+                id="player"
+                playsinline
+                controls
+                data-poster="Bilder/EAH_LOGO.jpg"
+              >
+                <source
+                  src="Videos/Praktikum Grundlagen ET Versuch 4 Teil1.webm"
+                  type="video/webm"
+                />
+              </video>
+              <script>
+                const player = new Plyr("#player");
+              </script>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>
+              <span id="best"></span>
+              <h4>Bestimmung der Ersatzkomponenten einer Spule</h4>
+            </legend>
+            <ul>
+              <li>Ermitteln Sie für die Spule mit 1000 Windungen:</li>
+              <li>
+                a) den Gleichstromwiderstand durch Strom- / Spannungsmessung
+              </li>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <label for="u"
+                        >U<sub></sub> =
+                        <input
+                          id="u"
+                          size="20"
+                          maxlength="20"
+                          value="5 V"
+                          readonly=""
+                        />
+                      </label>
+                    </td>
+                    <td></td>
+                    <td>
+                      <label for="i"
+                        >I<sub></sub> =
+                        <input
+                          id="i"
+                          size="20"
+                          maxlength="20"
+                          placeholder="10 A"
+                        />
+                      </label>
+                    </td>
+                    <td></td>
+                    <td>
+                      <label for="r"
+                        >R<sub></sub> =
+                        <input
+                          id="r"
+                          size="20"
+                          maxlength="20"
+                          placeholder="10 Ω"
+                        />
+                      </label>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <li>
+                b) den Scheinwiderstand durch Strom- /Spannungsmessung bei f =
+                100 Hz und f = 10 kHz.
+              </li>
+              <li>
+                Hinweis: Kontrollieren Sie bei b) den Verlauf u<sub>L</sub>(t)
+                oszillographisch. Die Messung soll mit einem sinusförmigen
+                Signal erfolgen. <br />Verringern sie unter Umständen die
+                Amplitude des zur Messung verwendeten Wechselsignals bis es
+                wieder sinusförmig ist!
+              </li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th></th>
+                      <th>f = 100 Hz</th>
+                      <th>f = 10 kHz</th>
+                    </tr>
+
+                    <tr>
+                      <td>U</td>
+                      <td><input id="u1" placeholder="10 V" /></td>
+                      <td><input id="u2" placeholder="10 V" /></td>
+                    </tr>
+                    <tr>
+                      <td>I</td>
+                      <td><input id="i1" placeholder="10 A" /></td>
+                      <td><input id="i2" placeholder="10 A" /></td>
+                    </tr>
+                    <tr>
+                      <td>Z</td>
+                      <td><input id="z1" placeholder="10 Ω" /></td>
+                      <td><input id="z2" placeholder="10 Ω" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>Bestimmen Sie die Induktivität der Spule:</li>
+              <li>a) unter Vernachlässigung des Gleichstromwiderstandes.</li>
+              <div>
+                <textarea
+                  rows="8"
+                  cols="80"
+                  placeholder="Schreiben Sie hier..."
+                ></textarea>
+              </div>
+              <li>b) unter Berücksichtigung des Gleichstromwiderstandes.</li>
+              <div>
+                <textarea
+                  rows="8"
+                  cols="80"
+                  placeholder="Schreiben Sie hier..."
+                ></textarea>
+              </div>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th>Induktivität L</th>
+                      <th>f = 100 Hz</th>
+                      <th>f = 10 kHz</th>
+                    </tr>
+
+                    <tr>
+                      <td>
+                        unter Vernachlässigung des<br />Gleichstromwiderstandes
+                      </td>
+                      <td><input id="l1" placeholder="10 H" /></td>
+                      <td><input id="l2" placeholder="10 H" /></td>
+                    </tr>
+                    <tr>
+                      <td>Berücksichtigung des<br />Gleichstromwiderstandes</td>
+                      <td><input id="l3" placeholder="10 H" /></td>
+                      <td><input id="l4" placeholder="10 H" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>Diskussieren Sie</li>
+              <div>
+                <textarea
+                  rows="8"
+                  cols="80"
+                  placeholder="Schreiben Sie hier..."
+                ></textarea>
+              </div>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>
+              <span id="freq"></span>
+              <h4>Frequenzverhalten von Bauelementen</h4>
+            </legend>
+            <ul>
+              <li>
+                Untersuchen Sie nacheinander das Frequenzverhalten |Z| = g(f)
+                folgender drei Bauelemente. R = 150 Ω, C = 2,2 μF, Spule mit
+                1000 Wdg. (für 0 ≤ f ≤ 3 kHz).
+              </li>
+              <li>Hinweise:</li>
+              <li>
+                Überprüfen Sie den sinusförmigen Verlauf u<sub>L</sub>(t)
+                oszillographisch.
+              </li>
+              <li>
+                Beachten Sie die Wirkung des Verlustwiderstandes der Spule bei
+                niedrigen Frequenzen.
+              </li>
+              <li><strong>Spule</strong></li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th></th>
+                      <th>DC</th>
+                      <th>5 Hz</th>
+                      <th>10 Hz</th>
+                      <th>20 Hz</th>
+                      <th>50 Hz</th>
+                    </tr>
+                    <tr>
+                      <td>U</td>
+                      <td><input id="uf1" placeholder="10 V" /></td>
+                      <td><input id="uf2" placeholder="10 V" /></td>
+                      <td><input id="uf3" placeholder="10 V" /></td>
+                      <td><input id="uf4" placeholder="10 V" /></td>
+                      <td><input id="uf5" placeholder="10 V" /></td>
+                    </tr>
+                    <tr>
+                      <td>I</td>
+                      <td><input id="if1" placeholder="10 A" /></td>
+                      <td><input id="if2" placeholder="10 A" /></td>
+                      <td><input id="if3" placeholder="10 A" /></td>
+                      <td><input id="if4" placeholder="10 A" /></td>
+                      <td><input id="if5" placeholder="10 A" /></td>
+                    </tr>
+                    <tr>
+                      <td>Z<sub>L</sub></td>
+                      <td><input id="zf1" placeholder="10 Ω" /></td>
+                      <td><input id="zf2" placeholder="10 Ω" /></td>
+                      <td><input id="zf3" placeholder="10 Ω" /></td>
+                      <td><input id="zf4" placeholder="10 Ω" /></td>
+                      <td><input id="zf5" placeholder="10 Ω" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th></th>
+                      <th>100 Hz</th>
+                      <th>500 Hz</th>
+                      <th>1 kHz</th>
+                      <th>2 kHz</th>
+                      <th>3 kHz</th>
+                    </tr>
+                    <tr>
+                      <td>U</td>
+                      <td><input id="uf6" placeholder="10 V" /></td>
+                      <td><input id="uf7" placeholder="10 V" /></td>
+                      <td><input id="uf8" placeholder="10 V" /></td>
+                      <td><input id="uf9" placeholder="10 V" /></td>
+                      <td><input id="uf0" placeholder="10 V" /></td>
+                    </tr>
+                    <tr>
+                      <td>I</td>
+                      <td><input id="if6" placeholder="10 A" /></td>
+                      <td><input id="if7" placeholder="10 A" /></td>
+                      <td><input id="if8" placeholder="10 A" /></td>
+                      <td><input id="if9" placeholder="10 A" /></td>
+                      <td><input id="if0" placeholder="10 A" /></td>
+                    </tr>
+                    <tr>
+                      <td>Z<sub>L</sub></td>
+                      <td><input id="zf6" placeholder="10 Ω" /></td>
+                      <td><input id="zf7" placeholder="10 Ω" /></td>
+                      <td><input id="zf8" placeholder="10 Ω" /></td>
+                      <td><input id="zf9" placeholder="10 Ω" /></td>
+                      <td><input id="zf0" placeholder="10 Ω" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li><strong>Kondensator</strong></li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th></th>
+                      <th>DC</th>
+                      <th>5 Hz</th>
+                      <th>10 Hz</th>
+                      <th>20 Hz</th>
+                      <th>50 Hz</th>
+                    </tr>
+                    <tr>
+                      <td>U</td>
+                      <td><input id="uf11" placeholder="10 V" /></td>
+                      <td><input id="uf12" placeholder="10 V" /></td>
+                      <td><input id="uf13" placeholder="10 V" /></td>
+                      <td><input id="uf14" placeholder="10 V" /></td>
+                      <td><input id="uf15" placeholder="10 V" /></td>
+                    </tr>
+                    <tr>
+                      <td>I</td>
+                      <td><input id="if11" placeholder="10 A" /></td>
+                      <td><input id="if12" placeholder="10 A" /></td>
+                      <td><input id="if13" placeholder="10 A" /></td>
+                      <td><input id="if14" placeholder="10 A" /></td>
+                      <td><input id="if15" placeholder="10 A" /></td>
+                    </tr>
+                    <tr>
+                      <td>Z<sub>C</sub></td>
+                      <td><input id="zf11" placeholder="10 Ω" /></td>
+                      <td><input id="zf12" placeholder="10 Ω" /></td>
+                      <td><input id="zf13" placeholder="10 Ω" /></td>
+                      <td><input id="zf14" placeholder="10 Ω" /></td>
+                      <td><input id="zf15" placeholder="10 Ω" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th></th>
+                      <th>100 Hz</th>
+                      <th>500 Hz</th>
+                      <th>1 kHz</th>
+                      <th>2 kHz</th>
+                      <th>3 kHz</th>
+                    </tr>
+                    <tr>
+                      <td>U</td>
+                      <td><input id="uf16" placeholder="10 V" /></td>
+                      <td><input id="uf17" placeholder="10 V" /></td>
+                      <td><input id="uf18" placeholder="10 V" /></td>
+                      <td><input id="uf19" placeholder="10 V" /></td>
+                      <td><input id="uf10" placeholder="10 V" /></td>
+                    </tr>
+                    <tr>
+                      <td>I</td>
+                      <td><input id="if16" placeholder="10 A" /></td>
+                      <td><input id="if17" placeholder="10 A" /></td>
+                      <td><input id="if18" placeholder="10 A" /></td>
+                      <td><input id="if19" placeholder="10 A" /></td>
+                      <td><input id="if10" placeholder="10 A" /></td>
+                    </tr>
+                    <tr>
+                      <td>Z<sub>C</sub></td>
+                      <td><input id="zf16" placeholder="10 Ω" /></td>
+                      <td><input id="zf17" placeholder="10 Ω" /></td>
+                      <td><input id="zf18" placeholder="10 Ω" /></td>
+                      <td><input id="zf19" placeholder="10 Ω" /></td>
+                      <td><input id="zf10" placeholder="10 Ω" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li><strong>Widerstand</strong></li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th></th>
+                      <th>DC</th>
+                      <th>10 Hz</th>
+                      <th>100 Hz</th>
+                      <th>1 kHz</th>
+                      <th>3 kHz</th>
+                    </tr>
+                    <tr>
+                      <td>U</td>
+                      <td><input id="uf111" placeholder="10 V" /></td>
+                      <td><input id="uf112" placeholder="10 V" /></td>
+                      <td><input id="uf113" placeholder="10 V" /></td>
+                      <td><input id="uf114" placeholder="10 V" /></td>
+                      <td><input id="uf115" placeholder="10 V" /></td>
+                    </tr>
+                    <tr>
+                      <td>I</td>
+                      <td><input id="if111" placeholder="10 A" /></td>
+                      <td><input id="if112" placeholder="10 A" /></td>
+                      <td><input id="if113" placeholder="10 A" /></td>
+                      <td><input id="if114" placeholder="10 A" /></td>
+                      <td><input id="if115" placeholder="10 A" /></td>
+                    </tr>
+                    <tr>
+                      <td>Z<sub>R</sub></td>
+                      <td><input id="zf111" placeholder="10 Ω" /></td>
+                      <td><input id="zf112" placeholder="10 Ω" /></td>
+                      <td><input id="zf113" placeholder="10 Ω" /></td>
+                      <td><input id="zf114" placeholder="10 Ω" /></td>
+                      <td><input id="zf115" placeholder="10 Ω" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <li>
+                Stellen Sie die Ergebnisse grafisch in einem gemeinsamen
+                Diagramm dar!
+              </li>
+              <div class="center">
+                <iframe
+                  id="frame-1"
+                  class="embed-container"
+                  src="ZeichenTool/zeichentool.html"
+                  style="width: 80vw; height: 50.448vw"
+                  onload="setZeichenTool(document.getElementById(`frame-1`), `7`)"
+                ></iframe>
+              </div>
+            </ul>
+          </fieldset>
+
+          <!-- Literaturhinweise -->
+          <fieldset>
+            <legend>
+              <span id="lite"></span>
+              <h4>Literaturhinweise</h4>
+            </legend>
+            <ul>
+              <li>
+                <div>siehe Vorlesung</div>
+              </li>
+            </ul>
+          </fieldset>
+        </article>
+      </div>
+
+      <!-- Druckoptionen -->
+      <div id="wrapper">
+        <p>
+          <b>zum drucken der Datei auf dem iPad:</b><br />
+          Klicken Sie auf den nachfolgenden Button<br />
+          Anschließend die Druckvorschau mit der Zoom-Geste groß ziehen und das
+          Dokument speichern
+        </p>
+
+        <a><button id="pbtn" class="button">Drucken</button></a>
+        <a
+          ><button class="button" onclick="toggletheme()">
+            Toggle dark mode
+          </button></a
+        >
+
+        <p>
+          <b>Hinweise zur Selbstkontrolle:</b><br />
+          Achten Sie auf richtige eingabe der Einheit. Zulässige Einheiten sind:
+          "Ohm, Ω, A, V, %".<br />
+          Anschließend können Sie auch folgende Zehnerpotenzen benuntzen: "n, u,
+          m, k"<br />
+          In den Feldern ist keine Berechnung des Ergebnisses zulässig.<br />
+          <b>Beteutung der Farben:</b><br />
+          Grau: das Feld wurde nicht ausgefüllt.<br />
+          Gelb: die verlangte Einheit ist nicht richtig oder entspricht nicht
+          den Vorgaben.<br />
+          T&uuml;rkies: kein Zahlenwert vor erforderlicher Basiseinheit
+          gefunden.<br />
+          Rot: das eingegebene Ergebnis ist falsch.<br />
+          Gr&uuml;n: das eingegebene Ergebnis ist richtig.<br />
+        </p>
+
+        <p>
+          <button onclick="kontrolle()" class="button">Selbstkontrolle</button>
+        </p>
+      </div>
+
+      <!-- Fußzeile -->
+      <footer>
+        <br />
+        <hr />
+        <a href="mailto:oliver.reimer@eah-jena.de" target="_blank"
+          >Kontakt - Mail</a
+        >
+        <p>
+          © 2020
+          <a href="https://www2.eah-jena.de/et/"
+            >EAH Jena - FB Elektrotechnik und Informationstechnik</a
+          >
+        </p>
+      </footer>
+      <!-- zum drucken -->
+    </div>
+  </body>
+  <script src="Javascript/Drucken.js"></script>
+</html>
+
+<script>
+  function kontrolle() {
+    const i = document.querySelector("#i");
+    checkSingleInput(i, 0.2667, "A");
+    const r = document.querySelector("#r");
+    checkSingleInput(r, 18.748, "V");
+
+    const u1 = document.querySelector("#u1");
+    const u2 = document.querySelector("#u2");
+    checkSingleInput(u1, 1.01, "V");
+    checkSingleInput(u2, 3.31, "V");
+
+    const i1 = document.querySelector("#i1");
+    const i2 = document.querySelector("#i2");
+    checkSingleInput(i1, 0.04696, "A");
+    checkSingleInput(i2, 0.00299, "A");
+
+    const z1 = document.querySelector("#z1");
+    const z2 = document.querySelector("#z2");
+    checkSingleInput(z1, 21.508, "Ohm");
+    checkSingleInput(z2, 1107.02, "Ohm");
+
+    const l1 = document.querySelector("#l1");
+    const l2 = document.querySelector("#l2");
+    const l3 = document.querySelector("#l3");
+    const l4 = document.querySelector("#l4");
+    checkSingleInput(l1, 0.03423, "H");
+    checkSingleInput(l2, 0.01762, "H");
+    checkSingleInput(l3, 0.0167, "H");
+    checkSingleInput(l4, 0.01762, "H");
+
+    const uf1 = document.querySelector("#uf1");
+    const uf2 = document.querySelector("#uf2");
+    const uf3 = document.querySelector("#uf3");
+    const uf4 = document.querySelector("#uf4");
+    const uf5 = document.querySelector("#uf5");
+    const uf6 = document.querySelector("#uf6");
+    const uf7 = document.querySelector("#uf7");
+    const uf8 = document.querySelector("#uf8");
+    const uf9 = document.querySelector("#uf9");
+    const uf0 = document.querySelector("#uf0");
+    checkSingleInput(uf1, 2.504, "V");
+    checkSingleInput(uf2, 0.8522, "V");
+    checkSingleInput(uf3, 0.8722, "V");
+    checkSingleInput(uf4, 0.8828, "V");
+    checkSingleInput(uf5, 0.914, "V");
+    checkSingleInput(uf6, 1.009, "V");
+    checkSingleInput(uf7, 2.173, "V");
+    checkSingleInput(uf8, 2.849, "V");
+    checkSingleInput(uf9, 3.19, "V");
+    checkSingleInput(uf0, 3.271, "V");
+
+    const if1 = document.querySelector("#if1");
+    const if2 = document.querySelector("#if2");
+    const if3 = document.querySelector("#if3");
+    const if4 = document.querySelector("#if4");
+    const if5 = document.querySelector("#if5");
+    const if6 = document.querySelector("#if6");
+    const if7 = document.querySelector("#if7");
+    const if8 = document.querySelector("#if8");
+    const if9 = document.querySelector("#if9");
+    const if0 = document.querySelector("#if0");
+    checkSingleInput(if1, 0.1372, "A");
+    checkSingleInput(if2, 0.44696, "A");
+    checkSingleInput(if3, 0.0478, "A");
+    checkSingleInput(if4, 0.04806, "A");
+    checkSingleInput(if5, 0.04801, "A");
+    checkSingleInput(if6, 0.04751, "A");
+    checkSingleInput(if7, 0.03787, "A");
+    checkSingleInput(if8, 0.02585, "A");
+    checkSingleInput(if9, 0.01459, "A");
+    checkSingleInput(if0, 0.009996, "A");
+
+    const zf1 = document.querySelector("#zf1");
+    const zf2 = document.querySelector("#zf2");
+    const zf3 = document.querySelector("#zf3");
+    const zf4 = document.querySelector("#zf4");
+    const zf5 = document.querySelector("#zf5");
+    const zf6 = document.querySelector("#zf6");
+    const zf7 = document.querySelector("#zf7");
+    const zf8 = document.querySelector("#zf8");
+    const zf9 = document.querySelector("#zf9");
+    const zf0 = document.querySelector("#zf0");
+    checkSingleInput(zf1, 18.25, "Ohm");
+    checkSingleInput(zf2, 18.147, "Ohm");
+    checkSingleInput(zf3, 18.247, "Ohm");
+    checkSingleInput(zf4, 18.369, "Ohm");
+    checkSingleInput(zf5, 19.44, "Ohm");
+    checkSingleInput(zf6, 21.238, "Ohm");
+    checkSingleInput(zf7, 57.38, "Ohm");
+    checkSingleInput(zf8, 110.21, "Ohm");
+    checkSingleInput(zf9, 218.643, "Ohm");
+    checkSingleInput(zf0, 327.231, "Ohm");
+
+    const uf11 = document.querySelector("#uf11");
+    const uf12 = document.querySelector("#uf12");
+    const uf13 = document.querySelector("#uf13");
+    const uf14 = document.querySelector("#uf14");
+    const uf15 = document.querySelector("#uf15");
+    const uf16 = document.querySelector("#uf16");
+    const uf17 = document.querySelector("#uf17");
+    const uf18 = document.querySelector("#uf18");
+    const uf19 = document.querySelector("#uf19");
+    const uf10 = document.querySelector("#uf10");
+    checkSingleInput(uf11, 2.515, "V");
+    checkSingleInput(uf12, 3.301, "V");
+    checkSingleInput(uf13, 3.34, "V");
+    checkSingleInput(uf14, 3.348, "V");
+    checkSingleInput(uf15, 3.351, "V");
+    checkSingleInput(uf16, 3.339, "V");
+    checkSingleInput(uf17, 3.142, "V");
+    checkSingleInput(uf18, 2.699, "V");
+    checkSingleInput(uf19, 1.895, "V");
+    checkSingleInput(uf10, 1.397, "V");
+
+    const if11 = document.querySelector("#if11");
+    const if12 = document.querySelector("#if12");
+    const if13 = document.querySelector("#if13");
+    const if14 = document.querySelector("#if14");
+    const if15 = document.querySelector("#if15");
+    const if16 = document.querySelector("#if16");
+    const if17 = document.querySelector("#if17");
+    const if18 = document.querySelector("#if18");
+    const if19 = document.querySelector("#if19");
+    const if10 = document.querySelector("#if10");
+    checkSingleInput(if11, 0.25, "A");
+    checkSingleInput(if12, 0.000235, "A");
+    checkSingleInput(if13, 0.0004725, "A");
+    checkSingleInput(if14, 0.0009482, "A");
+    checkSingleInput(if15, 0.002374, "A");
+    checkSingleInput(if16, 0.004729, "A");
+    checkSingleInput(if17, 0.0222, "A");
+    checkSingleInput(if18, 0.03809, "A");
+    checkSingleInput(if19, 0.05335, "A");
+    checkSingleInput(if10, 0.05887, "A");
+
+    const zf11 = document.querySelector("#zf11");
+    const zf12 = document.querySelector("#zf12");
+    const zf13 = document.querySelector("#zf13");
+    const zf14 = document.querySelector("#zf14");
+    const zf15 = document.querySelector("#zf15");
+    const zf16 = document.querySelector("#zf16");
+    const zf17 = document.querySelector("#zf17");
+    const zf18 = document.querySelector("#zf18");
+    const zf19 = document.querySelector("#zf19");
+    const zf10 = document.querySelector("#zf10");
+    checkSingleInput(zf11, 10.06, "Ohm");
+    checkSingleInput(zf12, 14076, 8, "Ohm");
+    checkSingleInput(zf13, 7068, 78, "Ohm");
+    checkSingleInput(zf14, 3590, 9, "Ohm");
+    checkSingleInput(zf15, 1411, 54, "Ohm");
+    checkSingleInput(zf16, 706.07, "Ohm");
+    checkSingleInput(zf17, 141.53, "Ohm");
+    checkSingleInput(zf18, 70.858, "Ohm");
+    checkSingleInput(zf19, 35.52, "Ohm");
+    checkSingleInput(zf10, 23.72, "Ohm");
+
+    const uf111 = document.querySelector("#uf111");
+    const uf112 = document.querySelector("#uf112");
+    const uf113 = document.querySelector("#uf113");
+    const uf114 = document.querySelector("#uf114");
+    const uf115 = document.querySelector("#uf115");
+
+    checkSingleInput(uf111, 2.495, "V");
+    checkSingleInput(uf112, 2.488, "V");
+    checkSingleInput(uf113, 2.49, "V");
+    checkSingleInput(uf114, 2.483, "V");
+    checkSingleInput(uf115, 2.486, "V");
+
+    const if111 = document.querySelector("#if111");
+    const if112 = document.querySelector("#if112");
+    const if113 = document.querySelector("#if113");
+    const if114 = document.querySelector("#if114");
+    const if115 = document.querySelector("#if115");
+
+    checkSingleInput(if111, 0.01677, "A");
+    checkSingleInput(if112, 0.01668, "A");
+    checkSingleInput(if113, 0.01671, "A");
+    checkSingleInput(if114, 0.01666, "A");
+    checkSingleInput(if115, 0.01666, "A");
+
+    const zf111 = document.querySelector("#zf111");
+    const zf112 = document.querySelector("#zf112");
+    const zf113 = document.querySelector("#zf113");
+    const zf114 = document.querySelector("#zf114");
+    const zf115 = document.querySelector("#zf115");
+
+    checkSingleInput(zf111, 148.78, "Ohm");
+    checkSingleInput(zf112, 149.16, "Ohm");
+    checkSingleInput(zf113, 149.013, "Ohm");
+    checkSingleInput(zf114, 149.04, "Ohm");
+    checkSingleInput(zf115, 149.22, "Ohm");
+  }
+</script>

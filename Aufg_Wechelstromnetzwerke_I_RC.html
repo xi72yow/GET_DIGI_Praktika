@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>###########</title>
+    <!-- Scriptdatein -->
+    <script src="Javascript/MeineFunktionen.js"></script>
+    <script src="Javascript/protokollMain.js"></script>
+    <link rel="stylesheet" href="CSS/stylesheet.css" />
+    <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+    <link rel="stylesheet" href="CSS/plyr.css" />
+    <!-- Temporäre sicherrung der HTML -->
+    <script>
+      neuladen();
+    </script>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="Bilder/favicon.ico" />
+  </head>
+
+  <body>
+    <!-- zum drucken -->
+    <div id="capture">
+      <header>
+        <!-- Seitenkopf -->
+        <div class="row border">
+          <div class="column small-4">
+            <img src="Bilder/EAH.png" title="EAH Logo" />
+          </div>
+          <div class="colum small-8">
+            <p class="pnebenlogo" id="pnebenlogo">
+              <b>Fachbereich Elektrotechnik und Informationstechnik</b> <br />
+              Laborpraktikum <br />
+              Grundlagen der Elektrotechnik <br />
+              Dipl.-Ing. O.Reimer<br />
+              <span id="datum" class="datum"> </span>
+            </p>
+          </div>
+
+          <script>
+            Datum();
+          </script>
+        </div>
+
+        <!-- Titel -->
+        <div class="divtitle" id="element-to-print">
+          <h1>Kennenlernen der Elektrotechnik: ##############</h1>
+        </div>
+
+        <!-- Eintragungen Studenten -->
+        <div class="links" width="50%" height="400">
+          <table>
+            <tr>
+              <td>
+                <label for="Studiengang"> Studiengang/Set:</label>
+              </td>
+              <td>
+                <input
+                  for="StudiengangEingabe"
+                  type="search"
+                  list="Studiengang"
+                  size="25"
+                  maxlength="25"
+                  placeholder="Studiengang"
+                  style="margin-left: 25px"
+                  required
+                />
+                <datalist id="Studiengang">
+                  <option value="WI"></option>
+                  <option value="UT"></option>
+                  <option value="MT"></option>
+                </datalist>
+                <input
+                  for="Setnummer"
+                  type="search"
+                  list="Set"
+                  size="9"
+                  maxlength="15"
+                  placeholder="1.01"
+                  required
+                />
+                <datalist id="Set">
+                  <option value="2.01"></option>
+                  <option value="2.02"></option>
+                  <option value="2.03"></option>
+                  <option value="2.04"></option>
+                  <option value="2.05"></option>
+                  <option value="2.06"></option>
+                  <option value="2.07"></option>
+                  <option value="2.08"></option>
+                </datalist>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Teilnehmer">Teilnehmer:</label>
+              </td>
+              <td>
+                <input
+                  type="text"
+                  id="Teilnehmer"
+                  size="40"
+                  maxlength="50"
+                  placeholder="Erika Mustermann"
+                  style="margin-left: 25px"
+                  required
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label for="Matrikelnummer">Matrikelnummer:</label>
+              </td>
+              <td>
+                <input
+                  id="Matrikelnummer"
+                  size="40"
+                  maxlength="50"
+                  placeholder="665544"
+                  style="margin-left: 25px"
+                  required
+                />
+              </td>
+            </tr>
+          </table>
+
+          <label>Versuchs-ID: GET-01</label>
+          <label
+            >persönliche Prüf-ID:
+            <script type="text/javascript">
+              var min = 9,
+                max = 99999;
+              document.write(
+                20201407 + Math.floor(Math.random() * (max - min)) + min
+              );
+            </script>
+          </label>
+        </div>
+
+        <!-- Eintragung Testat -->
+        <div class="rechts">
+          <table>
+            <tr>
+              <td>Betreuer</td>
+              <td><input readonly /></td>
+            </tr>
+            <tr>
+              <td>Datum</td>
+              <td><input readonly /></td>
+            </tr>
+            <tr>
+              <td>Unterschrift</td>
+              <td><input readonly /></td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Inhaltsverzeichnis -->
+        <div class="inhalt">
+          <hr />
+          <h2>Inhaltsverzeichnis</h2>
+          <a href="#span">#############</a><br /><br />
+          <a href="#mess">#############</a><br /><br />
+          <a href="#diod">#############</a><br /><br />
+          <a href="#lite">#############</a><br /><br />
+        </div>
+
+        <!-- hinweise -->
+        <div class="hinweise">
+          <h2>Hinweise zum Praktikum</h2>
+          <ul>
+            <li>
+              Für die Lösungen zu den einzelnen Aufgaben sind im Protokoll
+              Leerstellen vorgesehen. <br />
+              Verwenden Sie bitte für die Nebenrechnungen kein eigenes Papier.
+            </li>
+            <li style="color: #a52f33">
+              Folgen Sie immer den Anweisungen der Aufsichtspersonen! <br />
+              Wenn Sie sich unsicher sind, stellen Sie Fragen.<br />
+              Lassen Sie sich Ihren Versuchsaufbau vor dem Einschalten abnehmen.
+            </li>
+          </ul>
+        </div>
+
+        <div class="Druckhinweis">
+          <h2>Druckhinweis</h2>
+          <ul>
+            <li>
+              <p id="datumdruck"></p>
+              <script>
+                Datum1();
+              </script>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Inhalt -->
+      <div>
+        <article class="article">
+          <h2>Versuchaufgaben</h2>
+          <fieldset>
+            <legend>
+              <span id="rcre"></span>
+              <h4>RC-Reihenschaltung</h4>
+            </legend>
+            <ul>
+              <li>
+                Bauen Sie eine Reihenschaltung mit R = 100 Ω und C = 4,7 μF auf.
+              </li>
+              <li>
+                Achten Sie darauf, dass in die Schaltung immer ein Strom von
+                I<sub>eff</sub> = 15 mA fließt. Passen Sie dazu nach der
+                Änderung der Frequenz die Ausgangsspannung des Signalgenerators
+                an.
+              </li>
+              <li>
+                Messen Sie U<sub>C</sub> und U<sub>R</sub> bei den angegebenen
+                Frequenzen und bestimmen Sie daraus X<sub>C</sub>
+              </li>
+              <li>Zeichnen Sie die Zeigerdiagramme für die Spannungen.</li>
+              <li>
+                Ermitteln Sie daraus für die angegebenen Frequenzen grafisch die
+                gesuchten Werte aus der Tabelle und kontrollieren Sie das
+                Ergebnis für |U| mathematisch.
+              </li>
+              <li>
+                Entwickeln Sie aus den ermittelten Werten das Zeigerdiagramm für
+                Z.
+              </li>
+              <li>
+                Bestimmen Sie daraus grafisch Z und φ für die angegebenen
+                Frequenzen.
+              </li>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th>f in Hz</th>
+                      <th>|I| in mA</th>
+                      <th>|U<sub>R</sub>| in V<br />gemessen</th>
+                      <th>|U<sub>C</sub>| in V <br />gemessen</th>
+                      <th>
+                        |X<sub>C</sub>| in Ω <br />
+                        berechnet
+                      </th>
+                    </tr>
+                    <tr>
+                      <td>250</td>
+                      <td>15</td>
+                      <td><input placeholder="10 V" /></td>
+                      <td><input placeholder="10 V" /></td>
+                      <td><input placeholder="10 Ω" /></td>
+                    </tr>
+                    <tr>
+                      <td>500</td>
+                      <td>15</td>
+                      <td><input placeholder="10 V" /></td>
+                      <td><input placeholder="10 V" /></td>
+                      <td><input placeholder="10 Ω" /></td>
+                    </tr>
+                    <tr>
+                      <td>1000</td>
+                      <td>15</td>
+                      <td><input placeholder="10 V" /></td>
+                      <td><input placeholder="10 V" /></td>
+                      <td><input placeholder="10 Ω" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <table class="w3-table w3-striped w3-border">
+                  <tbody>
+                    <tr>
+                      <th>f in Hz</th>
+                      <th>|I| in mA</th>
+                      <th>|U| in V<br />graphisch</th>
+                      <th>|U| in V<br />berechnet</th>
+                      <th>
+                        |Z| in Ω<br />
+                        graphisch
+                      </th>
+                      <th>
+                        φ in °<br />
+                        graphisch
+                      </th>
+                    </tr>
+                    <tr>
+                      <td>250</td>
+                      <td>15</td>
+                      <td><input placeholder="10 V" /></td>
+                      <td><input placeholder="10 V" /></td>
+                      <td><input placeholder="10 Ω" /></td>
+                      <td><input placeholder="10 °" /></td>
+                    </tr>
+                    <tr>
+                      <td>500</td>
+                      <td>15</td>
+                      <td><input placeholder="10 V" /></td>
+                      <td><input placeholder="10 V" /></td>
+                      <td><input placeholder="10 Ω" /></td>
+                      <td><input placeholder="10 °" /></td>
+                    </tr>
+                    <tr>
+                      <td>1000</td>
+                      <td>15</td>
+                      <td><input placeholder="10 V" /></td>
+                      <td><input placeholder="10 V" /></td>
+                      <td><input placeholder="10 Ω" /></td>
+                      <td><input placeholder="10 °" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="center">
+                <iframe
+                  id="frame-2"
+                  class="embed-container"
+                  src="ZeichenTool/zeichentool.html"
+                  style="width: 80vw; height: 50.448vw"
+                  onload="setZeichenTool(document.getElementById(`frame-2`), `0`)"
+                ></iframe>
+              </div>
+              <li>
+                Ermitteln Sie aus den Zeigerdiagrammen für Z die Frequenz, bei
+                der φ = -45 ° beträgt.
+              </li>
+              <label for="f"
+                >f<sub></sub> =
+                <input id="f" size="20" maxlength="20" placeholder="10 Hz" />
+              </label>
+              <li>Bei welcher Frequenz beträgt φ = -20 °?</li>
+              <label for="f1"
+                >f<sub></sub> =
+                <input id="f1" size="20" maxlength="20" placeholder="10 Hz" />
+              </label>
+              <li>Diskussieren Sie</li>
+              <div>
+                <textarea
+                  rows="8"
+                  cols="80"
+                  placeholder="Schreiben Sie hier..."
+                ></textarea>
+              </div>
+            </ul>
+          </fieldset>
+
+          <!-- Literaturhinweise -->
+          <fieldset>
+            <legend>
+              <span id="lite"></span>
+              <h4>Literaturhinweise</h4>
+            </legend>
+            <ul>
+              <li>
+                <div>siehe Vorlesung</div>
+              </li>
+            </ul>
+          </fieldset>
+        </article>
+      </div>
+
+      <!-- Druckoptionen -->
+      <div id="wrapper">
+        <p>
+          <b>zum drucken der Datei auf dem iPad:</b><br />
+          Klicken Sie auf den nachfolgenden Button<br />
+          Anschließend die Druckvorschau mit der Zoom-Geste groß ziehen und das
+          Dokument speichern
+        </p>
+
+        <a><button id="pbtn" class="button">Drucken</button></a>
+        <a
+          ><button class="button" onclick="toggletheme()">
+            Toggle dark mode
+          </button></a
+        >
+
+        <p>
+          <b>Hinweise zur Selbstkontrolle:</b><br />
+          Achten Sie auf richtige eingabe der Einheit. Zulässige Einheiten sind:
+          "Ohm, Ω, A, V, %".<br />
+          Anschließend können Sie auch folgende Zehnerpotenzen benuntzen: "n, u,
+          m, k"<br />
+          In den Feldern ist keine Berechnung des Ergebnisses zulässig.<br />
+          <b>Beteutung der Farben:</b><br />
+          Grau: das Feld wurde nicht ausgefüllt.<br />
+          Gelb: die verlangte Einheit ist nicht richtig oder entspricht nicht
+          den Vorgaben.<br />
+          T&uuml;rkies: kein Zahlenwert vor erforderlicher Basiseinheit
+          gefunden.<br />
+          Rot: das eingegebene Ergebnis ist falsch.<br />
+          Gr&uuml;n: das eingegebene Ergebnis ist richtig.<br />
+        </p>
+
+        <p>
+          <button onclick="kontrolle()" class="button">Selbstkontrolle</button>
+        </p>
+      </div>
+
+      <!-- Fußzeile -->
+      <footer>
+        <br />
+        <hr />
+        <a href="mailto:oliver.reimer@eah-jena.de" target="_blank"
+          >Kontakt - Mail</a
+        >
+        <p>
+          © 2020
+          <a href="https://www2.eah-jena.de/et/"
+            >EAH Jena - FB Elektrotechnik und Informationstechnik</a
+          >
+        </p>
+      </footer>
+      <!-- zum drucken -->
+    </div>
+  </body>
+  <script src="Javascript/Drucken.js"></script>
+</html>
+
+<script>
+  function kontrolle(params) {}
+</script>

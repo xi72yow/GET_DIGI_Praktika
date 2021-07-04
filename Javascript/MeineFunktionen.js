@@ -208,6 +208,10 @@ Array.prototype.min = function () {
 // als default ist die einheit automatisch mit kontrolliert und 10% toleranz
 
 function checkSingleInput(userInput, loesung, Basiseinheit, toleranzInFaktor, EinheitZwingend) {
+  if (!userInput) {
+    console.warn("Input not defined!");
+    return 999;
+  }
   EinheitZwingend = (typeof EinheitZwingend !== 'undefined') ? EinheitZwingend : true;
   toleranzInFaktor = (typeof toleranzInFaktor !== 'undefined') ? toleranzInFaktor : 0.1;
 
