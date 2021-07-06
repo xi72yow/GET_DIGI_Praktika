@@ -1,0 +1,53 @@
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Erstelle Praktika</title>
+    <script src="/Javascript/protocolParts.js"></script>
+    <script src="/Javascript/template.js"></script>
+  </head>
+  <body>
+    <div id="checkbox-container"></div>
+    <button onclick="makeDocument()">Create</button>
+    <script>
+      function createInterface() {
+        let container = document.querySelector("#checkbox-container");
+        protocolParts.forEach((value, index, array) => {
+          let obj = JSON.parse(value);
+
+          container.insertAdjacentHTML(
+            "beforeend",
+            `<input type="checkbox" id="${index}" name="${obj.headline}">
+             <label for="${obj.headline}">${obj.headline}</label>`
+          );
+        });
+      }
+
+      function getAllCheckedCheckbox() {
+        let boxes = document.querySelectorAll('input[type="checkbox"]');
+        let choosen = [];
+        boxes.forEach((box, index, array) => {
+          if (box.checked) {
+            choosen.push(box.id);
+          }
+        });
+        return choosen;
+      }
+
+      function makeDocument() {
+        let win = window.open();
+        let doc = new DOMParser().parseFromString(tamplate, "text/html");
+        let choosen = getAllCheckedCheckbox();
+        let tasks = doc.documentElement.querySelector("#aufgaben");
+        choosen.forEach((task, index, array) => {
+          let obj = JSON.parse(protocolParts[task]);
+          let html = obj.html.replace(/xxx/g, '"');
+          tasks.insertAdjacentHTML("beforeend", `${html}`);
+        });
+        win.document.write(doc.documentElement.innerHTML);
+      }
+      createInterface();
+    </script>
+  </body>
+</html>

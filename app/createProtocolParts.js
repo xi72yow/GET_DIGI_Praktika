@@ -67,7 +67,7 @@ async function createDataArray() {
 }
 async function writeInFile(string) {
     new Promise(async function (resolve, reject) {
-        await fsp.appendFile(output, `'` + string.replace(/\\n/g, '').trim() + `',`);
+        await fsp.appendFile(output, `'` + string.replace(/\\n/g, '').trim().replace(/\s+/g, ' ').trim() + `',`);
         resolve("check");
     });
 
@@ -86,7 +86,7 @@ async function createJS() {
             let part = {
                 thema: title,
                 headline: field.querySelector("legend").textContent,
-                html: field.outerHTML
+                html: field.outerHTML.replace(/"/g, 'xxx')
             }
             //console.log(JSON.stringify(part))
 
