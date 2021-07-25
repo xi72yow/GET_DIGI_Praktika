@@ -46,7 +46,7 @@ let tamplate = '<!DOCTYPE html>'+
 ''+
 '        <!-- Titel -->'+
 '        <div class="divtitle" id="element-to-print">'+
-'          <h1>Kennenlernen der Elektrotechnik: ##############</h1>'+
+'          <h1 id="versuchsnummer">Kennenlernen der Elektrotechnik: ##############</h1>'+
 '        </div>'+
 ''+
 '        <!-- Eintragungen Studenten -->'+
@@ -161,10 +161,6 @@ let tamplate = '<!DOCTYPE html>'+
 '        <div id="inhaltsverzeichnis" class="inhalt">'+
 '          <hr />'+
 '          <h2>Inhaltsverzeichnis</h2>'+
-'          <a href="#span">#############</a><br /><br />'+
-'          <a href="#mess">#############</a><br /><br />'+
-'          <a href="#diod">#############</a><br /><br />'+
-'          <a href="#lite">#############</a><br /><br />'+
 '        </div>'+
 ''+
 '        <!-- hinweise -->'+

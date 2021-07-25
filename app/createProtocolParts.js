@@ -83,15 +83,20 @@ async function createJS() {
         let fields = dom.window.document.querySelectorAll("fieldset");
         for (let i = 0; i < fields.length; i++) {
             const field = fields[i];
-            let part = {
-                thema: title,
-                headline: field.querySelector("legend").textContent,
-                html: field.outerHTML.replace(/"/g, 'xxx')
+            if (!field.querySelector("legend").textContent.includes("Literaturhinweise")) {
+                let part = {
+                    thema: title,
+                    headline: field.querySelector("legend").textContent,
+                    experiment: field.querySelector("legend").querySelector("h4").dataset.experiment,
+                    id:field.querySelector("legend").querySelector("h4").id,
+                    part: field.querySelector("legend").querySelector("h4").dataset.part,
+                    points: field.querySelector("legend").querySelector("h4").dataset.points,
+                    html: field.outerHTML.replace(/"/g, 'xxx')
+                }
+                //console.log(JSON.stringify(part))
+
+                writeInFile(JSON.stringify(part));
             }
-            //console.log(JSON.stringify(part))
-
-            writeInFile(JSON.stringify(part));
-
         }
     }
     await fsp.appendFile(output, `];`);

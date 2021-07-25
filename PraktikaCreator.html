@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
@@ -9,16 +10,60 @@
   </head>
   <body>
     <div id="checkbox-container"></div>
-    <button onclick="makeDocument()">Create</button>
+    <div class="table">
+      <div id="experiment-1">
+        <h3>Versuch 1</h3>
+        <div id="e1-part-1"></div>
+        <div id="e1-part-2"></div>
+        <div id="e1-part-3"></div>
+      </div>
+      <div id="experiment-2">
+        <h3>Versuch 2</h3>
+        <div id="e2-part-1"></div>
+        <div id="e2-part-2"></div>
+        <div id="e2-part-3"></div>
+      </div>
+      <div id="experiment-3">
+        <h3>Versuch 3</h3>
+        <div id="e3-part-1"></div>
+        <div id="e3-part-2"></div>
+        <div id="e3-part-3"></div>
+      </div>
+      <div id="experiment-4">
+        <h3>Versuch 4</h3>
+        <div id="e4-part-1"></div>
+        <div id="e4-part-2"></div>
+        <div id="e4-part-3"></div>
+      </div>
+    </div>
+    <div>
+      <button onclick="makeDocument('new')">Create</button
+      ><button onclick="makeDocument('storage')">Load</button>
+    </div>
+
     <script>
+      function unCheckFalseBoxes(currentExperiment) {
+        for (let index = 1; index < 5; index++) {
+          if (parseInt(currentExperiment, 10) !== index) {
+            let group = document.querySelector("#experiment-" + index);
+            let boxes = group.querySelectorAll('input[type="checkbox"]');
+            boxes.forEach((box, index, array) => {
+              box.checked = false;
+            });
+          }
+        }
+      }
       function createInterface() {
-        let container = document.querySelector("#checkbox-container");
         protocolParts.forEach((value, index, array) => {
           let obj = JSON.parse(value);
 
+          let container = document.querySelector(
+            `#e${obj.experiment}-part-${obj.part}`
+          );
+
           container.insertAdjacentHTML(
             "beforeend",
-            `<input type="checkbox" id="${index}" name="${obj.headline}">
+            `<input type="checkbox" id="${index}" name="${obj.headline}" onclick="unCheckFalseBoxes('${obj.experiment}')">
              <label for="${obj.headline}">${obj.headline}</label>`
           );
         });
@@ -32,19 +77,43 @@
             choosen.push(box.id);
           }
         });
+        localStorage.setItem("lastExperiment", choosen.toString());
         return choosen;
       }
 
-      function makeDocument() {
+      function makeDocument(state) {
+        let choosen = new Array();
+        if (state === "new") {
+          choosen = getAllCheckedCheckbox();
+        }
+        if (state === "storage") {
+          if (!localStorage.getItem("lastExperiment")) {
+            alert("keine gespeicherten Daten gefunden");
+            return;
+          }
+          choosen = localStorage.getItem("lastExperiment").split(",");
+        }
         let win = window.open();
         let doc = new DOMParser().parseFromString(tamplate, "text/html");
-        let choosen = getAllCheckedCheckbox();
         let tasks = doc.documentElement.querySelector("#aufgaben");
+        let contents = doc.documentElement.querySelector("#inhaltsverzeichnis");
         choosen.forEach((task, index, array) => {
           let obj = JSON.parse(protocolParts[task]);
+          if (index === 0) {
+            doc.documentElement.querySelector("#versuchsnummer").textContent =
+              "Kennenlernen der Elektrotechnik: Versuch " + obj.experiment;
+            doc.documentElement.querySelector("title").textContent =
+              "ET Versuch " + obj.experiment;
+          }
+
           let html = obj.html.replace(/xxx/g, '"');
           tasks.insertAdjacentHTML("beforeend", `${html}`);
+          contents.insertAdjacentHTML(
+            "beforeend",
+            `<a href="#${obj.id}">${obj.headline}</a><br /><br />`
+          );
         });
+
         win.document.write(doc.documentElement.innerHTML);
       }
       createInterface();
