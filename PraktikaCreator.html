@@ -93,12 +93,13 @@
           }
           choosen = localStorage.getItem("lastExperiment").split(",");
         }
-        let win = window.open();
-        let doc = new DOMParser().parseFromString(tamplate, "text/html");
+        let doc = new DOMParser().parseFromString(template, "text/html");
         let tasks = doc.documentElement.querySelector("#aufgaben");
         let contents = doc.documentElement.querySelector("#inhaltsverzeichnis");
+        let points = 0;
         choosen.forEach((task, index, array) => {
           let obj = JSON.parse(protocolParts[task]);
+          points = points + parseInt(obj.points, 10);
           if (index === 0) {
             doc.documentElement.querySelector("#versuchsnummer").textContent =
               "Kennenlernen der Elektrotechnik: Versuch " + obj.experiment;
@@ -113,7 +114,14 @@
             `<a href="#${obj.id}">${obj.headline}</a><br /><br />`
           );
         });
-
+        console.log(points);
+        if (points < 4) {
+          alert(
+            "Der von Ihnen Konfigurierte Versuch entspricht nicht den Anforderungen. Wählen Sie bitte weitere Teilversuche!"
+          );
+          return;
+        }
+        let win = window.open();
         win.document.write(doc.documentElement.innerHTML);
       }
       createInterface();

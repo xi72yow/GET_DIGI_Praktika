@@ -3,8 +3,22 @@ const fs = require('fs');
 const path = require('path');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
-const output = "../Javascript/protocolParts.js"
+const output1 = "../Javascript/protocolParts.js"
+const output2 = "../Javascript/template.js"
 
+//protocolParts.js
+try {
+    if (fs.existsSync(output1)) {
+        fs.unlink(output1, (err) => {
+            if (err) {
+                throw err;
+            }
+            console.log("protocolParts.js is deleted. now recreate");
+        });
+    }
+} catch (err) {
+    console.error(err)
+}
 
 function fromDir(startPath, filter) {
     return new Promise(function (resolve, reject) {
@@ -67,13 +81,13 @@ async function createDataArray() {
 }
 async function writeInFile(string) {
     new Promise(async function (resolve, reject) {
-        await fsp.appendFile(output, `'` + string.replace(/\\n/g, '').trim().replace(/\s+/g, ' ').trim() + `',`);
+        await fsp.appendFile(output1, `'` + string.replace(/\\n/g, '').trim().replace(/\s+/g, ' ').trim() + `',`);
         resolve("check");
     });
 
 }
-async function createJS() {
-    await fsp.appendFile(output, `let protocolParts = [`);
+async function createProtokollPartsJS() {
+    await fsp.appendFile(output1, `let protocolParts = [`);
     let htmls = await createDataArray();
     //console.log(htmls)
     for (let i = 0; i < htmls.length; i++) {
@@ -88,7 +102,7 @@ async function createJS() {
                     thema: title,
                     headline: field.querySelector("legend").textContent,
                     experiment: field.querySelector("legend").querySelector("h4").dataset.experiment,
-                    id:field.querySelector("legend").querySelector("h4").id,
+                    id: field.querySelector("legend").querySelector("h4").id,
                     part: field.querySelector("legend").querySelector("h4").dataset.part,
                     points: field.querySelector("legend").querySelector("h4").dataset.points,
                     html: field.outerHTML.replace(/"/g, 'xxx')
@@ -99,7 +113,28 @@ async function createJS() {
             }
         }
     }
-    await fsp.appendFile(output, `];`);
+    await fsp.appendFile(output1, `];`);
 }
 
-createJS();
+createProtokollPartsJS();
+
+//template.js
+try {
+    if (fs.existsSync(output2)) {
+        fs.unlink(output2, (err) => {
+            if (err) {
+                throw err;
+            }
+            console.log("template.js is deleted. now recreate");
+        });
+    }
+} catch (err) {
+    console.error(err)
+}
+
+async function createTemplateJS() {
+    const data = await fsp.readFile("../Aufg_NeuÜberarbeitet.html");
+    await fsp.appendFile(output2, `let template = '` + data.toString().replace(/\\n/g, '').trim().replace(/\s+/g, ' ').trim() + `'`);
+}
+
+createTemplateJS();

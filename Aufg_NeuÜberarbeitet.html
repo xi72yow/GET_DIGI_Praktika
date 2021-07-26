@@ -20,6 +20,27 @@
   </head>
 
   <body>
+    <button onclick="topFunction()" id="toTopBtn" title="zum Start">Top</button>
+    <script>
+      var mybutton = document.getElementById("toTopBtn");
+      window.onscroll = function () {
+        scrollFunction();
+      };
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
     <!-- zum drucken -->
     <div id="capture">
       <header>
