@@ -10,7 +10,6 @@ function Datum1() {
 };
 
 function Datum() {
-  //console.log(inhalt);
   var date = new(Date);
   let content = document.getElementById('pnebenlogo').innerHTML;
   document.getElementById('pnebenlogo').innerHTML = content+('Praktikum am: ' + date.getDate() +
